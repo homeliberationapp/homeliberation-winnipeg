@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Need to Sell Fast in Winnipeg? | Home Liberation</title>
+    <meta name="description" content="Need to sell your Winnipeg house quickly? Job relocation? Divorce? We buy houses fast for cash - close in as few as 7 days.">
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23f97316'/%3E%3Cstop offset='100%25' style='stop-color:%233b82f6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='20' fill='url(%23g)'/%3E%3Cpath d='M50 25 L70 42 L62 42 L62 70 L38 70 L38 42 L30 42 Z' fill='white'/%3E%3Cpath d='M35 52 L65 52 M50 37 L50 67' stroke='white' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --midnight: #0a0f1c;
+            --slate: #1e293b;
+            --orange: #f97316;
+            --blue: #3b82f6;
+            --green: #10b981;
+            --white: #ffffff;
+            --silver: #cbd5e1;
+            --gray: #64748b;
+            --gold: #fbbf24;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--midnight);
+            color: var(--white);
+            line-height: 1.6;
+        }
+
+        .bg-gradient {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background: radial-gradient(ellipse at top, rgba(249,115,22,0.1), transparent 50%),
+                        linear-gradient(180deg, var(--midnight), var(--slate));
+        }
+
+        header {
+            background: rgba(10,15,28,0.98);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(249,115,22,0.2);
+            padding: 1.2rem 0;
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+            color: var(--white);
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--orange), var(--blue));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-icon svg {
+            width: 28px;
+            height: 28px;
+            fill: white;
+        }
+
+        .logo-text {
+            font-size: 1.3rem;
+            font-weight: 800;
+        }
+
+        .logo-text span {
+            background: linear-gradient(135deg, var(--orange), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero {
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -2px;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, var(--orange), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: var(--silver);
+            margin-bottom: 3rem;
+            line-height: 1.7;
+        }
+
+        .content-section {
+            background: rgba(30,41,59,0.5);
+            border: 1px solid rgba(249,115,22,0.2);
+            border-radius: 16px;
+            padding: 3rem;
+            margin: 3rem 0;
+            text-align: left;
+        }
+
+        .content-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--orange);
+        }
+
+        .content-section h3 {
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+            color: var(--white);
+        }
+
+        .content-section p {
+            color: var(--silver);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .content-section ul {
+            color: var(--silver);
+            margin: 1rem 0 1rem 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .content-section li {
+            margin-bottom: 0.8rem;
+        }
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .solution-card {
+            background: rgba(15,23,42,0.8);
+            border: 1px solid rgba(249,115,22,0.3);
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .solution-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--orange);
+        }
+
+        .solution-card p {
+            color: var(--silver);
+            font-size: 1rem;
+        }
+
+        .timeline {
+            background: rgba(15,23,42,0.8);
+            border: 1px solid var(--orange);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .timeline h4 {
+            color: var(--orange);
+            margin-bottom: 1rem;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, rgba(249,115,22,0.2), rgba(59,130,246,0.2));
+            border: 2px solid var(--orange);
+            border-radius: 16px;
+            padding: 3rem;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .cta-box h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-box p {
+            font-size: 1.2rem;
+            color: var(--silver);
+            margin-bottom: 2rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--orange), #ea580c);
+            color: white;
+            padding: 1.3rem 3rem;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 800;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+            box-shadow: 0 10px 40px rgba(249,115,22,0.4);
+            text-transform: uppercase;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 50px rgba(249,115,22,0.6);
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .content-section { padding: 2rem; }
+            .solution-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 3L4 9v12h5v-7h6v7h5V9l-8-6z"/>
+                        <line x1="7" y1="12" x2="17" y2="12" stroke="white" stroke-width="2"/>
+                        <line x1="12" y1="7" x2="12" y2="17" stroke="white" stroke-width="2"/>
+                    </svg>
+                </div>
+                <div class="logo-text">Home <span>Liberation</span></div>
+            </a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Sell Your House <span class="highlight">Fast</span> in Winnipeg</h1>
+
+            <p class="subtitle">
+                Need to sell quickly? Job relocation? Divorce? Life changes? We buy houses fast for cash - close in as few as 7 days.
+            </p>
+
+            <div class="content-section">
+                <h2>⚡ When You Need to Move Fast</h2>
+
+                <p>
+                    <strong>Life doesn't wait for the perfect real estate market.</strong> Sometimes you need to sell NOW, not in 3-6 months. Traditional listings take forever, and you don't have forever.
+                </p>
+
+                <h3>Common Quick-Sale Situations</h3>
+
+                <div class="solution-grid">
+                    <div class="solution-card">
+                        <h4>Job Relocation</h4>
+                        <p>New job starts in 30 days in another city? We close fast so you can move on time without double mortgages.</p>
+                    </div>
+
+                    <div class="solution-card">
+                        <h4>Divorce Settlement</h4>
+                        <p>Need to liquidate the marital home quickly? We make one offer, close fast, split proceeds - no drama.</p>
+                    </div>
+
+                    <div class="solution-card">
+                        <h4>Financial Emergency</h4>
+                        <p>Medical bills, business failure, unexpected expenses? Turn your equity into cash in days, not months.</p>
+                    </div>
+
+                    <div class="solution-card">
+                        <h4>Inherited Property</h4>
+                        <p>Don't want to manage an inherited home? Sell it quickly and split proceeds among heirs.</p>
+                    </div>
+
+                    <div class="solution-card">
+                        <h4>Downsizing Urgency</h4>
+                        <p>Moving to assisted living or condo? Need cash to secure your new place? We close on your timeline.</p>
+                    </div>
+
+                    <div class="solution-card">
+                        <h4>Pre-Foreclosure</h4>
+                        <p>Behind on payments with auction date approaching? We can close before the foreclosure completes.</p>
+                    </div>
+                </div>
+
+                <h3>Why Traditional Sales Are Too Slow</h3>
+
+                <p><strong>The typical Winnipeg home sale timeline:</strong></p>
+
+                <div class="timeline">
+                    <h4>Traditional Listing = 3-6 Months Minimum</h4>
+                    <ul>
+                        <li><strong>Week 1-2:</strong> Find realtor, sign listing agreement, stage home, photos</li>
+                        <li><strong>Week 3-8:</strong> List property, showings, open houses (10-40+ showings)</li>
+                        <li><strong>Week 9-12:</strong> Receive offers, negotiate, accept offer</li>
+                        <li><strong>Week 13-16:</strong> Buyer inspection, financing approval, appraisal</li>
+                        <li><strong>Week 17-18:</strong> Closing preparation, final walkthrough</li>
+                        <li><strong>Week 19-24:</strong> Close (if buyer financing doesn't fall through)</li>
+                    </ul>
+                    <p style="margin-top: 1rem;"><strong>30-40% of traditional sales fall through</strong> due to financing, inspection issues, or buyer cold feet. Then you start over.</p>
+                </div>
+
+                <div class="timeline">
+                    <h4>Our Process = 7-14 Days Total</h4>
+                    <ul>
+                        <li><strong>Day 1:</strong> You contact us</li>
+                        <li><strong>Day 2-3:</strong> We inspect the property</li>
+                        <li><strong>Day 4-5:</strong> We present written cash offer</li>
+                        <li><strong>Day 6-7:</strong> You accept, we open escrow</li>
+                        <li><strong>Day 8-14:</strong> We close - you get paid</li>
+                    </ul>
+                    <p style="margin-top: 1rem;"><strong>100% cash deal</strong> - no financing contingencies, no inspection surprises, no deals falling through.</p>
+                </div>
+
+                <h3>Fast Sale Benefits</h3>
+
+                <ul>
+                    <li><strong>Stop Carrying Costs:</strong> No more mortgage, taxes, insurance, utilities on a house you don't want</li>
+                    <li><strong>No Repairs or Staging:</strong> We buy as-is - no contractors, no stress, no money out of pocket</li>
+                    <li><strong>No Showings:</strong> One visit from us, not 20-30 random strangers walking through</li>
+                    <li><strong>Avoid Double Mortgages:</strong> Relocating? Close before your new mortgage starts</li>
+                    <li><strong>Cash in Hand:</strong> Get your equity converted to cash in days, not months</li>
+                    <li><strong>Certainty:</strong> No deals falling through 60 days in because buyer can't get financing</li>
+                    <li><strong>Privacy:</strong> No public listing, no neighbors gossiping, no "For Sale" sign</li>
+                    <li><strong>Flexibility:</strong> Pick your closing date - as fast as 7 days or delayed if you need time to move</li>
+                </ul>
+
+                <h3>How Fast Can We Really Close?</h3>
+
+                <p><strong>Our fastest closings:</strong></p>
+
+                <ul>
+                    <li><strong>5 days:</strong> Emergency foreclosure stop (owner 2 days from auction)</li>
+                    <li><strong>7 days:</strong> Job relocation (owner starting new job out of province)</li>
+                    <li><strong>10 days:</strong> Divorce settlement (both parties wanted it done fast)</li>
+                    <li><strong>14 days:</strong> Standard quick close (most common)</li>
+                    <li><strong>30-45 days:</strong> Delayed close (owner needs time to move, find new place, etc.)</li>
+                </ul>
+
+                <p>
+                    <strong>We work on YOUR timeline.</strong> Need to close tomorrow? Probably not, but we'll try. Need 60 days to organize your move? No problem - we'll work with you.
+                </p>
+
+                <h3>What You Trade for Speed</h3>
+
+                <p><strong>Transparency: Our offers are lower than retail market value.</strong> Here's why:</p>
+
+                <ul>
+                    <li>We pay cash (no financing contingencies)</li>
+                    <li>We close fast (7-14 days vs 3-6 months)</li>
+                    <li>We buy as-is (you do zero repairs or cleaning)</li>
+                    <li>We pay closing costs (you save thousands)</li>
+                    <li>We assume all risk (no deals falling through)</li>
+                    <li>We're running a business (we need profit margin to renovate and resell)</li>
+                </ul>
+
+                <p>
+                    <strong>Typical trade-off:</strong> You might net 10-15% less than a perfect retail sale, but you save 3-6 months, avoid repair costs, avoid realtor fees (5-6%), and eliminate the risk of deals falling through.
+                </p>
+
+                <p>
+                    <strong>Example:</strong> House worth $300K retail might get our offer around $240-260K depending on condition and needed repairs. But you close in 10 days with cash in hand versus 4-6 months of carrying costs, showings, and uncertainty.
+                </p>
+
+                <h3>Who Benefits Most from Fast Sales?</h3>
+
+                <ul>
+                    <li><strong>Relocating Professionals:</strong> New job in Toronto starting next month? Sell fast, move on.</li>
+                    <li><strong>Divorcing Couples:</strong> Need clean break and split equity ASAP? We make it simple.</li>
+                    <li><strong>Inherited Property Heirs:</strong> Multiple siblings want to split proceeds and move on? Fast close works.</li>
+                    <li><strong>Downsizing Seniors:</strong> Moving to retirement home and need equity for deposits? We close quickly.</li>
+                    <li><strong>Financial Distress:</strong> Need cash NOW for medical, legal, or business reasons? We can help.</li>
+                    <li><strong>Tired Landlords:</strong> Problem tenants, constant repairs, ready to exit rental business? Sell fast.</li>
+                </ul>
+
+                <h3>Our Quick-Close Process</h3>
+
+                <div class="solution-grid">
+                    <div class="solution-card">
+                        <h4>1. Contact Us Today</h4>
+                        <p>Call, text, or submit our form. Tell us your situation and timeline. We respond same day.</p>
+                    </div>
+
+                    <div class="solution-card">
+                        <h4>2. Property Visit (24-48 hrs)</h4>
+                        <p>We visit your property, assess condition, measure rooms, take photos. Takes 15-20 minutes.</p>
+                    </div>
+
+                    <div class="solution-card">
+                        <h4>3. Written Offer (2-3 days)</h4>
+                        <p>We present written cash offer with explanation of how we calculated it. No pressure.</p>
+                    </div>
+
+                    <div class="solution-card">
+                        <h4>4. Accept & Close (7-14 days)</h4>
+                        <p>Accept our offer, we open escrow, complete paperwork, close on agreed date. You get paid.</p>
+                    </div>
+                </div>
+
+                <h3>Questions Quick-Sale Sellers Ask</h3>
+
+                <p><strong>Q: Can I really close in 7 days?</strong><br>
+                A: Yes, if all paperwork is ready and title is clear. Most close in 10-14 days. Fastest was 5 days.</p>
+
+                <p><strong>Q: Do I have to move out immediately?</strong><br>
+                A: No. We can do rent-back agreements or delayed possession. You pick your move date.</p>
+
+                <p><strong>Q: What if I need more time to find a new place?</strong><br>
+                A: We can delay closing up to 60-90 days if needed. We're flexible.</p>
+
+                <p><strong>Q: Do you pay closing costs?</strong><br>
+                A: Yes, we typically pay all closing costs. You net the full offer amount.</p>
+
+                <p><strong>Q: Is this a scam?</strong><br>
+                A: No. We're legitimate investors. We provide references, proof of funds, and work with licensed lawyers.</p>
+            </div>
+
+            <div class="cta-box">
+                <h2>Get Your Fast-Cash Offer Today</h2>
+                <p>Stop waiting. Start your fast sale now and close on YOUR timeline.</p>
+                <a href="contact.html" class="btn-primary">Request Quick Cash Offer</a>
+            </div>
+
+            <div style="background: rgba(59,130,246,0.1); border: 1px solid var(--blue); border-radius: 12px; padding: 2rem; text-align: left;">
+                <h3 style="color: var(--blue); margin-bottom: 1rem;">🚀 Why Choose Us for Quick Sales</h3>
+                <ul style="color: var(--silver); line-height: 2; padding-left: 1.5rem;">
+                    <li><strong>Proven track record:</strong> 127 Winnipeg homes purchased in 2024</li>
+                    <li><strong>All-cash offers:</strong> No financing contingencies or delays</li>
+                    <li><strong>Flexible timelines:</strong> Close in 7 days or delay up to 90 days</li>
+                    <li><strong>Local expertise:</strong> We know Winnipeg neighborhoods and values</li>
+                    <li><strong>Transparent process:</strong> We explain exactly how we calculate offers</li>
+                    <li><strong>Licensed & insured:</strong> Work with real estate lawyers and title companies</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

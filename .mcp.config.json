@@ -1,0 +1,24 @@
+{
+  "mcpServers": {
+    "playwright": {
+      "command": "npx",
+      "args": ["@playwright/mcp@latest"],
+      "capabilities": ["vision", "pdf"],
+      "browser": "chrome",
+      "headless": true,
+      "timeout": {
+        "navigation": 60000,
+        "action": 5000
+      },
+      "outputDir": "./test-results",
+      "saveTrace": true,
+      "saveVideo": "1280x720",
+      "description": "Automated testing and web scraping for property data"
+    }
+  },
+  "globalSettings": {
+    "autoStart": true,
+    "persistAcrossSessions": true,
+    "logLevel": "info"
+  }
+}

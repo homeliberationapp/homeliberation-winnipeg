@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Consultation | Home Liberation Winnipeg</title>
+    <meta name="description" content="Start your free consultation. Tell us about your property situation and we'll respond within 48 hours.">
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23f97316'/%3E%3Cstop offset='100%25' style='stop-color:%233b82f6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='20' fill='url(%23g)'/%3E%3Cpath d='M50 25 L70 42 L62 42 L62 70 L38 70 L38 42 L30 42 Z' fill='white'/%3E%3Cpath d='M35 52 L65 52 M50 37 L50 67' stroke='white' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --midnight: #0a0f1c;
+            --slate: #1e293b;
+            --orange: #f97316;
+            --blue: #3b82f6;
+            --green: #10b981;
+            --white: #ffffff;
+            --silver: #cbd5e1;
+            --gray: #64748b;
+            --gold: #fbbf24;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--midnight);
+            color: var(--white);
+            line-height: 1.6;
+        }
+
+        .bg-gradient {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background: radial-gradient(ellipse at top, rgba(249,115,22,0.1), transparent 50%),
+                        radial-gradient(ellipse at bottom, rgba(59,130,246,0.15), transparent 50%),
+                        linear-gradient(180deg, var(--midnight), var(--slate));
+        }
+
+        header {
+            background: rgba(10,15,28,0.98);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(249,115,22,0.2);
+            padding: 1.2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+            color: var(--white);
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--orange), var(--blue));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-icon svg {
+            width: 28px;
+            height: 28px;
+            fill: white;
+        }
+
+        .logo-text {
+            font-size: 1.3rem;
+            font-weight: 800;
+        }
+
+        .logo-text span {
+            background: linear-gradient(135deg, var(--orange), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .back-link {
+            color: var(--orange);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -2px;
+            margin-bottom: 1rem;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, var(--orange), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--silver);
+            margin-bottom: 3rem;
+            line-height: 1.7;
+        }
+
+        .form-section {
+            background: rgba(30,41,59,0.6);
+            border: 1px solid rgba(249,115,22,0.2);
+            border-radius: 16px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .form-section h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--orange);
+        }
+
+        .form-section p {
+            color: var(--silver);
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--white);
+            font-size: 0.95rem;
+        }
+
+        label .required {
+            color: var(--orange);
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 0.9rem 1.2rem;
+            background: rgba(15,23,42,0.8);
+            border: 1px solid rgba(249,115,22,0.3);
+            border-radius: 8px;
+            color: var(--white);
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--orange);
+            box-shadow: 0 0 0 3px rgba(249,115,22,0.2);
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        select {
+            cursor: pointer;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-top: 1.5rem;
+        }
+
+        input[type="checkbox"] {
+            width: auto;
+            cursor: pointer;
+        }
+
+        .checkbox-group label {
+            margin: 0;
+            font-weight: 400;
+            color: var(--silver);
+            cursor: pointer;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(135deg, var(--orange), #ea580c);
+            color: white;
+            padding: 1.2rem;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 10px 40px rgba(249,115,22,0.4);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 50px rgba(249,115,22,0.6);
+        }
+
+        .privacy-note {
+            text-align: center;
+            color: var(--gray);
+            font-size: 0.85rem;
+            margin-top: 2rem;
+        }
+
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--silver);
+            font-size: 0.9rem;
+        }
+
+        .trust-item::before {
+            content: '✓';
+            color: var(--green);
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .form-grid { grid-template-columns: 1fr; }
+            .form-section { padding: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 3L4 9v12h5v-7h6v7h5V9l-8-6z"/>
+                        <line x1="7" y1="12" x2="17" y2="12" stroke="white" stroke-width="2"/>
+                        <line x1="12" y1="7" x2="12" y2="17" stroke="white" stroke-width="2"/>
+                    </svg>
+                </div>
+                <div class="logo-text">Home <span>Liberation</span></div>
+            </a>
+            <a href="index.html" class="back-link">← Back to Home</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Start Your Free <span class="highlight">Consultation</span></h1>
+        <p class="subtitle">
+            Fill out the form below and we'll respond within 48 hours. All information is completely confidential.
+        </p>
+
+        <form id="consultationForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
+            <!-- PERSONAL INFORMATION -->
+            <div class="form-section">
+                <h2>Your Information</h2>
+                <p>We'll use this to contact you about your property</p>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>First Name <span class="required">*</span></label>
+                        <input type="text" name="first_name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Last Name <span class="required">*</span></label>
+                        <input type="text" name="last_name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email Address <span class="required">*</span></label>
+                        <input type="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Phone Number <span class="required">*</span></label>
+                        <input type="tel" name="phone" required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROPERTY INFORMATION -->
+            <div class="form-section">
+                <h2>Property Details</h2>
+                <p>Tell us about the property you want to discuss</p>
+
+                <div class="form-grid">
+                    <div class="form-group full-width">
+                        <label>Property Address <span class="required">*</span></label>
+                        <input type="text" name="address" placeholder="123 Main Street, Winnipeg, MB" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Property Type <span class="required">*</span></label>
+                        <select name="property_type" required>
+                            <option value="">Select type...</option>
+                            <option value="single-family">Single-Family Home</option>
+                            <option value="duplex">Duplex</option>
+                            <option value="triplex">Triplex</option>
+                            <option value="apartment">Apartment Building (4+ units)</option>
+                            <option value="condo">Condo</option>
+                            <option value="townhouse">Townhouse</option>
+                            <option value="mixed-use">Mixed-Use Building</option>
+                            <option value="land">Land/Lot</option>
+                            <option value="commercial">Commercial Property</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Approximate Year Built</label>
+                        <input type="text" name="year_built" placeholder="e.g., 1970">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Bedrooms</label>
+                        <input type="number" name="bedrooms" min="0">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Bathrooms</label>
+                        <input type="number" name="bathrooms" min="0" step="0.5">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Approximate Square Feet</label>
+                        <input type="number" name="square_feet" placeholder="e.g., 1200">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Property Condition <span class="required">*</span></label>
+                        <select name="condition" required>
+                            <option value="">Select condition...</option>
+                            <option value="excellent">Excellent (Move-in ready)</option>
+                            <option value="good">Good (Minor updates needed)</option>
+                            <option value="fair">Fair (Needs some work)</option>
+                            <option value="poor">Poor (Major repairs needed)</option>
+                            <option value="uninhabitable">Uninhabitable</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SITUATION -->
+            <div class="form-section">
+                <h2>Your Situation</h2>
+                <p>Help us understand what you're dealing with</p>
+
+                <div class="form-group">
+                    <label>What best describes your situation? <span class="required">*</span></label>
+                    <select name="situation" required>
+                        <option value="">Select your situation...</option>
+                        <option value="foreclosure">Facing Foreclosure</option>
+                        <option value="repairs">Major Repairs Needed</option>
+                        <option value="quick-sale">Need to Sell Quickly</option>
+                        <option value="landlord">Tired of Being a Landlord</option>
+                        <option value="inherited">Inherited Property</option>
+                        <option value="divorce">Divorce</option>
+                        <option value="relocation">Job Relocation</option>
+                        <option value="downsizing">Downsizing</option>
+                        <option value="bankruptcy">Bankruptcy</option>
+                        <option value="tax-liens">Tax Liens/Back Taxes</option>
+                        <option value="code-violations">Code Violations</option>
+                        <option value="tenants">Problem Tenants</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Current Occupancy Status</label>
+                    <select name="occupancy">
+                        <option value="">Select...</option>
+                        <option value="owner-occupied">I live here</option>
+                        <option value="tenant-occupied">Tenants living here</option>
+                        <option value="vacant">Vacant</option>
+                        <option value="partially-vacant">Partially vacant</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Mortgage Status</label>
+                    <select name="mortgage_status">
+                        <option value="">Select...</option>
+                        <option value="current">Current on payments</option>
+                        <option value="behind">Behind on payments</option>
+                        <option value="foreclosure">In foreclosure process</option>
+                        <option value="paid-off">Paid off/No mortgage</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Timeline - How soon do you need to move forward?</label>
+                    <select name="timeline">
+                        <option value="">Select timeline...</option>
+                        <option value="immediate">Immediately (within 7 days)</option>
+                        <option value="urgent">Very soon (1-2 weeks)</option>
+                        <option value="month">Within a month</option>
+                        <option value="flexible">Flexible timeline</option>
+                        <option value="exploring">Just exploring options</option>
+                    </select>
+                </div>
+
+                <div class="form-group full-width">
+                    <label>Additional Details (Optional)</label>
+                    <textarea name="message" placeholder="Tell us anything else that would help us understand your situation..."></textarea>
+                </div>
+            </div>
+
+            <!-- CONSENT -->
+            <div class="form-section">
+                <div class="checkbox-group">
+                    <input type="checkbox" id="consent" name="consent" required>
+                    <label for="consent">I understand this consultation is confidential and there's no obligation. I consent to being contacted about my property.</label>
+                </div>
+
+                <input type="hidden" name="_subject" value="New Consultation Request - Home Liberation">
+                <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+
+                <button type="submit" class="submit-btn">Submit Consultation Request</button>
+            </div>
+        </form>
+
+        <div class="trust-badges">
+            <div class="trust-item">Response within 48 hours</div>
+            <div class="trust-item">100% Confidential</div>
+            <div class="trust-item">Zero obligation</div>
+        </div>
+
+        <p class="privacy-note">
+            Your information is completely confidential and will never be shared. We respect your privacy.
+        </p>
+    </div>
+
+    <script>
+        // Form validation and submission
+        document.getElementById('consultationForm').addEventListener('submit', function(e) {
+            // Add any custom validation here
+            console.log('Form submitted');
+        });
+    </script>
+</body>
+</html>

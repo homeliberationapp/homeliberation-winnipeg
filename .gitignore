@@ -1,0 +1,13 @@
+# Ignore old versions
+index_dark.html
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/

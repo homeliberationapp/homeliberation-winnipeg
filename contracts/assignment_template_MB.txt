@@ -1,0 +1,265 @@
+ASSIGNMENT OF PURCHASE AGREEMENT
+
+This Assignment Agreement ("Agreement") is made on [DATE]
+
+BETWEEN:
+
+ASSIGNOR: Velocity Real Estate Inc.
+Address: [COMPANY ADDRESS]
+("Assignor")
+
+AND:
+
+ASSIGNEE: [BUYER NAME]
+Address: [BUYER ADDRESS]
+Email: [BUYER EMAIL]
+Phone: [BUYER PHONE]
+("Assignee")
+
+RE: [PROPERTY ADDRESS] (the "Property")
+
+RECITALS:
+
+A. Assignor has entered into a Purchase Agreement dated [ORIGINAL CONTRACT DATE] with
+   [SELLER NAME] ("Seller") for the purchase of the Property.
+
+B. Assignor wishes to assign all rights and obligations under the Purchase Agreement to Assignee.
+
+C. Assignee wishes to accept such assignment.
+
+D. Seller has been notified of this assignment and consents to same.
+
+NOW THEREFORE in consideration of the mutual covenants and agreements herein contained,
+and for other good and valuable consideration (the receipt and sufficiency of which is hereby
+acknowledged), the parties agree as follows:
+
+1. ASSIGNMENT
+
+1.1 Assignor hereby assigns to Assignee all of Assignor's rights, title, and interest in the
+Purchase Agreement dated [ORIGINAL CONTRACT DATE] relating to the Property.
+
+1.2 Assignee hereby accepts the assignment and assumes all obligations of Assignor under
+the Purchase Agreement from the date of this Agreement forward.
+
+1.3 Seller shall be notified of this assignment and Assignee shall close directly with Seller.
+
+2. ASSIGNMENT FEE
+
+2.1 Assignee shall pay to Assignor an assignment fee of $[AMOUNT] CAD (the "Assignment Fee").
+
+2.2 Payment terms:
+    a) $[50% AMOUNT] CAD due upon execution of this Agreement (PAID)
+    b) $[50% AMOUNT] CAD due at closing
+
+2.3 The Assignment Fee is NON-REFUNDABLE except as provided in Section 5 (Due Diligence Period).
+
+2.4 The Assignment Fee shall be paid by:
+    □ Certified cheque payable to "Velocity Real Estate Inc."
+    □ Wire transfer to account: [ACCOUNT INFO]
+    □ Other: ___________________
+
+3. PURCHASE PRICE
+
+3.1 The purchase price for the Property as agreed with Seller is $[PURCHASE PRICE] CAD.
+
+3.2 Assignee shall pay the purchase price directly to Seller at closing.
+
+3.3 Option fee of $500 CAD paid by Assignor to Seller shall be credited to purchase price.
+
+4. EARNEST MONEY DEPOSIT
+
+4.1 Assignee shall deposit $[DEPOSIT AMOUNT] CAD into escrow with [TITLE COMPANY/LAWYER]
+within [2] business days of executing this Agreement.
+
+4.2 The deposit shall be held in trust and applied to the purchase price at closing.
+
+4.3 If the transaction does not close due to Seller default, the deposit shall be refunded to Assignee.
+
+4.4 If the transaction does not close due to Assignee default (after Due Diligence Period),
+the deposit shall be forfeited.
+
+5. DUE DILIGENCE PERIOD
+
+5.1 Assignee shall have [10] calendar days from the date of this Agreement (the "Due Diligence Period")
+to conduct the following:
+    a) Property inspection (structural, mechanical, electrical, plumbing)
+    b) Title search and review
+    c) Survey review
+    d) Zoning verification
+    e) Environmental assessment (if applicable)
+    f) Financing arrangement (if applicable)
+
+5.2 If Assignee is not satisfied for ANY reason within the Due Diligence Period, Assignee may
+terminate this Agreement by written notice to Assignor on or before [DUE DILIGENCE END DATE].
+
+5.3 Upon termination during Due Diligence Period:
+    - Earnest deposit shall be refunded to Assignee in full
+    - Assignment Fee shall be refunded to Assignee in full
+    - All parties shall be released from further obligation
+
+5.4 If Assignee does not terminate by the end of the Due Diligence Period, this Agreement becomes
+firm and binding with no further conditions.
+
+6. CLOSING
+
+6.1 Closing shall occur on or before [CLOSING DATE].
+
+6.2 Closing shall take place at:
+    □ [LAWYER NAME & ADDRESS]
+    □ [TITLE COMPANY NAME & ADDRESS]
+    □ Other: ___________________
+
+6.3 Assignee shall close the transaction directly with Seller.
+
+6.4 At closing, Assignee shall pay:
+    a) Purchase price to Seller: $[PURCHASE PRICE] CAD
+    b) Remaining Assignment Fee to Assignor: $[50% AMOUNT] CAD
+    c) Legal fees, title insurance, and closing costs as applicable
+
+6.5 Possession of the Property shall be transferred to Assignee on the closing date.
+
+7. REPRESENTATIONS AND WARRANTIES OF ASSIGNOR
+
+7.1 Assignor represents and warrants:
+    a) Assignor has a valid and binding Purchase Agreement with Seller
+    b) The Purchase Agreement is assignable
+    c) Assignor has provided Assignee with a true copy of the Purchase Agreement
+    d) Assignor is not a licensed real estate broker or salesperson
+    e) Assignor has disclosed all known material facts about the Property
+    f) Assignor has valid authority to enter into this Agreement
+
+7.2 Assignor makes NO representations or warranties regarding:
+    - Property condition
+    - Property value
+    - Fitness for particular purpose
+    - Compliance with building codes or bylaws
+    - Repair costs
+    - Rental income potential
+    - Future appreciation
+
+8. REPRESENTATIONS AND WARRANTIES OF ASSIGNEE
+
+8.1 Assignee represents and warrants:
+    a) Assignee has sufficient funds or financing to close the transaction
+    b) Assignee has reviewed the Purchase Agreement
+    c) Assignee will conduct independent due diligence
+    d) Assignee understands this is a wholesale transaction
+    e) Assignee is acquiring the Property for investment purposes
+    f) Assignee has sought independent legal and financial advice
+    g) Assignee is not relying on any representations by Assignor except those in writing
+
+8.2 Assignee acknowledges:
+    - Assignee is responsible for all property inspections
+    - Assignee is purchasing the Property "AS IS, WHERE IS"
+    - Assignee has not relied on any profit projections from Assignor
+    - Assignee understands real estate investment carries risk
+
+9. DISCLAIMER
+
+9.1 ASSIGNOR IS NOT A LICENSED REAL ESTATE BROKER, APPRAISER, OR HOME INSPECTOR.
+
+9.2 All property information is provided "AS IS" without warranty of any kind, express or implied.
+
+9.3 Assignee is solely responsible for conducting independent due diligence including but not limited to:
+    - Property inspection by licensed inspector
+    - Title search by lawyer
+    - Property appraisal
+    - Zoning verification
+    - Repair cost estimates
+    - Rental income analysis
+
+9.4 Assignee acknowledges that Assignee should consult with legal, financial, tax, and real estate
+professionals before entering into this Agreement.
+
+10. DEFAULT
+
+10.1 If Assignee defaults on this Agreement after the Due Diligence Period:
+    a) Earnest deposit shall be forfeited
+    b) Assignment Fee (if paid) shall be forfeited
+    c) Assignor may pursue additional remedies at law or in equity
+
+10.2 If Seller defaults on the Purchase Agreement:
+    a) Assignor and Assignee shall cooperate to enforce the Purchase Agreement
+    b) If Purchase Agreement cannot be enforced, all fees shall be refunded to Assignee
+
+11. CONFIDENTIALITY
+
+11.1 Assignee agrees to keep confidential:
+    - Assignment Fee amount
+    - Assignor's acquisition strategies
+    - Seller information
+    - Deal structure
+
+11.2 Assignee may disclose information only as required by law or with Assignor's written consent.
+
+12. INDEPENDENT CONTRACTOR
+
+12.1 Assignor and Assignee are independent contractors.
+
+12.2 Nothing in this Agreement creates a partnership, joint venture, or agency relationship.
+
+13. GOVERNING LAW
+
+13.1 This Agreement shall be governed by the laws of the Province of Manitoba and the laws
+of Canada applicable therein.
+
+13.2 The parties hereby submit to the exclusive jurisdiction of the courts of Manitoba.
+
+14. ENTIRE AGREEMENT
+
+14.1 This Agreement constitutes the entire agreement between the parties and supersedes all
+prior negotiations, representations, and agreements.
+
+14.2 No amendment to this Agreement shall be valid unless in writing and signed by both parties.
+
+15. SEVERABILITY
+
+15.1 If any provision of this Agreement is held to be invalid or unenforceable, the remaining
+provisions shall continue in full force and effect.
+
+16. NOTICES
+
+16.1 All notices shall be in writing and delivered to:
+
+Assignor:
+Velocity Real Estate Inc.
+[ADDRESS]
+Email: [EMAIL]
+
+Assignee:
+[BUYER NAME]
+[ADDRESS]
+Email: [BUYER EMAIL]
+
+17. TIME OF ESSENCE
+
+17.1 Time shall be of the essence in this Agreement.
+
+18. SURVIVAL
+
+18.1 The representations, warranties, and covenants in this Agreement shall survive closing.
+
+SIGNED AND DELIVERED this [DATE]
+
+____________________________________          ____________________________________
+ASSIGNOR                                     ASSIGNEE
+Velocity Real Estate Inc.                    [BUYER NAME]
+
+Per: _______________________________          Signature: __________________________
+
+Name: ______________________________          Print Name: _________________________
+
+Title: _____________________________          Date: _______________________________
+
+Date: _______________________________
+
+
+WITNESS (Assignee's signature):
+
+Signature: __________________________
+
+Print Name: _________________________
+
+Address: ____________________________
+
+           ____________________________

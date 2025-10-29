@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Velocity Real Estate Winnipeg</title>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .login-container {
+      background: white;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      max-width: 400px;
+      width: 100%;
+    }
+
+    .logo {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .logo h1 {
+      font-size: 28px;
+      color: #0F172A;
+      margin-bottom: 5px;
+    }
+
+    .logo p {
+      color: #64748B;
+      font-size: 14px;
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      margin: 30px 0;
+      color: #94a3b8;
+      font-size: 14px;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: '';
+      flex: 1;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .divider span {
+      padding: 0 15px;
+    }
+
+    .google-btn {
+      width: 100%;
+      padding: 14px;
+      background: white;
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      transition: all 0.2s;
+      margin-bottom: 20px;
+    }
+
+    .google-btn:hover {
+      border-color: #cbd5e1;
+      background: #f8fafc;
+    }
+
+    .google-btn img {
+      width: 20px;
+      height: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #0F172A;
+      font-weight: 500;
+      font-size: 14px;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px;
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: all 0.2s;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #667eea;
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 16px;
+      background: #667eea;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-top: 10px;
+    }
+
+    .login-btn:hover {
+      background: #5568d3;
+    }
+
+    .login-btn:disabled {
+      background: #cbd5e1;
+      cursor: not-allowed;
+    }
+
+    .forgot-password {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .forgot-password a {
+      color: #667eea;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .signup-link {
+      text-align: center;
+      margin-top: 30px;
+      padding-top: 30px;
+      border-top: 1px solid #e2e8f0;
+      color: #64748B;
+      font-size: 14px;
+    }
+
+    .signup-link a {
+      color: #667eea;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .error-message {
+      background: #fee2e2;
+      color: #dc2626;
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      font-size: 14px;
+      display: none;
+    }
+
+    .success-message {
+      background: #d1fae5;
+      color: #065f46;
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      font-size: 14px;
+      display: none;
+    }
+
+    .user-type-toggle {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .user-type-btn {
+      flex: 1;
+      padding: 12px;
+      background: #f8fafc;
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-size: 14px;
+      font-weight: 600;
+      color: #64748B;
+    }
+
+    .user-type-btn.active {
+      background: #667eea;
+      border-color: #667eea;
+      color: white;
+    }
+
+    @media (max-width: 480px) {
+      .login-container {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <!-- Logo -->
+    <div class="logo">
+      <h1>⚡ Velocity</h1>
+      <p>Winnipeg's Fastest Cash Home Buyers</p>
+    </div>
+
+    <!-- Error/Success Messages -->
+    <div class="error-message" id="errorMessage"></div>
+    <div class="success-message" id="successMessage"></div>
+
+    <!-- User Type Toggle -->
+    <div class="user-type-toggle">
+      <button class="user-type-btn active" onclick="switchUserType('buyer')">
+        👥 I'm a Buyer
+      </button>
+      <button class="user-type-btn" onclick="switchUserType('seller')">
+        🏠 I'm a Seller
+      </button>
+    </div>
+
+    <!-- Google Login (ONE-CLICK) -->
+    <button class="google-btn" onclick="loginWithGoogle()">
+      <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google">
+      Continue with Google
+    </button>
+
+    <!-- Divider -->
+    <div class="divider">
+      <span>or continue with email</span>
+    </div>
+
+    <!-- Email/Password Login Form -->
+    <form id="loginForm" onsubmit="return handleLogin(event)">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" required autocomplete="email">
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" required autocomplete="current-password">
+      </div>
+
+      <button type="submit" class="login-btn" id="loginBtn">
+        Log In
+      </button>
+    </form>
+
+    <!-- Forgot Password -->
+    <div class="forgot-password">
+      <a href="/auth/forgot-password">Forgot password?</a>
+    </div>
+
+    <!-- Sign Up Link -->
+    <div class="signup-link">
+      Don't have an account? <a href="/register.html">Sign up</a>
+    </div>
+  </div>
+
+  <!-- Google Identity Services -->
+  <div id="g_id_onload"
+       data-client_id="YOUR_GOOGLE_CLIENT_ID"
+       data-callback="handleGoogleCallback"
+       data-auto_select="false">
+  </div>
+
+  <script>
+    let userType = 'buyer'; // Default
+
+    // Switch user type
+    function switchUserType(type) {
+      userType = type;
+
+      // Update active button
+      document.querySelectorAll('.user-type-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      event.target.classList.add('active');
+    }
+
+    // Google One-Tap Login
+    function loginWithGoogle() {
+      // Trigger Google login popup
+      google.accounts.id.prompt((notification) => {
+        if (notification.isNotDisplayed() || notification.isSkippedMoment()) {
+          // Fallback: Show Google Sign-In button
+          console.log('Google One-Tap not available, showing button');
+        }
+      });
+    }
+
+    // Handle Google callback
+    async function handleGoogleCallback(response) {
+      const googleIdToken = response.credential;
+
+      try {
+        // Send token to backend
+        const res = await fetch('/api/auth/google', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            idToken: googleIdToken,
+            userType: userType
+          })
+        });
+
+        if (!res.ok) {
+          throw new Error('Google login failed');
+        }
+
+        const data = await res.json();
+
+        // Save JWT token
+        localStorage.setItem('authToken', data.token);
+        localStorage.setItem('user', JSON.stringify(data.user));
+
+        showSuccess('Login successful! Redirecting...');
+
+        // Redirect based on user type
+        setTimeout(() => {
+          if (data.user.userType === 'admin') {
+            window.location.href = '/admin.html';
+          } else if (data.user.userType === 'buyer') {
+            window.location.href = '/buyers/dashboard.html';
+          } else if (data.user.userType === 'seller') {
+            window.location.href = '/sellers/dashboard.html';
+          }
+        }, 1000);
+
+      } catch (error) {
+        showError('Google login failed. Please try again.');
+        console.error('Google login error:', error);
+      }
+    }
+
+    // Handle email/password login
+    async function handleLogin(event) {
+      event.preventDefault();
+
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const loginBtn = document.getElementById('loginBtn');
+
+      // Disable button
+      loginBtn.disabled = true;
+      loginBtn.textContent = 'Logging in...';
+
+      try {
+        const response = await fetch('/api/auth/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password, userType })
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+          throw new Error(data.error || 'Login failed');
+        }
+
+        // Check if 2FA required
+        if (data.requiresTwoFactor) {
+          window.location.href = `/auth/2fa?userId=${data.userId}`;
+          return;
+        }
+
+        // Save JWT token
+        localStorage.setItem('authToken', data.token);
+        localStorage.setItem('user', JSON.stringify(data.user));
+
+        showSuccess('Login successful! Redirecting...');
+
+        // Redirect based on user type
+        setTimeout(() => {
+          if (data.user.userType === 'admin') {
+            window.location.href = '/admin.html';
+          } else if (data.user.userType === 'buyer') {
+            window.location.href = '/buyers/dashboard.html';
+          } else if (data.user.userType === 'seller') {
+            window.location.href = '/sellers/dashboard.html';
+          }
+        }, 1000);
+
+      } catch (error) {
+        showError(error.message);
+        loginBtn.disabled = false;
+        loginBtn.textContent = 'Log In';
+      }
+
+      return false;
+    }
+
+    // Show error message
+    function showError(message) {
+      const errorDiv = document.getElementById('errorMessage');
+      errorDiv.textContent = message;
+      errorDiv.style.display = 'block';
+
+      setTimeout(() => {
+        errorDiv.style.display = 'none';
+      }, 5000);
+    }
+
+    // Show success message
+    function showSuccess(message) {
+      const successDiv = document.getElementById('successMessage');
+      successDiv.textContent = message;
+      successDiv.style.display = 'block';
+    }
+
+    // Initialize Google Identity Services
+    window.onload = function() {
+      google.accounts.id.initialize({
+        client_id: document.getElementById('g_id_onload').getAttribute('data-client_id'),
+        callback: handleGoogleCallback,
+        auto_select: false,
+        cancel_on_tap_outside: true
+      });
+    };
+  </script>
+
+</body>
+</html>

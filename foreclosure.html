@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Foreclosure in Winnipeg | Home Liberation</title>
+    <meta name="description" content="Behind on mortgage payments? Facing foreclosure in Winnipeg? We buy homes fast and help you avoid foreclosure damage to your credit.">
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23f97316'/%3E%3Cstop offset='100%25' style='stop-color:%233b82f6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='20' fill='url(%23g)'/%3E%3Cpath d='M50 25 L70 42 L62 42 L62 70 L38 70 L38 42 L30 42 Z' fill='white'/%3E%3Cpath d='M35 52 L65 52 M50 37 L50 67' stroke='white' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --midnight: #0a0f1c;
+            --slate: #1e293b;
+            --orange: #f97316;
+            --blue: #3b82f6;
+            --green: #10b981;
+            --white: #ffffff;
+            --silver: #cbd5e1;
+            --gray: #64748b;
+            --gold: #fbbf24;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--midnight);
+            color: var(--white);
+            line-height: 1.6;
+        }
+
+        .bg-gradient {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background-image:
+                linear-gradient(rgba(10,15,28,0.91), rgba(10,15,28,0.87)),
+                url('https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            animation: subtleZoom 30s ease-in-out infinite alternate;
+        }
+
+        @keyframes subtleZoom {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.05); }
+        }
+
+        header {
+            background: rgba(10,15,28,0.98);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(249,115,22,0.2);
+            padding: 1.2rem 0;
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+            color: var(--white);
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--orange), var(--blue));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-icon svg {
+            width: 28px;
+            height: 28px;
+            fill: white;
+        }
+
+        .logo-text {
+            font-size: 1.3rem;
+            font-weight: 800;
+        }
+
+        .logo-text span {
+            background: linear-gradient(135deg, var(--orange), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero {
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -2px;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, var(--orange), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: var(--silver);
+            margin-bottom: 3rem;
+            line-height: 1.7;
+        }
+
+        .content-section {
+            background: rgba(30,41,59,0.5);
+            border: 1px solid rgba(249,115,22,0.2);
+            border-radius: 16px;
+            padding: 3rem;
+            margin: 3rem 0;
+            text-align: left;
+        }
+
+        .content-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--orange);
+        }
+
+        .content-section h3 {
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+            color: var(--white);
+        }
+
+        .content-section p {
+            color: var(--silver);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .content-section ul {
+            color: var(--silver);
+            margin: 1rem 0 1rem 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .content-section li {
+            margin-bottom: 0.8rem;
+        }
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .solution-card {
+            background: rgba(15,23,42,0.8);
+            border: 1px solid rgba(249,115,22,0.3);
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .solution-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--orange);
+        }
+
+        .solution-card p {
+            color: var(--silver);
+            font-size: 1rem;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .step {
+            text-align: center;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--orange), var(--gold));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 900;
+            margin: 0 auto 1rem;
+        }
+
+        .step h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .step p {
+            color: var(--silver);
+            font-size: 0.95rem;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, rgba(249,115,22,0.2), rgba(59,130,246,0.2));
+            border: 2px solid var(--orange);
+            border-radius: 16px;
+            padding: 3rem;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .cta-box h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-box p {
+            font-size: 1.2rem;
+            color: var(--silver);
+            margin-bottom: 2rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--orange), #ea580c);
+            color: white;
+            padding: 1.3rem 3rem;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 800;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+            box-shadow: 0 10px 40px rgba(249,115,22,0.4);
+            text-transform: uppercase;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 50px rgba(249,115,22,0.6);
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .content-section { padding: 2rem; }
+            .solution-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 3L4 9v12h5v-7h6v7h5V9l-8-6z"/>
+                        <line x1="7" y1="12" x2="17" y2="12" stroke="white" stroke-width="2"/>
+                        <line x1="12" y1="7" x2="12" y2="17" stroke="white" stroke-width="2"/>
+                    </svg>
+                </div>
+                <div class="logo-text">Home <span>Liberation</span></div>
+            </a>
+        </nav>
+    </header>
+
+    <div style="background: linear-gradient(135deg, #ef4444, #dc2626); color: white; text-align: center; padding: 0.9rem; font-weight: 700; font-size: 1rem; animation: pulse 2.2s ease-in-out infinite;">
+        ⚠️ ACT FAST: Stopped 2 foreclosures in Winnipeg this week • Time matters • Free emergency consultation
+    </div>
+
+    <style>
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.93; }
+        }
+    </style>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Stop <span class="highlight">Foreclosure</span> in Its Tracks</h1>
+
+            <p class="subtitle">
+                Behind on mortgage payments? Facing foreclosure in Winnipeg? We can help you avoid the devastating impact on your credit and financial future.
+            </p>
+
+            <div class="content-section">
+                <h2>🏚️ The Foreclosure Crisis</h2>
+
+                <p>
+                    <strong>Foreclosure is terrifying.</strong> The threatening letters, the legal notices, the sleepless nights wondering if you'll lose your home. The shame of watching your neighbors see the bank's notices on your door.
+                </p>
+
+                <p>
+                    Many Winnipeg homeowners face foreclosure due to circumstances beyond their control:
+                </p>
+
+                <ul>
+                    <li><strong>Job Loss:</strong> Lost your income and can't keep up with mortgage payments</li>
+                    <li><strong>Medical Emergency:</strong> Overwhelming medical bills draining your savings</li>
+                    <li><strong>Divorce:</strong> Separation leaving you unable to afford the house alone</li>
+                    <li><strong>Business Failure:</strong> Self-employed income disappeared</li>
+                    <li><strong>Adjustable Rate Increase:</strong> Your mortgage payment jumped and you can't afford it</li>
+                    <li><strong>Property Damage:</strong> Uninsured damage making the home unlivable</li>
+                    <li><strong>Tax Arrears:</strong> Behind on property taxes and the city is threatening action</li>
+                </ul>
+
+                <p>
+                    <strong>Foreclosure destroys your credit for 7 years.</strong> It makes renting difficult, raises insurance rates, and can even impact job prospects. But there's a better way.
+                </p>
+
+                <h3>How We Help You Avoid Foreclosure</h3>
+
+                <div class="solution-grid">
+                    <div class="solution-card">
+                        <h4>Fast Cash Purchase</h4>
+                        <p>We buy your home quickly for cash, paying off the mortgage before foreclosure completes. You walk away with your credit intact and potentially cash in your pocket.</p>
+                    </div>
+
+                    <div class="solution-card">
+                        <h4>Subject-To Acquisition</h4>
+                        <p>We take over your mortgage payments immediately, stopping foreclosure proceedings. You're released from liability while we assume the debt and property.</p>
+                    </div>
+
+                    <div class="solution-card">
+                        <h4>Short Sale Assistance</h4>
+                        <p>If you owe more than the home is worth, we negotiate with your lender for a short sale, avoiding foreclosure and minimizing credit damage.</p>
+                    </div>
+
+                    <div class="solution-card">
+                        <h4>Deed in Lieu</h4>
+                        <p>We work with you and the bank to transfer the property voluntarily, avoiding foreclosure while protecting your credit as much as possible.</p>
+                    </div>
+                </div>
+
+                <h3>Foreclosure Situations We Specialize In</h3>
+
+                <ul>
+                    <li><strong>Pre-Foreclosure Notices:</strong> Just received the first warning letter? We can act immediately</li>
+                    <li><strong>Active Foreclosure:</strong> Legal proceedings already started? We can still help</li>
+                    <li><strong>Auction Scheduled:</strong> Even if the auction date is set, we may be able to intervene</li>
+                    <li><strong>Underwater Mortgages:</strong> Owe more than it's worth? We negotiate short sales</li>
+                    <li><strong>Multiple Missed Payments:</strong> 3-6 months behind? We catch it up or buy it</li>
+                    <li><strong>Second Mortgage Default:</strong> Behind on HELOC or second? We handle complex situations</li>
+                    <li><strong>Tax Foreclosure:</strong> City threatening foreclosure for unpaid taxes? We pay them off</li>
+                </ul>
+
+                <h3>Why Speed Matters in Foreclosure</h3>
+
+                <p>
+                    <strong>Time is your enemy in foreclosure.</strong> The longer you wait, the fewer options you have:
+                </p>
+
+                <ul>
+                    <li><strong>Week 1-30:</strong> Pre-foreclosure notice stage - Most options available</li>
+                    <li><strong>Week 30-90:</strong> Legal proceedings begin - Options narrowing</li>
+                    <li><strong>Week 90-180:</strong> Court process underway - Limited options</li>
+                    <li><strong>Week 180+:</strong> Auction scheduled - Very few options left</li>
+                </ul>
+
+                <p>
+                    <strong>We move fast.</strong> Our fastest closing was 5 days from first contact to foreclosure stopped. The sooner you contact us, the more we can do for you.
+                </p>
+
+                <h3>What You Can Expect</h3>
+
+                <div class="process-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h4>Emergency Contact</h4>
+                        <p>Call or submit our form. We respond within hours, not days.</p>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h4>Situation Analysis</h4>
+                        <p>We review your foreclosure timeline, mortgage balance, and property condition.</p>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h4>Solution Proposal</h4>
+                        <p>We present options: cash purchase, subject-to, short sale, or deed in lieu.</p>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h4>Fast Close</h4>
+                        <p>We close in days, not months. Foreclosure stopped, you move forward.</p>
+                    </div>
+                </div>
+
+                <h3>Our Commitment to You</h3>
+
+                <p>
+                    <strong>All contracts are structured to protect us and minimize our risk</strong> while providing you the fastest possible exit from foreclosure. We don't make promises we can't keep. If we can help, we will. If we can't, we'll tell you immediately and suggest alternatives.
+                </p>
+
+                <p>
+                    <strong>We are NOT:</strong>
+                </p>
+                <ul>
+                    <li>Foreclosure "rescue" scammers who take your deed and keep collecting rent</li>
+                    <li>Loan modification services that charge fees with no results</li>
+                    <li>Bankruptcy attorneys (though we can refer you to excellent ones)</li>
+                </ul>
+
+                <p>
+                    <strong>We ARE:</strong>
+                </p>
+                <ul>
+                    <li>Real estate investors who buy properties and solve problems</li>
+                    <li>Experienced negotiators who work with lenders daily</li>
+                    <li>Fast closers who can stop foreclosure in days</li>
+                </ul>
+            </div>
+
+            <div class="cta-box">
+                <h2>Stop Foreclosure Today</h2>
+                <p>Every day you wait, your options shrink. Contact us now for a confidential consultation.</p>
+                <a href="contact.html" class="btn-primary">Get Emergency Help Now</a>
+            </div>
+
+            <div style="background: rgba(239,68,68,0.1); border: 1px solid #ef4444; border-radius: 12px; padding: 2rem; text-align: left;">
+                <h3 style="color: #ef4444; margin-bottom: 1rem;">⚠️ Act Now - Don't Let Foreclosure Destroy Your Future</h3>
+                <p style="color: var(--silver); font-size: 1.1rem;">
+                    Foreclosure isn't just losing your home - it's 7 years of credit damage, difficulty renting, higher insurance rates, and lost job opportunities. But if you act now, you can avoid all of it. Contact us today for a confidential, no-obligation consultation.
+                </p>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

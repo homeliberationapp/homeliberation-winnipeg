@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inherited Property in Winnipeg? | Home Liberation</title>
+    <meta name="description" content="Inherited a house in Winnipeg? Probate, estate sales, sibling disputes - we buy inherited properties and handle the complexity for you.">
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23f97316'/%3E%3Cstop offset='100%25' style='stop-color:%233b82f6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='20' fill='url(%23g)'/%3E%3Cpath d='M50 25 L70 42 L62 42 L62 70 L38 70 L38 42 L30 42 Z' fill='white'/%3E%3Cpath d='M35 52 L65 52 M50 37 L50 67' stroke='white' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --midnight: #0a0f1c;
+            --slate: #1e293b;
+            --orange: #f97316;
+            --blue: #3b82f6;
+            --green: #10b981;
+            --white: #ffffff;
+            --silver: #cbd5e1;
+            --gray: #64748b;
+            --gold: #fbbf24;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--midnight);
+            color: var(--white);
+            line-height: 1.6;
+        }
+
+        .bg-gradient {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background: radial-gradient(ellipse at top, rgba(249,115,22,0.1), transparent 50%),
+                        linear-gradient(180deg, var(--midnight), var(--slate));
+        }
+
+        header {
+            background: rgba(10,15,28,0.98);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(249,115,22,0.2);
+            padding: 1.2rem 0;
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+            color: var(--white);
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--orange), var(--blue));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-icon svg {
+            width: 28px;
+            height: 28px;
+            fill: white;
+        }
+
+        .logo-text {
+            font-size: 1.3rem;
+            font-weight: 800;
+        }
+
+        .logo-text span {
+            background: linear-gradient(135deg, var(--orange), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero {
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -2px;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, var(--orange), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: var(--silver);
+            margin-bottom: 3rem;
+            line-height: 1.7;
+        }
+
+        .content-section {
+            background: rgba(30,41,59,0.5);
+            border: 1px solid rgba(249,115,22,0.2);
+            border-radius: 16px;
+            padding: 3rem;
+            margin: 3rem 0;
+            text-align: left;
+        }
+
+        .content-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--orange);
+        }
+
+        .content-section h3 {
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+            color: var(--white);
+        }
+
+        .content-section p {
+            color: var(--silver);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .content-section ul {
+            color: var(--silver);
+            margin: 1rem 0 1rem 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .content-section li {
+            margin-bottom: 0.8rem;
+        }
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .solution-card {
+            background: rgba(15,23,42,0.8);
+            border: 1px solid rgba(249,115,22,0.3);
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .solution-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--orange);
+        }
+
+        .solution-card p {
+            color: var(--silver);
+            font-size: 1rem;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, rgba(249,115,22,0.2), rgba(59,130,246,0.2));
+            border: 2px solid var(--orange);
+            border-radius: 16px;
+            padding: 3rem;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .cta-box h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-box p {
+            font-size: 1.2rem;
+            color: var(--silver);
+            margin-bottom: 2rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--orange), #ea580c);
+            color: white;
+            padding: 1.3rem 3rem;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 800;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+            box-shadow: 0 10px 40px rgba(249,115,22,0.4);
+            text-transform: uppercase;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 50px rgba(249,115,22,0.6);
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .content-section { padding: 2rem; }
+            .solution-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 3L4 9v12h5v-7h6v7h5V9l-8-6z"/>
+                        <line x1="7" y1="12" x2="17" y2="12" stroke="white" stroke-width="2"/>
+                        <line x1="12" y1="7" x2="12" y2="17" stroke="white" stroke-width="2"/>
+                    </svg>
+                </div>
+                <div class="logo-text">Home <span>Liberation</span></div>
+            </a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Inherited a <span class="highlight">Property</span> in Winnipeg?</h1>
+
+            <p class="subtitle">
+                Probate, estate sales, sibling disputes, out-of-province heirs - we buy inherited properties and handle the complexity for you.
+            </p>
+
+            <div class="content-section">
+                <h2>🏡 The Inherited Property Burden</h2>
+
+                <p>
+                    <strong>You just inherited your parents' house. Now what?</strong> The grief is overwhelming, and now you're facing a property you don't want, can't afford, or don't know what to do with.
+                </p>
+
+                <p>
+                    Inherited properties come with unique challenges:
+                </p>
+
+                <ul>
+                    <li><strong>Emotional Attachment:</strong> Memories make it hard to make logical decisions</li>
+                    <li><strong>Sibling Conflicts:</strong> Multiple heirs with different opinions on what to do</li>
+                    <li><strong>Out-of-Province Heirs:</strong> Living in BC or Ontario, can't manage a Winnipeg property</li>
+                    <li><strong>Probate Delays:</strong> Legal process takes months, bills keep piling up</li>
+                    <li><strong>Ongoing Costs:</strong> Property taxes, insurance, utilities, maintenance eating into inheritance</li>
+                    <li><strong>Deferred Maintenance:</strong> Mom lived there 40 years, never updated anything</li>
+                    <li><strong>Contents Overwhelming:</strong> Lifetime of belongings to sort through, donate, dispose</li>
+                    <li><strong>Uncertain Value:</strong> Is it worth $200K or $300K? No one knows.</li>
+                </ul>
+
+                <p>
+                    <strong>Meanwhile, you're bleeding money.</strong> Property taxes, insurance, utilities, lawn care, snow removal - $500-800/month just to keep an empty house you don't even want.
+                </p>
+
+                <h3>Common Inherited Property Scenarios We Handle</h3>
+
+                <div class="solution-grid">
+                    <div class="solution-card">
+                        <h4>Multiple Heirs, One House</h4>
+                        <p>3 siblings inherited the family home. One wants to keep it, one wants to rent it, one wants to sell. We buy it, split proceeds equally, everyone moves on.</p>
+                    </div>
+
+                    <div class="solution-card">
+                        <h4>Out-of-Province Heirs</h4>
+                        <p>You live in Vancouver, inherited Winnipeg property. Can't manage it long-distance. We buy it, handle everything, wire you proceeds.</p>
+                    </div>
+
+                    <div class="solution-card">
+                        <h4>Probate Pending</h4>
+                        <p>Estate still in probate, but bills keep coming. We can structure purchase contingent on probate completion or buy immediately with estate authorization.</p>
+                    </div>
+
+                    <div class="solution-card">
+                        <h4>Outdated/Run Down</h4>
+                        <p>Parents lived there since 1978, never updated. Needs $50K+ in renovations. We buy as-is, you inherit the equity without renovation costs.</p>
+                    </div>
+
+                    <div class="solution-card">
+                        <h4>Hoarder Estate</h4>
+                        <p>Decades of possessions filling every room. Overwhelming cleanup required. We buy it full, handle cleanout and disposal ourselves.</p>
+                    </div>
+
+                    <div class="solution-card">
+                        <h4>Reverse Mortgage Complications</h4>
+                        <p>Reverse mortgage payoff required. Complex paperwork. We work with lenders to structure purchase that satisfies loan.</p>
+                    </div>
+                </div>
+
+                <h3>Why Inherited Properties Are Hard to Sell Traditionally</h3>
+
+                <ul>
+                    <li><strong>Outdated Condition:</strong> Buyers want move-in ready, not 1970s time capsules</li>
+                    <li><strong>Emotional Pricing:</strong> Heirs remember it as worth more than market value</li>
+                    <li><strong>Decision Delays:</strong> Multiple heirs = slow decisions on repairs, pricing, offers</li>
+                    <li><strong>Geographic Distance:</strong> Can't manage showings from 2,000 km away</li>
+                    <li><strong>Carrying Costs:</strong> Losing $500-800/month while it sits on market 3-6 months</li>
+                    <li><strong>Estate Complications:</strong> Probate, executor duties, legal complexities slow everything</li>
+                    <li><strong>Contents Clearance:</strong> Need to empty house before listing (expensive, time-consuming)</li>
+                </ul>
+
+                <h3>How We Simplify Inherited Property Sales</h3>
+
+                <p><strong>We handle everything:</strong></p>
+
+                <ul>
+                    <li><strong>Buy As-Is:</strong> No repairs, no renovations, no updates required</li>
+                    <li><strong>Buy With Contents:</strong> Leave furniture, belongings, everything - we clean it out</li>
+                    <li><strong>Work With Executors:</strong> We understand estate legal requirements and work with probate lawyers</li>
+                    <li><strong>Multiple Heir Coordination:</strong> We handle paperwork for all heirs to sign</li>
+                    <li><strong>Flexible Closing:</strong> Close during probate, after probate, whenever legally possible</li>
+                    <li><strong>Split Proceeds Easily:</strong> We wire/check each heir their share directly</li>
+                    <li><strong>Stop Carrying Costs:</strong> Close fast, stop bleeding money on taxes/insurance/utilities</li>
+                </ul>
+
+                <h3>Inherited Property Types We Buy</h3>
+
+                <ul>
+                    <li><strong>Family Homes:</strong> Parents' house, grandparents' home, longtime family property</li>
+                    <li><strong>Rental Properties:</strong> Inherited rental with problem tenants or deferred maintenance</li>
+                    <li><strong>Vacant Land:</strong> Inherited lots or acreage you don't want</li>
+                    <li><strong>Condos/Apartments:</strong> Inherited condo units (we pay condo fees until closing)</li>
+                    <li><strong>Multi-Family:</strong> Inherited duplex, triplex, fourplex properties</li>
+                    <li><strong>Commercial Property:</strong> Inherited business properties or mixed-use buildings</li>
+                </ul>
+
+                <h3>Probate and Legal Considerations</h3>
+
+                <p><strong>We work within Manitoba probate law:</strong></p>
+
+                <ul>
+                    <li><strong>Before Probate Complete:</strong> We can make offers subject to probate completion, locking in price now</li>
+                    <li><strong>During Probate:</strong> With executor authority, we can sometimes purchase before full probate</li>
+                    <li><strong>After Probate:</strong> Standard purchase with all heirs signing</li>
+                    <li><strong>Executor Sales:</strong> We work directly with estate executors/administrators</li>
+                    <li><strong>Court-Ordered Sales:</strong> We can participate in estate auctions or court-ordered sales</li>
+                </ul>
+
+                <p>
+                    <strong>We're NOT lawyers and don't give legal advice.</strong> We work WITH your probate lawyer to structure compliant purchases. All contracts protect us and minimize our risk while following estate law.
+                </p>
+
+                <h3>Multiple Heirs? No Problem.</h3>
+
+                <p><strong>Scenario: 3 siblings inherited parents' $360K Winnipeg home</strong></p>
+
+                <p><strong>Option 1: Keep It</strong></p>
+                <ul>
+                    <li>Who manages it? Who pays for repairs? What if one sibling wants out later?</li>
+                    <li>Recipe for family conflict and resentment</li>
+                </ul>
+
+                <p><strong>Option 2: Rent It</strong></p>
+                <ul>
+                    <li>Who manages tenants? Repairs? Rent collection?</li>
+                    <li>How do you split income after expenses?</li>
+                    <li>Still ongoing conflict and complexity</li>
+                </ul>
+
+                <p><strong>Option 3: Sell to Us</strong></p>
+                <ul>
+                    <li>We offer $310K cash (house needs $30K repairs)</li>
+                    <li>Each sibling gets $103,333 wire transfer</li>
+                    <li>Close in 14 days, everyone moves on</li>
+                    <li>No repairs, no cleanup, no ongoing management</li>
+                    <li><strong>Clean break, fair split, zero conflict</strong></li>
+                </ul>
+
+                <h3>Out-of-Province Heir Situations</h3>
+
+                <p><strong>You live in Toronto, inherited Winnipeg house. You face:</strong></p>
+
+                <ul>
+                    <li>Can't manage showings remotely (realtors charge extra for this)</li>
+                    <li>Can't supervise repairs or contractors</li>
+                    <li>Can't check on property security (vandalism, squatters, frozen pipes)</li>
+                    <li>Flying back and forth costs hundreds or thousands</li>
+                    <li>Time zone differences complicate communication</li>
+                    <li>Don't know local market values or contractors</li>
+                </ul>
+
+                <p><strong>We solve everything:</strong></p>
+                <ul>
+                    <li>One phone/video call to discuss property</li>
+                    <li>We inspect property ourselves</li>
+                    <li>We make cash offer</li>
+                    <li>You accept via email/DocuSign</li>
+                    <li>We handle all closing with local lawyers</li>
+                    <li>We wire you proceeds - never need to visit Winnipeg</li>
+                </ul>
+
+                <h3>The Contents Problem</h3>
+
+                <p><strong>Parents lived there 40 years. Every room is full of:</strong></p>
+
+                <ul>
+                    <li>Furniture (some antique, most outdated)</li>
+                    <li>Clothes, photos, documents</li>
+                    <li>Kitchen items, books, knick-knacks</li>
+                    <li>Garage/basement tools, boxes, "treasures"</li>
+                    <li>Years of accumulated "stuff"</li>
+                </ul>
+
+                <p><strong>Traditional options:</strong></p>
+                <ul>
+                    <li><strong>Estate Sale:</strong> Costs $2,000-5,000, takes weeks, leaves junk behind</li>
+                    <li><strong>Donation:</strong> Charities won't take everything, you still haul the rest</li>
+                    <li><strong>Junk Removal:</strong> $2,000-8,000 depending on volume</li>
+                    <li><strong>DIY:</strong> Dozens of hours sorting, hauling, dumping (if you're local)</li>
+                </ul>
+
+                <p><strong>Our option: Leave it all.</strong></p>
+                <ul>
+                    <li>We buy house with contents included</li>
+                    <li>You take sentimental items and valuables</li>
+                    <li>We handle estate sale, donations, junk removal ourselves</li>
+                    <li>Cost: $0 to you (we factor it into our offer)</li>
+                </ul>
+
+                <h3>Tax Implications of Inherited Properties</h3>
+
+                <p><strong>Disclaimer: Consult a tax professional. We're not accountants.</strong></p>
+
+                <p>General considerations:</p>
+                <ul>
+                    <li><strong>Capital Gains:</strong> Usually minimal if sold soon after inheritance (stepped-up basis)</li>
+                    <li><strong>Estate Taxes:</strong> Manitoba probate fees apply (around 0.7% of estate value)</li>
+                    <li><strong>Ongoing Costs Deductible:</strong> Property taxes, maintenance during estate period may offset gains</li>
+                    <li><strong>Multiple Heirs:</strong> Each heir reports their share of gains</li>
+                </ul>
+
+                <p>We work with your accountant to time sale for optimal tax treatment.</p>
+
+                <h3>Our Inherited Property Purchase Process</h3>
+
+                <div class="solution-grid">
+                    <div class="solution-card">
+                        <h4>1. Initial Contact</h4>
+                        <p>Tell us about the property, probate status, number of heirs, condition. We'll explain options.</p>
+                    </div>
+
+                    <div class="solution-card">
+                        <h4>2. Property Assessment</h4>
+                        <p>We visit property, assess condition and contents. Can work with executor or heir representative.</p>
+                    </div>
+
+                    <div class="solution-card">
+                        <h4>3. Written Cash Offer</h4>
+                        <p>We present offer with explanation. Can structure contingent on probate or immediate if estate allows.</p>
+                    </div>
+
+                    <div class="solution-card">
+                        <h4>4. Coordinate All Heirs</h4>
+                        <p>We provide purchase documents for all heirs to sign. Work with probate lawyer for compliance.</p>
+                    </div>
+
+                    <div class="solution-card">
+                        <h4>5. Close & Distribute</h4>
+                        <p>Close when probate allows. We wire/check each heir their share. Property is no longer your problem.</p>
+                    </div>
+                </div>
+
+                <h3>What Makes Inherited Property Sales Different</h3>
+
+                <ul>
+                    <li><strong>Emotional, Not Financial:</strong> Decisions driven by grief, guilt, family dynamics - not profit maximization</li>
+                    <li><strong>Time Pressure:</strong> Heirs want it resolved quickly to move on with lives</li>
+                    <li><strong>Distance Challenges:</strong> Often out-of-town heirs who can't easily manage property</li>
+                    <li><strong>Conflict Potential:</strong> Multiple heirs = multiple opinions = need for simple, fast resolution</li>
+                    <li><strong>Condition Acceptance:</strong> "We'll take it as-is" is incredibly appealing vs. $30K renovation projects</li>
+                </ul>
+
+                <p>
+                    <strong>We specialize in making inherited property sales simple, fast, and conflict-free.</strong>
+                </p>
+            </div>
+
+            <div class="cta-box">
+                <h2>Simplify Your Inherited Property Sale</h2>
+                <p>Stop stressing about the inherited property. Get a fair cash offer and move forward.</p>
+                <a href="contact.html" class="btn-primary">Get Estate Property Offer</a>
+            </div>
+
+            <div style="background: rgba(251,191,36,0.1); border: 1px solid var(--gold); border-radius: 12px; padding: 2rem; text-align: left;">
+                <h3 style="color: var(--gold); margin-bottom: 1rem;">💡 Inherited Property FAQ</h3>
+                <p style="color: var(--silver); margin-bottom: 1rem;"><strong>Q: Can you buy before probate is complete?</strong><br>
+                A: Sometimes. Depends on estate authorization and executor powers. We can make subject-to-probate offers.</p>
+
+                <p style="color: var(--silver); margin-bottom: 1rem;"><strong>Q: What if siblings can't agree?</strong><br>
+                A: Majority or executor usually has authority. We work within legal framework to facilitate sale.</p>
+
+                <p style="color: var(--silver); margin-bottom: 1rem;"><strong>Q: Do you buy properties with reverse mortgages?</strong><br>
+                A: Yes. We work with reverse mortgage lenders to structure compliant purchases.</p>
+
+                <p style="color: var(--silver);"><strong>Q: What about personal belongings and family heirlooms?</strong><br>
+                A: You remove anything sentimental/valuable before closing. We handle disposal of the rest.</p>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

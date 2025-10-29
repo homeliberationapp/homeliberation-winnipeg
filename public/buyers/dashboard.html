@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buyer Dashboard - Velocity Winnipeg</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --navy: #0F172A;
+      --amber: #F59E0B;
+      --green: #10B981;
+      --red: #EF4444;
+      --bg: #F8FAFC;
+      --card: #FFFFFF;
+      --border: #E2E8F0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--navy);
+    }
+
+    /* HEADER */
+    .header {
+      background: var(--navy);
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .profile-pic {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 2px solid var(--amber);
+    }
+
+    .header-right {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .btn {
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--amber);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #D97706;
+    }
+
+    /* STATS BAR */
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      padding: 2rem;
+    }
+
+    .stat-card {
+      background: var(--card);
+      padding: 1.5rem;
+      border-radius: 8px;
+      border-left: 4px solid var(--amber);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .stat-label {
+      font-size: 0.875rem;
+      color: #64748B;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-value {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    /* MAIN CONTENT */
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* DEAL CARDS */
+    .deals-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .deal-card {
+      background: var(--card);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: all 0.3s;
+      position: relative;
+    }
+
+    .deal-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    }
+
+    .deal-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    .deal-badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: var(--green);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.875rem;
+      font-weight: bold;
+    }
+
+    .deal-badge.hot {
+      background: var(--red);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+    }
+
+    .deal-content {
+      padding: 1.5rem;
+    }
+
+    .deal-address {
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .deal-metrics {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+
+    .metric {
+      text-align: center;
+      padding: 0.75rem;
+      background: var(--bg);
+      border-radius: 6px;
+    }
+
+    .metric-label {
+      font-size: 0.75rem;
+      color: #64748B;
+    }
+
+    .metric-value {
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: var(--green);
+    }
+
+    .deal-actions {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .btn-block {
+      flex: 1;
+    }
+
+    /* TABS */
+    .tabs {
+      display: flex;
+      gap: 0;
+      border-bottom: 2px solid var(--border);
+      margin-bottom: 2rem;
+    }
+
+    .tab {
+      padding: 1rem 2rem;
+      cursor: pointer;
+      border: none;
+      background: none;
+      font-size: 1rem;
+      color: #64748B;
+      border-bottom: 3px solid transparent;
+      transition: all 0.2s;
+    }
+
+    .tab.active {
+      color: var(--amber);
+      border-bottom-color: var(--amber);
+      font-weight: 600;
+    }
+
+    /* EMPTY STATE */
+    .empty-state {
+      text-align: center;
+      padding: 4rem 2rem;
+      color: #64748B;
+    }
+
+    .empty-state-icon {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+    }
+
+    /* MODAL */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.7);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal.show {
+      display: flex;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      max-width: 500px;
+      width: 90%;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    .modal-close {
+      float: right;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #64748B;
+    }
+
+    @media (max-width: 768px) {
+      .deals-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-bar {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-left">
+      <img id="profilePic" src="" alt="Profile" class="profile-pic">
+      <div>
+        <div id="userName" style="font-weight: 600;">Loading...</div>
+        <div style="font-size: 0.875rem; opacity: 0.8;">Investor Dashboard</div>
+      </div>
+    </div>
+    <div class="header-right">
+      <button class="btn btn-primary" onclick="window.location.href='/buyers/profile.html'">
+        ⚙️ Profile
+      </button>
+      <button class="btn btn-primary" onclick="logout()">
+        🚪 Logout
+      </button>
+    </div>
+  </div>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stat-card">
+      <div class="stat-label">Active Bids</div>
+      <div class="stat-value" id="activeBids">0</div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-label">Deals Won</div>
+      <div class="stat-value" id="dealsWon">0</div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-label">Portfolio Value</div>
+      <div class="stat-value" id="portfolioValue">$0</div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-label">Total ROI</div>
+      <div class="stat-value" id="totalROI">0%</div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="container">
+
+    <!-- TABS -->
+    <div class="tabs">
+      <button class="tab active" onclick="switchTab('matches')">🎯 My Matches</button>
+      <button class="tab" onclick="switchTab('all')">🏠 All Deals</button>
+      <button class="tab" onclick="switchTab('saved')">⭐ Saved</button>
+      <button class="tab" onclick="switchTab('bids')">📋 My Bids</button>
+      <button class="tab" onclick="switchTab('portfolio')">💼 Portfolio</button>
+    </div>
+
+    <!-- MATCHES TAB (Personalized) -->
+    <div id="matches-tab" class="tab-content">
+      <div class="section-title">
+        <span>🎯 Properties Matched to Your Criteria</span>
+        <button class="btn btn-primary" onclick="editCriteria()">Edit Criteria</button>
+      </div>
+
+      <div id="matchesGrid" class="deals-grid">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+
+    <!-- ALL DEALS TAB -->
+    <div id="all-tab" class="tab-content" style="display:none;">
+      <div class="section-title">
+        <span>🏠 All Available Deals (Winnipeg)</span>
+      </div>
+
+      <div id="allDealsGrid" class="deals-grid">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+
+    <!-- SAVED TAB -->
+    <div id="saved-tab" class="tab-content" style="display:none;">
+      <div class="section-title">
+        <span>⭐ Saved for Later</span>
+      </div>
+
+      <div id="savedGrid" class="deals-grid">
+        <div class="empty-state">
+          <div class="empty-state-icon">⭐</div>
+          <h3>No saved properties yet</h3>
+          <p>Click the star icon on any deal to save it</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- BIDS TAB -->
+    <div id="bids-tab" class="tab-content" style="display:none;">
+      <div class="section-title">
+        <span>📋 My Bids</span>
+      </div>
+
+      <div id="bidsGrid" class="deals-grid">
+        <div class="empty-state">
+          <div class="empty-state-icon">📋</div>
+          <h3>No bids placed yet</h3>
+          <p>Browse deals and place your first bid</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PORTFOLIO TAB -->
+    <div id="portfolio-tab" class="tab-content" style="display:none;">
+      <div class="section-title">
+        <span>💼 My Portfolio</span>
+      </div>
+
+      <div id="portfolioGrid" class="deals-grid">
+        <div class="empty-state">
+          <div class="empty-state-icon">💼</div>
+          <h3>No deals won yet</h3>
+          <p>Win your first deal to start building your portfolio</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BID MODAL -->
+  <div id="bidModal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeBidModal()">&times;</span>
+      <h2>Place Your Bid</h2>
+      <div id="bidModalContent"></div>
+    </div>
+  </div>
+
+  <script>
+    let currentUser = null;
+    let deals = [];
+
+    // Load user data
+    async function loadUserData() {
+      const authToken = localStorage.getItem('authToken');
+      if (!authToken) {
+        window.location.href = '/login.html';
+        return;
+      }
+
+      try {
+        // Fetch user profile
+        const response = await fetch('/api/buyer/profile', {
+          headers: {
+            'Authorization': `Bearer ${authToken}`
+          }
+        });
+
+        if (!response.ok) throw new Error('Unauthorized');
+
+        currentUser = await response.json();
+
+        // Update UI
+        document.getElementById('userName').textContent = currentUser.name;
+        document.getElementById('profilePic').src = currentUser.profilePicture || '/assets/default-avatar.png';
+
+        // Update stats
+        document.getElementById('activeBids').textContent = currentUser.performance.totalBidsPlaced - currentUser.performance.dealsWon;
+        document.getElementById('dealsWon').textContent = currentUser.performance.dealsWon;
+        document.getElementById('portfolioValue').textContent = '$' + (currentUser.performance.totalSpent || 0).toLocaleString();
+        document.getElementById('totalROI').textContent = ((currentUser.performance.avgROI || 0) * 100).toFixed(1) + '%';
+
+        // Load deals
+        await loadDeals();
+
+      } catch (error) {
+        console.error('Failed to load user data:', error);
+        window.location.href = '/login.html';
+      }
+    }
+
+    // Load deals
+    async function loadDeals() {
+      try {
+        const response = await fetch('/api/deals/available', {
+          headers: {
+            'Authorization': `Bearer ${localStorage.getItem('authToken')}`
+          }
+        });
+
+        deals = await response.json();
+
+        // Calculate match scores
+        deals.forEach(deal => {
+          deal.matchScore = calculateMatchScore(deal);
+        });
+
+        // Sort by match score
+        deals.sort((a, b) => b.matchScore - a.matchScore);
+
+        // Populate grids
+        populateMatches();
+        populateAllDeals();
+
+      } catch (error) {
+        console.error('Failed to load deals:', error);
+      }
+    }
+
+    // Calculate match score
+    function calculateMatchScore(deal) {
+      let score = 0;
+      const criteria = currentUser.investmentCriteria;
+
+      // Property type match
+      if (criteria.propertyTypes.includes(deal.propertyType)) score += 25;
+
+      // Budget match
+      if (deal.price >= criteria.minBudget && deal.price <= criteria.maxBudget) score += 20;
+
+      // Neighborhood match
+      if (criteria.preferredNeighborhoods.includes(deal.neighborhood)) score += 20;
+
+      // ROI match
+      if (deal.roi >= criteria.minROI) score += 15;
+
+      // Cap rate match
+      if (deal.capRate >= criteria.minCapRate) score += 10;
+
+      // Deal quality
+      if (deal.dealQuality >= criteria.minDealQuality) score += 10;
+
+      return score;
+    }
+
+    // Populate matches
+    function populateMatches() {
+      const grid = document.getElementById('matchesGrid');
+      const matches = deals.filter(d => d.matchScore >= 50); // 50% match minimum
+
+      if (matches.length === 0) {
+        grid.innerHTML = `
+          <div class="empty-state" style="grid-column: 1/-1;">
+            <div class="empty-state-icon">🎯</div>
+            <h3>No matches yet</h3>
+            <p>Update your investment criteria to see personalized matches</p>
+            <button class="btn btn-primary" onclick="editCriteria()">Set Investment Criteria</button>
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = matches.map(deal => createDealCard(deal, true)).join('');
+    }
+
+    // Populate all deals
+    function populateAllDeals() {
+      const grid = document.getElementById('allDealsGrid');
+      grid.innerHTML = deals.map(deal => createDealCard(deal, false)).join('');
+    }
+
+    // Create deal card
+    function createDealCard(deal, showMatch) {
+      const matchBadge = showMatch ? `<div class="deal-badge ${deal.matchScore >= 80 ? 'hot' : ''}">${deal.matchScore}% Match</div>` : '';
+
+      return `
+        <div class="deal-card">
+          <img src="${deal.photoUrl || '/assets/placeholder-house.jpg'}" alt="${deal.address}" class="deal-image">
+          ${matchBadge}
+
+          <div class="deal-content">
+            <div class="deal-address">${deal.address}</div>
+            <div style="font-size: 0.875rem; color: #64748B; margin-bottom: 1rem;">
+              ${deal.neighborhood}, Winnipeg
+            </div>
+
+            <div class="deal-metrics">
+              <div class="metric">
+                <div class="metric-label">Price</div>
+                <div class="metric-value">$${deal.price.toLocaleString()}</div>
+              </div>
+              <div class="metric">
+                <div class="metric-label">ROI</div>
+                <div class="metric-value">${(deal.roi * 100).toFixed(1)}%</div>
+              </div>
+              <div class="metric">
+                <div class="metric-label">ARV</div>
+                <div class="metric-value">$${deal.arv.toLocaleString()}</div>
+              </div>
+              <div class="metric">
+                <div class="metric-label">Cap Rate</div>
+                <div class="metric-value">${(deal.capRate * 100).toFixed(1)}%</div>
+              </div>
+            </div>
+
+            <div class="deal-actions">
+              <button class="btn btn-primary btn-block" onclick="placeBid('${deal.id}')">
+                💰 Place Bid
+              </button>
+              <button class="btn btn-block" onclick="viewDetails('${deal.id}')">
+                👁️ Details
+              </button>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    // Switch tabs
+    function switchTab(tab) {
+      // Hide all
+      document.querySelectorAll('.tab-content').forEach(t => t.style.display = 'none');
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+
+      // Show selected
+      document.getElementById(tab + '-tab').style.display = 'block';
+      event.target.classList.add('active');
+    }
+
+    // Place bid
+    function placeBid(dealId) {
+      // Show bid modal
+      const modal = document.getElementById('bidModal');
+      modal.classList.add('show');
+      // Populate modal content
+    }
+
+    function closeBidModal() {
+      document.getElementById('bidModal').classList.remove('show');
+    }
+
+    // Edit criteria
+    function editCriteria() {
+      window.location.href = '/buyers/profile.html?tab=criteria';
+    }
+
+    // Logout
+    function logout() {
+      localStorage.removeItem('authToken');
+      localStorage.removeItem('user');
+      window.location.href = '/login.html';
+    }
+
+    // Load on page load
+    document.addEventListener('DOMContentLoaded', loadUserData);
+  </script>
+
+</body>
+</html>

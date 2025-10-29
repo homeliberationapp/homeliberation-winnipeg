@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Value Calculator | Home Liberation Winnipeg</title>
+    <meta name="description" content="Get a preliminary property valuation estimate. Enter your property details for an instant analysis.">
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23f97316'/%3E%3Cstop offset='100%25' style='stop-color:%233b82f6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='20' fill='url(%23g)'/%3E%3Cpath d='M50 25 L70 42 L62 42 L62 70 L38 70 L38 42 L30 42 Z' fill='white'/%3E%3Cpath d='M35 52 L65 52 M50 37 L50 67' stroke='white' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --midnight: #0a0f1c;
+            --slate: #1e293b;
+            --orange: #f97316;
+            --blue: #3b82f6;
+            --green: #10b981;
+            --white: #ffffff;
+            --silver: #cbd5e1;
+            --gray: #64748b;
+            --gold: #fbbf24;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--midnight);
+            color: var(--white);
+            line-height: 1.6;
+        }
+
+        .bg-gradient {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background: radial-gradient(ellipse at top, rgba(249,115,22,0.1), transparent 50%),
+                        linear-gradient(180deg, var(--midnight), var(--slate));
+        }
+
+        header {
+            background: rgba(10,15,28,0.98);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(249,115,22,0.2);
+            padding: 1.2rem 0;
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+            color: var(--white);
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--orange), var(--blue));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-icon svg {
+            width: 28px;
+            height: 28px;
+            fill: white;
+        }
+
+        .logo-text {
+            font-size: 1.3rem;
+            font-weight: 800;
+        }
+
+        .logo-text span {
+            background: linear-gradient(135deg, var(--orange), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -2px;
+            margin-bottom: 1rem;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, var(--orange), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--silver);
+            margin-bottom: 3rem;
+        }
+
+        .disclaimer {
+            background: rgba(249,115,22,0.1);
+            border: 1px solid var(--orange);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .disclaimer p {
+            color: var(--silver);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .form-section {
+            background: rgba(30,41,59,0.6);
+            border: 1px solid rgba(249,115,22,0.2);
+            border-radius: 16px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .form-section h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--orange);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--white);
+            font-size: 0.95rem;
+        }
+
+        label .required {
+            color: var(--orange);
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 0.9rem 1.2rem;
+            background: rgba(15,23,42,0.8);
+            border: 1px solid rgba(249,115,22,0.3);
+            border-radius: 8px;
+            color: var(--white);
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--orange);
+            box-shadow: 0 0 0 3px rgba(249,115,22,0.2);
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            margin-top: 1.5rem;
+        }
+
+        input[type="checkbox"] {
+            width: auto;
+            margin-top: 0.3rem;
+            cursor: pointer;
+        }
+
+        .checkbox-group label {
+            margin: 0;
+            font-weight: 400;
+            color: var(--silver);
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(135deg, var(--orange), #ea580c);
+            color: white;
+            padding: 1.3rem;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 10px 40px rgba(249,115,22,0.4);
+            text-transform: uppercase;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 50px rgba(249,115,22,0.6);
+        }
+
+        #results {
+            display: none;
+            background: rgba(30,41,59,0.8);
+            border: 2px solid var(--green);
+            border-radius: 16px;
+            padding: 3rem;
+            margin-top: 3rem;
+        }
+
+        #results h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .estimate-box {
+            background: rgba(16,185,129,0.1);
+            border: 1px solid var(--green);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .estimate-label {
+            color: var(--silver);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .estimate-value {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--green);
+        }
+
+        .next-steps {
+            background: rgba(249,115,22,0.1);
+            border: 1px solid var(--orange);
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .next-steps h3 {
+            color: var(--orange);
+            margin-bottom: 1rem;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--orange), #ea580c);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            margin-top: 1rem;
+            transition: all 0.3s;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .form-grid { grid-template-columns: 1fr; }
+            .form-section { padding: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 3L4 9v12h5v-7h6v7h5V9l-8-6z"/>
+                        <line x1="7" y1="12" x2="17" y2="12" stroke="white" stroke-width="2"/>
+                        <line x1="12" y1="7" x2="12" y2="17" stroke="white" stroke-width="2"/>
+                    </svg>
+                </div>
+                <div class="logo-text">Home <span>Liberation</span></div>
+            </a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Property Value <span class="highlight">Calculator</span></h1>
+        <p class="subtitle">
+            Get a preliminary estimate of what we might be able to offer for your property
+        </p>
+
+        <div class="disclaimer">
+            <p>
+                <strong>Important:</strong> This calculator provides a <strong>preliminary estimate only</strong>.
+                The actual offer will depend on property inspection, market conditions, repair costs, and other factors.
+                To receive an official offer, a consultation is required. All information you provide is confidential.
+            </p>
+        </div>
+
+        <form id="calculatorForm">
+            <!-- CONTACT INFO -->
+            <div class="form-section">
+                <h2>Your Contact Information</h2>
+                <p style="color: var(--silver); margin-bottom: 2rem; font-size: 0.95rem;">Required to receive your estimate</p>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>First Name <span class="required">*</span></label>
+                        <input type="text" name="first_name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Last Name <span class="required">*</span></label>
+                        <input type="text" name="last_name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email <span class="required">*</span></label>
+                        <input type="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Phone <span class="required">*</span></label>
+                        <input type="tel" name="phone" required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROPERTY DETAILS -->
+            <div class="form-section">
+                <h2>Property Information</h2>
+
+                <div class="form-grid">
+                    <div class="form-group full-width">
+                        <label>Property Address <span class="required">*</span></label>
+                        <input type="text" id="address" name="address" placeholder="123 Main St, Winnipeg, MB" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Property Type <span class="required">*</span></label>
+                        <select name="property_type" required>
+                            <option value="">Select...</option>
+                            <option value="single-family">Single-Family Home</option>
+                            <option value="duplex">Duplex</option>
+                            <option value="triplex">Triplex</option>
+                            <option value="apartment">Apartment Building</option>
+                            <option value="condo">Condo</option>
+                            <option value="townhouse">Townhouse</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Year Built</label>
+                        <input type="number" name="year_built" min="1800" max="2024">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Bedrooms <span class="required">*</span></label>
+                        <input type="number" id="bedrooms" name="bedrooms" min="0" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Bathrooms <span class="required">*</span></label>
+                        <input type="number" id="bathrooms" name="bathrooms" min="0" step="0.5" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Square Feet <span class="required">*</span></label>
+                        <input type="number" id="square_feet" name="square_feet" min="100" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Property Condition <span class="required">*</span></label>
+                        <select id="condition" name="condition" required>
+                            <option value="">Select...</option>
+                            <option value="excellent">Excellent</option>
+                            <option value="good">Good</option>
+                            <option value="fair">Fair</option>
+                            <option value="poor">Poor</option>
+                            <option value="uninhabitable">Uninhabitable</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label>Major Issues (select all that apply)</label>
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.8rem; margin-top: 0.8rem;">
+                            <label style="display: flex; align-items: center; gap: 0.5rem; font-weight: 400; color: var(--silver);">
+                                <input type="checkbox" name="issues" value="foundation"> Foundation issues
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 0.5rem; font-weight: 400; color: var(--silver);">
+                                <input type="checkbox" name="issues" value="roof"> Roof damage
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 0.5rem; font-weight: 400; color: var(--silver);">
+                                <input type="checkbox" name="issues" value="plumbing"> Plumbing problems
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 0.5rem; font-weight: 400; color: var(--silver);">
+                                <input type="checkbox" name="issues" value="electrical"> Electrical issues
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 0.5rem; font-weight: 400; color: var(--silver);">
+                                <input type="checkbox" name="issues" value="mold"> Mold/water damage
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 0.5rem; font-weight: 400; color: var(--silver);">
+                                <input type="checkbox" name="issues" value="fire"> Fire damage
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label>Current Situation</label>
+                        <select name="situation">
+                            <option value="">Select...</option>
+                            <option value="foreclosure">Facing foreclosure</option>
+                            <option value="repairs">Can't afford repairs</option>
+                            <option value="inherited">Inherited property</option>
+                            <option value="landlord">Rental property</option>
+                            <option value="divorce">Divorce</option>
+                            <option value="relocation">Relocating</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="consent" required>
+                    <label for="consent">I understand this is a preliminary estimate. I consent to being contacted with my results and to discuss my property further.</label>
+                </div>
+
+                <button type="submit" class="submit-btn">Calculate My Property Value</button>
+            </div>
+        </form>
+
+        <!-- RESULTS (Hidden until form submitted) -->
+        <div id="results">
+            <h2>Your Preliminary Estimate</h2>
+
+            <div class="estimate-box">
+                <div class="estimate-label">Estimated Value Range</div>
+                <div class="estimate-value" id="estimate">$XXX,XXX - $XXX,XXX</div>
+            </div>
+
+            <div class="next-steps">
+                <h3>Next Steps</h3>
+                <p style="color: var(--silver); margin-bottom: 1rem;">
+                    This is a preliminary estimate based on the information you provided. To receive an official offer,
+                    we need to review your property in detail and assess current market conditions.
+                </p>
+                <p style="color: var(--white); font-weight: 600; margin-bottom: 1rem;">
+                    We'll contact you within 48 hours to discuss your property and provide more accurate details.
+                </p>
+                <a href="contact.html" class="cta-btn">Schedule Full Consultation</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('calculatorForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Capture all form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+
+            // Send to admin (you'll configure this endpoint)
+            fetch('https://formspree.io/f/YOUR_FORM_ID', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                // Calculate rough estimate (for display only - real calculation happens on admin side)
+                const sqft = parseInt(data.square_feet) || 1200;
+                const bedrooms = parseInt(data.bedrooms) || 3;
+                const condition = data.condition;
+
+                // Winnipeg average: $237/sqft, adjust for condition
+                let basePrice = sqft * 237;
+
+                const conditionMultipliers = {
+                    'excellent': 1.0,
+                    'good': 0.85,
+                    'fair': 0.70,
+                    'poor': 0.55,
+                    'uninhabitable': 0.40
+                };
+
+                basePrice *= (conditionMultipliers[condition] || 0.70);
+
+                // Calculate range (±15%)
+                const lowEstimate = Math.floor(basePrice * 0.85 / 1000) * 1000;
+                const highEstimate = Math.floor(basePrice * 1.15 / 1000) * 1000;
+
+                // Display results
+                document.getElementById('estimate').textContent =
+                    `$${lowEstimate.toLocaleString()} - $${highEstimate.toLocaleString()}`;
+
+                document.getElementById('results').style.display = 'block';
+                document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>

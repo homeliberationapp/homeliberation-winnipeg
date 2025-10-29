@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facing Bankruptcy in Winnipeg? | Home Liberation</title>
+    <meta name="description" content="Personal or business bankruptcy in Winnipeg? Creditors threatening action? We buy properties in bankruptcy, receivership, and work with trustees for fast cash sales.">
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23f97316'/%3E%3Cstop offset='100%25' style='stop-color:%233b82f6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='20' fill='url(%23g)'/%3E%3Cpath d='M50 25 L70 42 L62 42 L62 70 L38 70 L38 42 L30 42 Z' fill='white'/%3E%3Cpath d='M35 52 L65 52 M50 37 L50 67' stroke='white' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --midnight: #0a0f1c;
+            --slate: #1e293b;
+            --orange: #f97316;
+            --blue: #3b82f6;
+            --green: #10b981;
+            --white: #ffffff;
+            --silver: #cbd5e1;
+            --gray: #64748b;
+            --gold: #fbbf24;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--midnight);
+            color: var(--white);
+            line-height: 1.6;
+        }
+
+        .bg-gradient {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background: radial-gradient(ellipse at top, rgba(249,115,22,0.1), transparent 50%),
+                        linear-gradient(180deg, var(--midnight), var(--slate));
+        }
+
+        header {
+            background: rgba(10,15,28,0.98);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(249,115,22,0.2);
+            padding: 1.2rem 0;
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+            color: var(--white);
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--orange), var(--blue));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-icon svg {
+            width: 28px;
+            height: 28px;
+            fill: white;
+        }
+
+        .logo-text {
+            font-size: 1.3rem;
+            font-weight: 800;
+        }
+
+        .logo-text span {
+            background: linear-gradient(135deg, var(--orange), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero {
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -2px;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, var(--orange), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: var(--silver);
+            margin-bottom: 3rem;
+            line-height: 1.7;
+        }
+
+        .content-section {
+            background: rgba(30,41,59,0.5);
+            border: 1px solid rgba(249,115,22,0.2);
+            border-radius: 16px;
+            padding: 3rem;
+            margin: 3rem 0;
+            text-align: left;
+        }
+
+        .content-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--orange);
+        }
+
+        .content-section h3 {
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+            color: var(--white);
+        }
+
+        .content-section p {
+            color: var(--silver);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .content-section ul {
+            color: var(--silver);
+            margin: 1rem 0 1rem 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .content-section li {
+            margin-bottom: 0.8rem;
+        }
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .solution-card {
+            background: rgba(15,23,42,0.8);
+            border: 1px solid rgba(249,115,22,0.3);
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .solution-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--orange);
+        }
+
+        .solution-card p {
+            color: var(--silver);
+            font-size: 1rem;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .step {
+            text-align: center;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--orange), var(--gold));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 900;
+            margin: 0 auto 1rem;
+        }
+
+        .step h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .step p {
+            color: var(--silver);
+            font-size: 0.95rem;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, rgba(249,115,22,0.2), rgba(59,130,246,0.2));
+            border: 2px solid var(--orange);
+            border-radius: 16px;
+            padding: 3rem;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .cta-box h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-box p {
+            font-size: 1.2rem;
+            color: var(--silver);
+            margin-bottom: 2rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--orange), #ea580c);
+            color: white;
+            padding: 1.3rem 3rem;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 800;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+            box-shadow: 0 10px 40px rgba(249,115,22,0.4);
+            text-transform: uppercase;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 50px rgba(249,115,22,0.6);
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .content-section { padding: 2rem; }
+            .solution-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 3L4 9v12h5v-7h6v7h5V9l-8-6z"/>
+                        <line x1="7" y1="12" x2="17" y2="12" stroke="white" stroke-width="2"/>
+                        <line x1="12" y1="7" x2="12" y2="17" stroke="white" stroke-width="2"/>
+                    </svg>
+                </div>
+                <div class="logo-text">Home <span>Liberation</span></div>
+            </a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Facing <span class="highlight">Bankruptcy</span> in Winnipeg?</h1>
+
+            <p class="subtitle">
+                Personal or business bankruptcy? Creditors threatening action? Trustee requiring asset liquidation? We buy properties in bankruptcy fast and work directly with trustees and creditors.
+            </p>
+
+            <div class="content-section">
+                <h2>💼 The Bankruptcy Reality</h2>
+
+                <p>
+                    <strong>Bankruptcy is devastating.</strong> Your business failed, medical bills piled up, divorce drained your finances, or you simply got in over your head. Now creditors are circling, lawyers are calling, and your home equity is needed to satisfy debts.
+                </p>
+
+                <p>
+                    <strong>The worst part? Time pressure.</strong> Bankruptcy trustees need to liquidate assets quickly. Creditors want their money now. You're stressed, embarrassed, and facing the loss of your home with no control over the timing or process.
+                </p>
+
+                <h3>Common Bankruptcy Situations We Handle</h3>
+
+                <ul>
+                    <li><strong>Personal Bankruptcy (Consumer Proposal):</strong> Filed bankruptcy under the Bankruptcy and Insolvency Act, trustee needs to sell house to pay creditors</li>
+                    <li><strong>Business Bankruptcy:</strong> Business failed, personal guarantees on loans, house must be liquidated to satisfy business debts</li>
+                    <li><strong>Creditor Pressure Sales:</strong> Haven't filed yet but creditors threatening judgment liens, need to sell before they force a sale</li>
+                    <li><strong>Trustee-Mandated Sales:</strong> Bankruptcy trustee has taken control of the property and requires immediate liquidation</li>
+                    <li><strong>Receivership Sales:</strong> Court-appointed receiver managing asset sale to satisfy secured creditors</li>
+                    <li><strong>Pre-Bankruptcy Quick Sales:</strong> Want to sell before filing to maximize equity and control the process</li>
+                    <li><strong>Partnership Disputes:</strong> Business partners in bankruptcy, property jointly owned, need quick resolution</li>
+                </ul>
+
+                <h3>Why Bankruptcy Property Sales Are Different</h3>
+
+                <p><strong>Normal real estate rules don't apply:</strong></p>
+
+                <ul>
+                    <li><strong>Time Pressure:</strong> Trustees and creditors demand fast sales - 30-60 days max, often faster</li>
+                    <li><strong>Multiple Parties:</strong> Owner, trustee, secured creditors, unsecured creditors - everyone has opinions</li>
+                    <li><strong>Court Approval Required:</strong> Sales often need court or trustee approval adding complexity</li>
+                    <li><strong>Limited Cooperation:</strong> Owners may be uncooperative, missing, or unable to help with showings</li>
+                    <li><strong>Title Complications:</strong> Liens, judgments, tax debts all cloud title and complicate closing</li>
+                    <li><strong>Emotional Distress:</strong> Owners facing bankruptcy are often hostile, depressed, or in denial</li>
+                    <li><strong>Equity Priority:</strong> Need to maximize recovery for creditors while selling fast - challenging balance</li>
+                </ul>
+
+                <h3>How We Help Bankruptcy Situations</h3>
+
+                <div class="solution-grid">
+                    <div class="solution-card">
+                        <h4>Work Directly With Trustees</h4>
+                        <p>We have relationships with bankruptcy trustees across Winnipeg. We know their requirements, speak their language, and close deals quickly to satisfy their timelines.</p>
+                    </div>
+
+                    <div class="solution-card">
+                        <h4>Fast All-Cash Offers</h4>
+                        <p>No financing contingencies that delay closing. We provide proof of funds and close in 14-21 days or faster if needed. Trustees love certainty.</p>
+                    </div>
+
+                    <div class="solution-card">
+                        <h4>Court-Ready Documentation</h4>
+                        <p>We provide all documentation required for court approval: proof of funds, purchase agreements, valuation support, comparable sales data.</p>
+                    </div>
+
+                    <div class="solution-card">
+                        <h4>Complex Lien Navigation</h4>
+                        <p>Multiple mortgages? Tax liens? Judgment liens? We calculate payoff amounts, structure offers to clear all encumbrances, and coordinate with creditors.</p>
+                    </div>
+
+                    <div class="solution-card">
+                        <h4>Pre-Bankruptcy Purchases</h4>
+                        <p>Facing bankruptcy but haven't filed yet? We can purchase before filing, maximizing your equity and giving you control over the sale process.</p>
+                    </div>
+
+                    <div class="solution-card">
+                        <h4>Distressed Owner Support</h4>
+                        <p>We understand the emotional toll. We work respectfully with owners, accommodate their situations, and make the process as painless as possible.</p>
+                    </div>
+                </div>
+
+                <h3>Types of Bankruptcy Properties We Purchase</h3>
+
+                <ul>
+                    <li><strong>Chapter 7 Liquidations (BIA Bankruptcy):</strong> Trustee-managed sales where all assets must be liquidated</li>
+                    <li><strong>Consumer Proposal Properties:</strong> Part of debt settlement where house sale helps satisfy creditors</li>
+                    <li><strong>Receivership Sales:</strong> Court-appointed receiver managing liquidation for secured creditors</li>
+                    <li><strong>Power of Sale Properties:</strong> Lender forcing sale due to mortgage default related to bankruptcy</li>
+                    <li><strong>Pre-Bankruptcy Strategic Sales:</strong> Owners selling before filing to control process and protect equity</li>
+                    <li><strong>Business Asset Liquidations:</strong> Commercial properties, rental properties, personal residences owned by bankrupt businesses</li>
+                    <li><strong>Estate Bankruptcies:</strong> Deceased person's estate in bankruptcy, heirs needing quick resolution</li>
+                </ul>
+
+                <h3>Our Bankruptcy Purchase Process</h3>
+
+                <div class="process-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h4>Initial Contact</h4>
+                        <p>Owner, trustee, or creditor contacts us. We gather basic information about the property and bankruptcy situation.</p>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h4>Trustee Coordination</h4>
+                        <p>We contact the bankruptcy trustee, verify their authority, understand their requirements and timeline.</p>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h4>Property Assessment</h4>
+                        <p>We inspect the property, run title search, calculate all liens and encumbrances, determine clear market value.</p>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h4>Written Offer</h4>
+                        <p>We submit formal written offer to trustee with proof of funds, comparable sales, and justification for our price.</p>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">5</div>
+                        <h4>Court Approval</h4>
+                        <p>If required, we provide all documentation for court approval. We've done this dozens of times.</p>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">6</div>
+                        <h4>Fast Closing</h4>
+                        <p>We close in 14-21 days on average. Creditors get paid, trustee completes their duty, owner moves forward.</p>
+                    </div>
+                </div>
+
+                <h3>What Trustees and Creditors Want</h3>
+
+                <p><strong>We understand the priorities:</strong></p>
+
+                <ul>
+                    <li><strong>Speed:</strong> Fast closing to minimize estate administration costs and satisfy time-sensitive creditor demands</li>
+                    <li><strong>Certainty:</strong> No deal falling through due to financing - cash offers only</li>
+                    <li><strong>Maximum Recovery:</strong> Fair market value to maximize creditor recovery and satisfy court approval requirements</li>
+                    <li><strong>Minimal Hassle:</strong> Buyers who understand the process and don't create problems</li>
+                    <li><strong>Proper Documentation:</strong> Clean paperwork that satisfies legal and court requirements</li>
+                    <li><strong>As-Is Purchase:</strong> No repair demands or renegotiation after inspection - we buy what we see</li>
+                </ul>
+
+                <h3>Pre-Bankruptcy vs. Post-Bankruptcy Sales</h3>
+
+                <p><strong>Selling BEFORE filing bankruptcy (if possible):</strong></p>
+
+                <ul>
+                    <li><strong>Pros:</strong> You control the process, potentially net more equity, avoid trustee involvement, less public</li>
+                    <li><strong>Cons:</strong> Creditors may object, timing pressure from threatening legal action, still responsible for debts until filing</li>
+                    <li><strong>Best For:</strong> Owners who see bankruptcy coming and want to maximize their position</li>
+                </ul>
+
+                <p><strong>Selling AFTER filing bankruptcy:</strong></p>
+
+                <ul>
+                    <li><strong>Pros:</strong> Trustee manages process, creditor pressure stops immediately, automatic stay protects you</li>
+                    <li><strong>Cons:</strong> Trustee controls sale, must satisfy court approval, potentially longer timeline</li>
+                    <li><strong>Best For:</strong> Already filed and trustee is requiring liquidation</li>
+                </ul>
+
+                <h3>Working With Multiple Creditors</h3>
+
+                <p>
+                    <strong>Most bankruptcy properties have complex creditor situations:</strong>
+                </p>
+
+                <ul>
+                    <li><strong>First Mortgage:</strong> Primary secured creditor - paid first from sale proceeds</li>
+                    <li><strong>Second Mortgage/HELOC:</strong> Secured creditor - paid after first mortgage</li>
+                    <li><strong>CRA Tax Liens:</strong> Canada Revenue Agency with super-priority for tax debts</li>
+                    <li><strong>Judgment Liens:</strong> Creditors who sued and won judgments registered against title</li>
+                    <li><strong>Mechanics Liens:</strong> Contractors who weren't paid for work on property</li>
+                    <li><strong>Unsecured Creditors:</strong> Credit cards, personal loans - paid last, often get nothing</li>
+                </ul>
+
+                <p>
+                    <strong>We calculate the exact payoff waterfall</strong> and structure our offer to clear all liens and provide maximum distribution to creditors based on their legal priority.
+                </p>
+
+                <h3>What You Can Expect From Us</h3>
+
+                <ul>
+                    <li><strong>Professional Conduct:</strong> We treat all parties with respect - owners, trustees, creditors, lawyers</li>
+                    <li><strong>Fast Response:</strong> Same-day response to inquiries, quick property assessment, fast offers</li>
+                    <li><strong>Transparent Offers:</strong> We show our math - comparable sales, repair estimates, profit margin</li>
+                    <li><strong>Experienced Team:</strong> We've done 50+ bankruptcy purchases, we know the process cold</li>
+                    <li><strong>Cash Ready:</strong> Proof of funds available immediately, no financing contingencies</li>
+                    <li><strong>Flexible Closing:</strong> We adapt to trustee and court timelines, close as fast as needed</li>
+                </ul>
+
+                <p>
+                    <strong>All contracts are structured to protect us and minimize our risk</strong> while satisfying the requirements of trustees, creditors, and courts. We're running a business buying distressed assets, and we're transparent about our profit margins and risk tolerance.
+                </p>
+
+                <h3>Common Questions About Bankruptcy Sales</h3>
+
+                <p><strong>Q: Will I get any money from the sale if I'm in bankruptcy?</strong><br>
+                A: It depends. If there's equity after paying all secured debts and bankruptcy costs, you may receive surplus funds. Often there's little left after creditors are paid.</p>
+
+                <p><strong>Q: Can I sell my house before filing bankruptcy?</strong><br>
+                A: Maybe. Consult a bankruptcy lawyer first. Pre-bankruptcy sales can be challenged if deemed fraudulent conveyances. We can close quickly but you need legal advice first.</p>
+
+                <p><strong>Q: How long does a trustee sale take?</strong><br>
+                A: With us, 14-21 days from offer acceptance to closing. Traditional listings take 3-6 months - too long for most trustees.</p>
+
+                <p><strong>Q: Will the trustee accept your offer?</strong><br>
+                A: If our offer is fair market value (supported by comparable sales) and we can close quickly with cash, trustees almost always accept. They want certainty and speed.</p>
+
+                <p><strong>Q: What if there's not enough equity to pay all creditors?</strong><br>
+                A: We buy properties with little or no equity. Secured creditors get paid first. Unsecured creditors often receive pennies on the dollar or nothing. That's bankruptcy law, not our decision.</p>
+
+                <p><strong>Q: Do you buy commercial properties or just residential?</strong><br>
+                A: We primarily buy residential but occasionally purchase small multi-family or mixed-use properties in bankruptcy. Contact us with details.</p>
+            </div>
+
+            <div class="cta-box">
+                <h2>Sell Your Bankruptcy Property Fast</h2>
+                <p>Work with experienced buyers who understand bankruptcy law and trustee requirements. Get a fast cash offer today.</p>
+                <a href="contact.html" class="btn-primary">Contact Us Now</a>
+            </div>
+
+            <div style="background: rgba(239,68,68,0.1); border: 1px solid #ef4444; border-radius: 12px; padding: 2rem; text-align: left;">
+                <h3 style="color: #ef4444; margin-bottom: 1rem;">⚠️ For Bankruptcy Trustees & Creditors</h3>
+                <p style="color: var(--silver); font-size: 1.1rem; margin-bottom: 1rem;">
+                    We work regularly with bankruptcy trustees, receivers, and creditor attorneys across Winnipeg. We provide:
+                </p>
+                <ul style="color: var(--silver); line-height: 2; padding-left: 1.5rem;">
+                    <li><strong>Fast closings:</strong> 14-21 days standard, can close faster if needed</li>
+                    <li><strong>All-cash offers:</strong> Proof of funds provided immediately</li>
+                    <li><strong>Court-ready documentation:</strong> Valuations, comparable sales, purchase agreements</li>
+                    <li><strong>As-is purchases:</strong> No repair demands or renegotiation</li>
+                    <li><strong>Experienced team:</strong> We understand BIA requirements and court procedures</li>
+                    <li><strong>Professional references:</strong> Available upon request from trustees we've worked with</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

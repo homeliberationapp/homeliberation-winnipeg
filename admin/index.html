@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Home Liberation</title>
+    <meta name="robots" content="noindex, nofollow">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --dark: #0f172a;
+            --darker: #020617;
+            --orange: #f97316;
+            --blue: #3b82f6;
+            --green: #10b981;
+            --red: #ef4444;
+            --white: #ffffff;
+            --gray: #64748b;
+            --silver: #cbd5e1;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--darker);
+            color: var(--white);
+            line-height: 1.6;
+        }
+
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 260px;
+            height: 100vh;
+            background: var(--dark);
+            border-right: 1px solid rgba(249,115,22,0.2);
+            padding: 2rem 1rem;
+            overflow-y: auto;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            padding: 0 1rem;
+        }
+
+        .logo span {
+            color: var(--orange);
+        }
+
+        .nav-section {
+            margin-bottom: 2rem;
+        }
+
+        .nav-label {
+            color: var(--gray);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 1px;
+            padding: 0 1rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 0.8rem 1rem;
+            color: var(--silver);
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.2s;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .nav-item:hover, .nav-item.active {
+            background: rgba(249,115,22,0.1);
+            color: var(--orange);
+        }
+
+        .main {
+            margin-left: 260px;
+            padding: 2rem;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 800;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: var(--dark);
+            border: 1px solid rgba(249,115,22,0.2);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .stat-label {
+            color: var(--gray);
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--orange);
+        }
+
+        .card {
+            background: var(--dark);
+            border: 1px solid rgba(249,115,22,0.2);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .card h2 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--orange);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            text-align: left;
+            padding: 1rem;
+            border-bottom: 1px solid rgba(249,115,22,0.2);
+            color: var(--gray);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid rgba(249,115,22,0.1);
+        }
+
+        tr:hover {
+            background: rgba(249,115,22,0.05);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: var(--orange);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #ea580c;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .badge-new { background: rgba(16,185,129,0.2); color: var(--green); }
+        .badge-pending { background: rgba(251,191,36,0.2); color: #fbbf24; }
+        .badge-contacted { background: rgba(59,130,246,0.2); color: var(--blue); }
+
+        .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .tool-card {
+            background: rgba(249,115,22,0.05);
+            border: 1px solid rgba(249,115,22,0.2);
+            border-radius: 12px;
+            padding: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--orange);
+        }
+
+        .tool-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tool-card p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 0.8rem;
+            background: var(--darker);
+            border: 1px solid rgba(249,115,22,0.3);
+            border-radius: 6px;
+            color: var(--white);
+            font-family: 'Inter', sans-serif;
+            margin-bottom: 1rem;
+        }
+
+        .calc-result {
+            background: rgba(16,185,129,0.1);
+            border: 1px solid var(--green);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .calc-result h3 {
+            color: var(--green);
+            margin-bottom: 1rem;
+        }
+
+        .calc-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(16,185,129,0.2);
+        }
+
+        .calc-row:last-child {
+            border-bottom: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--green);
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">Home <span>Liberation</span></div>
+
+        <div class="nav-section">
+            <div class="nav-label">Overview</div>
+            <a href="#dashboard" class="nav-item active" onclick="showSection('dashboard')">📊 Dashboard</a>
+            <a href="#leads" class="nav-item" onclick="showSection('leads')">👥 Leads</a>
+            <a href="#deals" class="nav-item" onclick="showSection('deals')">💰 Deals</a>
+        </div>
+
+        <div class="nav-section">
+            <div class="nav-label">Tools</div>
+            <a href="#calculator" class="nav-item" onclick="showSection('calculator')">🧮 Deal Calculator</a>
+            <a href="#comps" class="nav-item" onclick="showSection('comps')">📈 Comps Analysis</a>
+            <a href="#seo" class="nav-item" onclick="showSection('seo')">🔍 SEO Tools</a>
+            <a href="#marketing" class="nav-item" onclick="showSection('marketing')">📢 Marketing</a>
+        </div>
+
+        <div class="nav-section">
+            <div class="nav-label">Content</div>
+            <a href="#site-editor" class="nav-item" onclick="showSection('site-editor')">✏️ Edit Site</a>
+            <a href="#buyers-list" class="nav-item" onclick="showSection('buyers-list')">📬 Buyer's List</a>
+        </div>
+    </div>
+
+    <div class="main">
+        <!-- DASHBOARD -->
+        <div id="dashboard" class="section">
+            <div class="header">
+                <h1>Dashboard</h1>
+                <span style="color: var(--gray);">Welcome back, Admin</span>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-label">New Leads (24h)</div>
+                    <div class="stat-value">3</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Total Leads</div>
+                    <div class="stat-value">47</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Active Deals</div>
+                    <div class="stat-value">5</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Site Visitors (7d)</div>
+                    <div class="stat-value">342</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Recent Leads</h2>
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Property</th>
+                        <th>Situation</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                    <tr>
+                        <td>Michael Thompson</td>
+                        <td>234 Main St, Winnipeg</td>
+                        <td>Foreclosure</td>
+                        <td>2 hours ago</td>
+                        <td><span class="badge badge-new">New</span></td>
+                        <td><a href="#" class="btn btn-primary">Review</a></td>
+                    </tr>
+                    <tr>
+                        <td>Sarah Chen</td>
+                        <td>456 Oak Ave, Winnipeg</td>
+                        <td>Repairs Needed</td>
+                        <td>5 hours ago</td>
+                        <td><span class="badge badge-pending">Pending</span></td>
+                        <td><a href="#" class="btn btn-primary">Review</a></td>
+                    </tr>
+                    <tr>
+                        <td>David Martinez</td>
+                        <td>789 Elm St, Winnipeg</td>
+                        <td>Landlord Exit</td>
+                        <td>Yesterday</td>
+                        <td><span class="badge badge-contacted">Contacted</span></td>
+                        <td><a href="#" class="btn btn-primary">Review</a></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="card">
+                <h2>Quick Tools</h2>
+                <div class="tool-grid">
+                    <div class="tool-card" onclick="showSection('calculator')">
+                        <h3>🧮 Deal Calculator</h3>
+                        <p>Calculate offer, repairs, and profit margins</p>
+                    </div>
+                    <div class="tool-card" onclick="showSection('comps')">
+                        <h3>📈 Comps Analysis</h3>
+                        <p>Find comparable sales in Winnipeg</p>
+                    </div>
+                    <div class="tool-card" onclick="showSection('marketing')">
+                        <h3>📢 Marketing Hub</h3>
+                        <p>SEO, ads, and traffic generation</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DEAL CALCULATOR -->
+        <div id="calculator" class="section" style="display:none;">
+            <div class="header">
+                <h1>Deal Calculator</h1>
+            </div>
+
+            <div class="card">
+                <h2>Property Analysis</h2>
+
+                <label>Property Address</label>
+                <input type="text" id="calc_address" placeholder="123 Main St, Winnipeg">
+
+                <label>ARV (After Repair Value)</label>
+                <input type="number" id="calc_arv" placeholder="285000">
+
+                <label>Estimated Repair Costs</label>
+                <input type="number" id="calc_repairs" placeholder="35000">
+
+                <label>Your Desired Profit</label>
+                <input type="number" id="calc_profit" placeholder="40000">
+
+                <label>Holding Costs (months × monthly cost)</label>
+                <input type="number" id="calc_holding" placeholder="5000">
+
+                <label>Closing Costs (% of ARV)</label>
+                <input type="number" id="calc_closing" placeholder="3" step="0.1">
+
+                <button class="btn btn-primary" onclick="calculateDeal()">Calculate Max Offer</button>
+
+                <div id="calcResults" class="calc-result" style="display:none;">
+                    <h3>Deal Analysis</h3>
+                    <div class="calc-row">
+                        <span>ARV:</span>
+                        <span id="result_arv">$0</span>
+                    </div>
+                    <div class="calc-row">
+                        <span>Repair Costs:</span>
+                        <span id="result_repairs">$0</span>
+                    </div>
+                    <div class="calc-row">
+                        <span>Holding Costs:</span>
+                        <span id="result_holding">$0</span>
+                    </div>
+                    <div class="calc-row">
+                        <span>Closing Costs:</span>
+                        <span id="result_closing">$0</span>
+                    </div>
+                    <div class="calc-row">
+                        <span>Desired Profit:</span>
+                        <span id="result_profit">$0</span>
+                    </div>
+                    <div class="calc-row">
+                        <span>MAXIMUM OFFER:</span>
+                        <span id="result_max_offer">$0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Assignment Fee Calculator</h2>
+                <p style="color: var(--gray); margin-bottom: 1rem;">Calculate your wholesale assignment fee</p>
+
+                <label>Contract Price with Seller</label>
+                <input type="number" id="assign_contract" placeholder="200000">
+
+                <label>Price to Your Buyer</label>
+                <input type="number" id="assign_buyer" placeholder="220000">
+
+                <button class="btn btn-primary" onclick="calculateAssignment()">Calculate Fee</button>
+
+                <div id="assignResults" class="calc-result" style="display:none;">
+                    <h3>Assignment Analysis</h3>
+                    <div class="calc-row">
+                        <span>Contract Price:</span>
+                        <span id="assign_result_contract">$0</span>
+                    </div>
+                    <div class="calc-row">
+                        <span>Buyer Price:</span>
+                        <span id="assign_result_buyer">$0</span>
+                    </div>
+                    <div class="calc-row">
+                        <span>YOUR ASSIGNMENT FEE:</span>
+                        <span id="assign_result_fee">$0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- COMPS ANALYSIS -->
+        <div id="comps" class="section" style="display:none;">
+            <div class="header">
+                <h1>Comparable Sales Analysis</h1>
+            </div>
+
+            <div class="card">
+                <h2>Find Comps (Winnipeg)</h2>
+                <p style="color: var(--gray); margin-bottom: 1.5rem;">
+                    Use these tools to find comparable sales:
+                </p>
+
+                <div style="background: rgba(249,115,22,0.1); border: 1px solid var(--orange); border-radius: 8px; padding: 1.5rem; margin-bottom: 1rem;">
+                    <h3 style="margin-bottom: 1rem;">Free Resources:</h3>
+                    <ul style="color: var(--silver); line-height: 2;">
+                        <li><a href="https://www.realtor.ca" target="_blank" style="color: var(--orange);">Realtor.ca</a> - Search sold listings in Winnipeg</li>
+                        <li><a href="https://winnipeg.ca/assessment/" target="_blank" style="color: var(--orange);">Winnipeg Assessment</a> - Property tax assessments</li>
+                        <li><strong>Google:</strong> "recently sold homes [neighborhood] Winnipeg"</li>
+                        <li><strong>Drive neighborhood:</strong> Look for sold signs, note addresses</li>
+                    </ul>
+                </div>
+
+                <div style="background: rgba(59,130,246,0.1); border: 1px solid var(--blue); border-radius: 8px; padding: 1.5rem;">
+                    <h3 style="margin-bottom: 1rem;">Comp Analysis Formula:</h3>
+                    <p style="color: var(--silver); line-height: 1.8;">
+                        1. Find 3-5 sold homes within 0.5km<br>
+                        2. Similar size (±20% sqft)<br>
+                        3. Sold within last 6 months<br>
+                        4. Calculate $/sqft average<br>
+                        5. Adjust for condition differences<br>
+                        6. That's your ARV baseline
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEO & MARKETING -->
+        <div id="marketing" class="section" style="display:none;">
+            <div class="header">
+                <h1>Marketing & Traffic Generation</h1>
+            </div>
+
+            <div class="card">
+                <h2>🔍 SEO Strategy (Zero Budget)</h2>
+
+                <div style="margin-bottom: 2rem;">
+                    <h3 style="color: var(--orange); margin-bottom: 1rem;">High-Value Keywords to Target:</h3>
+                    <ul style="color: var(--silver); line-height: 2;">
+                        <li><strong>"sell my house fast Winnipeg"</strong> - High intent</li>
+                        <li><strong>"we buy houses Winnipeg"</strong> - Direct competitors</li>
+                        <li><strong>"avoid foreclosure Winnipeg"</strong> - Problem-focused</li>
+                        <li><strong>"sell house as-is Winnipeg"</strong> - No repairs needed</li>
+                        <li><strong>"cash for houses Winnipeg"</strong> - Fast close</li>
+                        <li><strong>"inherited property Winnipeg"</strong> - Specific situation</li>
+                    </ul>
+                </div>
+
+                <div style="margin-bottom: 2rem;">
+                    <h3 style="color: var(--orange); margin-bottom: 1rem;">Content Strategy:</h3>
+                    <p style="color: var(--silver); margin-bottom: 1rem;">Create blog posts targeting these searches:</p>
+                    <ul style="color: var(--silver); line-height: 2;">
+                        <li>"How to Sell Your House Fast in Winnipeg (2024 Guide)"</li>
+                        <li>"Avoiding Foreclosure in Manitoba: Your Complete Options"</li>
+                        <li>"Should I Repair My House Before Selling in Winnipeg?"</li>
+                        <li>"Inherited a House in Winnipeg? Here's What To Do"</li>
+                        <li>"Winnipeg Real Estate Market Update [Current Month]"</li>
+                    </ul>
+                </div>
+
+                <div style="margin-bottom: 2rem;">
+                    <h3 style="color: var(--orange); margin-bottom: 1rem;">Free Traffic Sources:</h3>
+                    <ul style="color: var(--silver); line-height: 2;">
+                        <li><strong>Kijiji Winnipeg:</strong> Post "We Buy Houses" ads weekly</li>
+                        <li><strong>Facebook Marketplace:</strong> "Looking to buy homes" posts</li>
+                        <li><strong>Reddit r/Winnipeg:</strong> Answer real estate questions, offer help</li>
+                        <li><strong>Local FB Groups:</strong> Join Winnipeg community groups, provide value</li>
+                        <li><strong>Google My Business:</strong> Free listing = local SEO boost</li>
+                        <li><strong>YouTube:</strong> "Selling Your Winnipeg Home" tips videos</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>📢 Buyer's List Building</h2>
+                <p style="color: var(--silver); margin-bottom: 1.5rem;">
+                    Build a list of cash buyers and investors who will buy your deals:
+                </p>
+
+                <ul style="color: var(--silver); line-height: 2;">
+                    <li><strong>FB Group:</strong> "Winnipeg Real Estate Investors"</li>
+                    <li><strong>REIN Groups:</strong> Real Estate Investment Network meetings</li>
+                    <li><strong>LinkedIn:</strong> Connect with Winnipeg investors</li>
+                    <li><strong>Your Site:</strong> "Join Buyer's List" page (capture emails)</li>
+                    <li><strong>Wholesale Sites:</strong> Post deals on Connected Investors, etc.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- BUYER'S LIST -->
+        <div id="buyers-list" class="section" style="display:none;">
+            <div class="header">
+                <h1>Buyer's List Management</h1>
+            </div>
+
+            <div class="card">
+                <h2>Email List (Connect to Mailchimp/SendGrid)</h2>
+                <p style="color: var(--gray); margin-bottom: 1rem;">Buyers who want first access to deals</p>
+
+                <div style="background: rgba(16,185,129,0.1); border: 1px solid var(--green); border-radius: 8px; padding: 1.5rem; margin: 1rem 0;">
+                    <div style="font-size: 2rem; font-weight: 800; color: var(--green); margin-bottom: 0.5rem;">127</div>
+                    <div style="color: var(--silver);">Total Subscribers</div>
+                </div>
+
+                <button class="btn btn-primary">Export Email List</button>
+                <button class="btn btn-primary">Send Deal Blast</button>
+            </div>
+        </div>
+
+        <!-- SITE EDITOR -->
+        <div id="site-editor" class="section" style="display:none;">
+            <div class="header">
+                <h1>Site Content Editor</h1>
+            </div>
+
+            <div class="card">
+                <h2>Update Site Numbers</h2>
+
+                <label>Homeowners Helped (shows on homepage)</label>
+                <input type="number" value="43">
+
+                <label>Average Home Value (Winnipeg)</label>
+                <input type="number" value="285000">
+
+                <label>Response Time Promise</label>
+                <input type="text" value="48 hours">
+
+                <button class="btn btn-primary">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(s => s.style.display = 'none');
+            document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+            document.getElementById(sectionId).style.display = 'block';
+            event.target.classList.add('active');
+        }
+
+        function calculateDeal() {
+            const arv = parseFloat(document.getElementById('calc_arv').value) || 0;
+            const repairs = parseFloat(document.getElementById('calc_repairs').value) || 0;
+            const profit = parseFloat(document.getElementById('calc_profit').value) || 0;
+            const holding = parseFloat(document.getElementById('calc_holding').value) || 0;
+            const closingPct = parseFloat(document.getElementById('calc_closing').value) || 3;
+
+            const closing = arv * (closingPct / 100);
+            const maxOffer = arv - repairs - profit - holding - closing;
+
+            document.getElementById('result_arv').textContent = '$' + arv.toLocaleString();
+            document.getElementById('result_repairs').textContent = '-$' + repairs.toLocaleString();
+            document.getElementById('result_holding').textContent = '-$' + holding.toLocaleString();
+            document.getElementById('result_closing').textContent = '-$' + closing.toLocaleString();
+            document.getElementById('result_profit').textContent = '-$' + profit.toLocaleString();
+            document.getElementById('result_max_offer').textContent = '$' + Math.floor(maxOffer).toLocaleString();
+
+            document.getElementById('calcResults').style.display = 'block';
+        }
+
+        function calculateAssignment() {
+            const contract = parseFloat(document.getElementById('assign_contract').value) || 0;
+            const buyer = parseFloat(document.getElementById('assign_buyer').value) || 0;
+            const fee = buyer - contract;
+
+            document.getElementById('assign_result_contract').textContent = '$' + contract.toLocaleString();
+            document.getElementById('assign_result_buyer').textContent = '$' + buyer.toLocaleString();
+            document.getElementById('assign_result_fee').textContent = '$' + fee.toLocaleString();
+
+            document.getElementById('assignResults').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

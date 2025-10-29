@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>We Buy Houses That Need Repairs | Home Liberation Winnipeg</title>
+    <meta name="description" content="Major repairs needed? Foundation issues? We buy houses in ANY condition across Winnipeg. No repairs required - we buy as-is.">
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23f97316'/%3E%3Cstop offset='100%25' style='stop-color:%233b82f6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='20' fill='url(%23g)'/%3E%3Cpath d='M50 25 L70 42 L62 42 L62 70 L38 70 L38 42 L30 42 Z' fill='white'/%3E%3Cpath d='M35 52 L65 52 M50 37 L50 67' stroke='white' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --midnight: #0a0f1c;
+            --slate: #1e293b;
+            --orange: #f97316;
+            --blue: #3b82f6;
+            --green: #10b981;
+            --white: #ffffff;
+            --silver: #cbd5e1;
+            --gray: #64748b;
+            --gold: #fbbf24;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--midnight);
+            color: var(--white);
+            line-height: 1.6;
+        }
+
+        .bg-gradient {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background: radial-gradient(ellipse at top, rgba(249,115,22,0.1), transparent 50%),
+                        linear-gradient(180deg, var(--midnight), var(--slate));
+        }
+
+        header {
+            background: rgba(10,15,28,0.98);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(249,115,22,0.2);
+            padding: 1.2rem 0;
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+            color: var(--white);
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--orange), var(--blue));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-icon svg {
+            width: 28px;
+            height: 28px;
+            fill: white;
+        }
+
+        .logo-text {
+            font-size: 1.3rem;
+            font-weight: 800;
+        }
+
+        .logo-text span {
+            background: linear-gradient(135deg, var(--orange), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero {
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -2px;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, var(--orange), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: var(--silver);
+            margin-bottom: 3rem;
+            line-height: 1.7;
+        }
+
+        .content-section {
+            background: rgba(30,41,59,0.5);
+            border: 1px solid rgba(249,115,22,0.2);
+            border-radius: 16px;
+            padding: 3rem;
+            margin: 3rem 0;
+            text-align: left;
+        }
+
+        .content-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--orange);
+        }
+
+        .content-section h3 {
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+            color: var(--white);
+        }
+
+        .content-section p {
+            color: var(--silver);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .content-section ul {
+            color: var(--silver);
+            margin: 1rem 0 1rem 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .content-section li {
+            margin-bottom: 0.8rem;
+        }
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .solution-card {
+            background: rgba(15,23,42,0.8);
+            border: 1px solid rgba(249,115,22,0.3);
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .solution-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--orange);
+        }
+
+        .solution-card p {
+            color: var(--silver);
+            font-size: 1rem;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, rgba(249,115,22,0.2), rgba(59,130,246,0.2));
+            border: 2px solid var(--orange);
+            border-radius: 16px;
+            padding: 3rem;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .cta-box h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-box p {
+            font-size: 1.2rem;
+            color: var(--silver);
+            margin-bottom: 2rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--orange), #ea580c);
+            color: white;
+            padding: 1.3rem 3rem;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 800;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+            box-shadow: 0 10px 40px rgba(249,115,22,0.4);
+            text-transform: uppercase;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 50px rgba(249,115,22,0.6);
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .content-section { padding: 2rem; }
+            .solution-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 3L4 9v12h5v-7h6v7h5V9l-8-6z"/>
+                        <line x1="7" y1="12" x2="17" y2="12" stroke="white" stroke-width="2"/>
+                        <line x1="12" y1="7" x2="12" y2="17" stroke="white" stroke-width="2"/>
+                    </svg>
+                </div>
+                <div class="logo-text">Home <span>Liberation</span></div>
+            </a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>We Buy <span class="highlight">ANY Condition</span> in Winnipeg</h1>
+
+            <p class="subtitle">
+                Major repairs needed? Foundation issues? Fire damage? Hoarder house? We buy houses in ANY condition across Winnipeg. No repairs required - we buy as-is.
+            </p>
+
+            <div class="content-section">
+                <h2>🔧 The Repair Nightmare</h2>
+
+                <p>
+                    <strong>That sinking feeling when you realize the house needs $50,000 in repairs.</strong> Or $100,000. Or more. The foundation is cracked, the roof is shot, the electrical is dangerous, and the plumbing is ancient.
+                </p>
+
+                <p>
+                    You're trapped between three terrible options:
+                </p>
+
+                <ul>
+                    <li><strong>Pay for repairs yourself:</strong> Drain your savings, take out loans, live through construction chaos</li>
+                    <li><strong>List it as-is:</strong> Get lowball offers from bargain hunters, deal with inspection nightmares</li>
+                    <li><strong>Do nothing:</strong> Watch the house deteriorate further while you're stuck paying taxes, insurance, utilities</li>
+                </ul>
+
+                <p>
+                    <strong>We offer a fourth option: Sell it to us as-is.</strong> No repairs, no contractors, no cleanup, no stress.
+                </p>
+
+                <h3>Major Repairs We Handle</h3>
+
+                <div class="solution-grid">
+                    <div class="solution-card">
+                        <h4>Foundation Problems</h4>
+                        <p>Cracks, settling, bowing walls, water intrusion - we buy homes with major foundation issues that would cost $30K-$100K+ to fix.</p>
+                    </div>
+
+                    <div class="solution-card">
+                        <h4>Roof Damage</h4>
+                        <p>Leaking, missing shingles, structural damage, complete replacement needed - we buy homes with roof problems costing $8K-$25K+.</p>
+                    </div>
+
+                    <div class="solution-card">
+                        <h4>Fire & Water Damage</h4>
+                        <p>Kitchen fires, basement floods, burst pipes, sewer backups - we buy disaster-damaged homes that insurance won't cover.</p>
+                    </div>
+
+                    <div class="solution-card">
+                        <h4>Mold & Asbestos</h4>
+                        <p>Black mold remediation, asbestos abatement, contamination cleanup - we handle homes with hazardous materials requiring specialized removal.</p>
+                    </div>
+
+                    <div class="solution-card">
+                        <h4>Electrical & Plumbing</h4>
+                        <p>Knob & tube wiring, cast iron pipes, outdated systems, code violations - we buy homes needing complete system replacements.</p>
+                    </p>
+                    </div>
+
+                    <div class="solution-card">
+                        <h4>Structural Issues</h4>
+                        <p>Sagging floors, rotted joists, termite damage, load-bearing wall problems - we buy homes with major structural defects.</p>
+                    </div>
+                </div>
+
+                <h3>Types of "Repair Nightmares" We Buy</h3>
+
+                <ul>
+                    <li><strong>Inherited Disaster Homes:</strong> Grandma's house hasn't been updated since 1967 and needs everything</li>
+                    <li><strong>Fire Damage Properties:</strong> Kitchen fire, electrical fire, or total loss - we buy them all</li>
+                    <li><strong>Flood/Water Damage:</strong> Basement floods, burst pipes, sewer backups, ice dam damage</li>
+                    <li><strong>Hoarder Houses:</strong> Filled with decades of stuff, structural damage hidden underneath</li>
+                    <li><strong>Grow-Op Properties:</strong> Former illegal grow operations with mold, electrical, and structural damage</li>
+                    <li><strong>Vacant & Vandalized:</strong> Sitting empty, stripped of copper, broken windows, squatters</li>
+                    <li><strong>Tear-Downs:</strong> So far gone that demolition is the only option</li>
+                    <li><strong>Code Violation Properties:</strong> City has condemned it or issued violation notices</li>
+                </ul>
+
+                <h3>Why Selling As-Is Makes Sense</h3>
+
+                <p><strong>The math rarely works out for you to do repairs:</strong></p>
+
+                <ul>
+                    <li><strong>You pay retail for repairs</strong> (contractors charge 30-50% more than investor rates)</li>
+                    <li><strong>You pay interest</strong> on loans or credit cards to fund repairs</li>
+                    <li><strong>You waste months</strong> finding contractors, managing work, dealing with delays</li>
+                    <li><strong>You pay carrying costs</strong> (mortgage, taxes, insurance, utilities) during repairs</li>
+                    <li><strong>You assume risk</strong> that repairs uncover more problems or cost more than estimated</li>
+                    <li><strong>You still pay realtor fees</strong> (5-6%) after all that</li>
+                </ul>
+
+                <p><strong>Example: A house worth $300K needs $60K in repairs</strong></p>
+
+                <ul>
+                    <li>Repair costs: $60,000</li>
+                    <li>Carrying costs (6 months): $12,000</li>
+                    <li>Realtor fees (5%): $15,000</li>
+                    <li><strong>Total cost to sell: $87,000</strong></li>
+                    <li><strong>Net to you: $213,000</strong></li>
+                </ul>
+
+                <p><strong>Our offer might be $220,000 cash, no repairs, close in 10 days.</strong></p>
+
+                <p>
+                    You net MORE by selling to us, even though our offer is lower than retail. Plus you avoid 6 months of stress, contractor headaches, and financial risk.
+                </p>
+
+                <h3>Our As-Is Purchase Process</h3>
+
+                <div class="solution-grid">
+                    <div class="solution-card">
+                        <h4>1. Contact Us</h4>
+                        <p>Tell us about the property and the repair issues. Be honest - it helps us make the best offer.</p>
+                    </div>
+
+                    <div class="solution-card">
+                        <h4>2. Quick Inspection</h4>
+                        <p>We visit the property to assess condition and calculate repair costs (using our contractor rates, not retail).</p>
+                    </div>
+
+                    <div class="solution-card">
+                        <h4>3. Cash Offer</h4>
+                        <p>We make a written cash offer based on ARV minus our repair costs and profit margin. No haggling.</p>
+                    </div>
+
+                    <div class="solution-card">
+                        <h4>4. Fast Closing</h4>
+                        <p>Accept our offer and close in as few as 7 days. Cash payment, no financing contingencies, no inspection surprises.</p>
+                    </div>
+                </div>
+
+                <h3>What We Look For (and Buy)</h3>
+
+                <ul>
+                    <li><strong>Winnipeg Location:</strong> We buy in all Winnipeg neighborhoods - North End, West End, St. Boniface, Transcona, Fort Garry, everywhere</li>
+                    <li><strong>Any Condition:</strong> From "needs cosmetic work" to "should be condemned" - we buy it all</li>
+                    <li><strong>Any Size:</strong> Small bungalows to large two-stories, single-family to multi-family</li>
+                    <li><strong>Clear Title Preferred:</strong> We can work with liens and judgments, but clear title is easier</li>
+                    <li><strong>Motivated Sellers:</strong> You need to sell quickly and can't wait months for retail buyers</li>
+                </ul>
+
+                <h3>How We Calculate Our Offer</h3>
+
+                <p><strong>We use the wholesale formula (and we're upfront about it):</strong></p>
+
+                <ul>
+                    <li><strong>After Repair Value (ARV):</strong> What the house is worth fully renovated</li>
+                    <li><strong>Minus Repair Costs:</strong> Our actual contractor costs (typically 40-60% of retail estimates)</li>
+                    <li><strong>Minus Our Profit:</strong> $20K-$40K depending on deal size and risk</li>
+                    <li><strong>Minus Holding Costs:</strong> Mortgage, taxes, insurance while we renovate</li>
+                    <li><strong>Minus Closing Costs:</strong> Legal fees, title insurance, realtor fees when we resell</li>
+                    <li><strong>= Maximum Offer Price</strong></li>
+                </ul>
+
+                <p>
+                    <strong>All contracts are structured to protect us and minimize our risk.</strong> We're running a business, not a charity. But we're honest, transparent, and we close fast with cash.
+                </p>
+
+                <h3>What You Can Leave Behind</h3>
+
+                <p><strong>We buy the property "broom clean" or "as-is with contents" - your choice:</strong></p>
+
+                <ul>
+                    <li><strong>Furniture & Appliances:</strong> Don't want to move it? Leave it. We'll handle disposal.</li>
+                    <li><strong>Junk & Debris:</strong> Basement full of stuff? Garage full of junk? We clean it out.</li>
+                    <li><strong>Yard Waste:</strong> Overgrown yard, fallen trees, garbage piles - we handle it.</li>
+                    <li><strong>Hazardous Materials:</strong> Old paint, chemicals, asbestos - we hire specialists to remove it properly.</li>
+                </ul>
+
+                <p>
+                    You pack what you want, leave the rest. We take care of everything else.
+                </p>
+            </div>
+
+            <div class="cta-box">
+                <h2>Get Your As-Is Cash Offer</h2>
+                <p>Stop stressing about repairs. Get a fair cash offer for your Winnipeg property in any condition.</p>
+                <a href="contact.html" class="btn-primary">Request Free Consultation</a>
+            </div>
+
+            <div style="background: rgba(16,185,129,0.1); border: 1px solid var(--green); border-radius: 12px; padding: 2rem; text-align: left;">
+                <h3 style="color: var(--green); margin-bottom: 1rem;">✅ Why Winnipeg Homeowners Choose Us</h3>
+                <ul style="color: var(--silver); line-height: 2; padding-left: 1.5rem;">
+                    <li><strong>No repair costs:</strong> We buy in any condition, as-is</li>
+                    <li><strong>No cleaning required:</strong> Leave what you don't want</li>
+                    <li><strong>No realtor fees:</strong> Save 5-6% commission</li>
+                    <li><strong>No showings:</strong> We make one visit and one offer</li>
+                    <li><strong>Fast closing:</strong> 7-14 days, all cash, no financing</li>
+                    <li><strong>Honest offers:</strong> We explain exactly how we calculated our price</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

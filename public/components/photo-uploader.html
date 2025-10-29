@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<!--
+  PHOTO UPLOADER COMPONENT
+  Reusable upload component for profile pictures, property photos, and documents
+
+  Usage:
+  <script src="/components/photo-uploader.html"></script>
+  PhotoUploader.init('#upload-container', 'PROFILE_PICTURE', callback);
+-->
+
+<style>
+  .photo-uploader {
+    border: 2px dashed #CBD5E1;
+    border-radius: 12px;
+    padding: 40px 20px;
+    text-align: center;
+    background: #F8FAFC;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .photo-uploader:hover {
+    border-color: #F59E0B;
+    background: #FFFBEB;
+  }
+
+  .photo-uploader.dragging {
+    border-color: #F59E0B;
+    background: #FEF3C7;
+    transform: scale(1.02);
+  }
+
+  .photo-uploader.uploading {
+    pointer-events: none;
+    opacity: 0.6;
+  }
+
+  .photo-uploader-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+  }
+
+  .photo-uploader-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1E293B;
+    margin-bottom: 8px;
+  }
+
+  .photo-uploader-subtitle {
+    font-size: 14px;
+    color: #64748B;
+    margin-bottom: 20px;
+  }
+
+  .photo-uploader-button {
+    background: linear-gradient(135deg, #F59E0B 0%, #F97316 100%);
+    color: white;
+    border: none;
+    padding: 12px 32px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.2s ease;
+  }
+
+  .photo-uploader-button:hover {
+    transform: translateY(-2px);
+  }
+
+  .photo-uploader-formats {
+    font-size: 12px;
+    color: #94A3B8;
+    margin-top: 12px;
+  }
+
+  .photo-uploader-preview {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+  }
+
+  .photo-preview {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  .photo-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .photo-preview-remove {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: rgba(239, 68, 68, 0.9);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+  }
+
+  .photo-preview-remove:hover {
+    background: #DC2626;
+  }
+
+  .photo-uploader-progress {
+    margin-top: 20px;
+  }
+
+  .progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #E2E8F0;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #F59E0B 0%, #F97316 100%);
+    transition: width 0.3s ease;
+  }
+
+  .progress-text {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #64748B;
+    font-weight: 500;
+  }
+
+  .photo-uploader-error {
+    margin-top: 16px;
+    padding: 12px;
+    background: #FEE2E2;
+    color: #DC2626;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+
+  .photo-uploader-success {
+    margin-top: 16px;
+    padding: 12px;
+    background: #D1FAE5;
+    color: #059669;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+</style>
+
+<script>
+/**
+ * PHOTO UPLOADER CLASS
+ */
+class PhotoUploader {
+
+  constructor(container, category, options = {}) {
+    this.container = typeof container === 'string' ? document.querySelector(container) : container;
+    this.category = category; // 'PROFILE_PICTURE', 'PROPERTY_PHOTO', 'DOCUMENT'
+    this.options = {
+      multiple: options.multiple || false,
+      maxFiles: options.maxFiles || (category === 'PROPERTY_PHOTO' ? 10 : 1),
+      onUploadComplete: options.onUploadComplete || (() => {}),
+      onUploadError: options.onUploadError || (() => {}),
+      showPreview: options.showPreview !== false,
+      acceptedFormats: options.acceptedFormats || this.getAcceptedFormats(category)
+    };
+
+    this.uploadedFiles = [];
+    this.render();
+    this.attachEvents();
+  }
+
+  /**
+   * GET ACCEPTED FILE FORMATS BY CATEGORY
+   */
+  getAcceptedFormats(category) {
+    const formats = {
+      PROFILE_PICTURE: 'image/jpeg,image/jpg,image/png,image/webp',
+      PROPERTY_PHOTO: 'image/jpeg,image/jpg,image/png,image/webp',
+      DOCUMENT: 'image/jpeg,image/jpg,image/png,application/pdf'
+    };
+    return formats[category] || 'image/*';
+  }
+
+  /**
+   * GET UPLOAD ICON
+   */
+  getIcon() {
+    const icons = {
+      PROFILE_PICTURE: '👤',
+      PROPERTY_PHOTO: '🏠',
+      DOCUMENT: '📄'
+    };
+    return icons[this.category] || '📤';
+  }
+
+  /**
+   * GET UPLOAD TEXT
+   */
+  getText() {
+    const text = {
+      PROFILE_PICTURE: {
+        title: 'Upload Profile Picture',
+        subtitle: 'Click to upload or drag and drop',
+        formats: 'JPG, PNG, or WEBP (max 5MB)'
+      },
+      PROPERTY_PHOTO: {
+        title: 'Upload Property Photos',
+        subtitle: 'Click to upload or drag and drop up to 10 photos',
+        formats: 'JPG, PNG, or WEBP (max 10MB each)'
+      },
+      DOCUMENT: {
+        title: 'Upload Document',
+        subtitle: 'Click to upload or drag and drop',
+        formats: 'JPG, PNG, or PDF (max 20MB)'
+      }
+    };
+    return text[this.category] || text.PROFILE_PICTURE;
+  }
+
+  /**
+   * RENDER UPLOADER
+   */
+  render() {
+    const text = this.getText();
+
+    this.container.innerHTML = `
+      <div class="photo-uploader" id="upload-zone">
+        <div class="photo-uploader-icon">${this.getIcon()}</div>
+        <div class="photo-uploader-title">${text.title}</div>
+        <div class="photo-uploader-subtitle">${text.subtitle}</div>
+        <button class="photo-uploader-button" type="button">Choose File${this.options.multiple ? 's' : ''}</button>
+        <div class="photo-uploader-formats">${text.formats}</div>
+
+        <input
+          type="file"
+          id="file-input"
+          accept="${this.options.acceptedFormats}"
+          ${this.options.multiple ? 'multiple' : ''}
+          style="display: none;"
+        />
+
+        <div class="photo-uploader-progress" id="upload-progress" style="display: none;">
+          <div class="progress-bar">
+            <div class="progress-bar-fill" id="progress-fill" style="width: 0%;"></div>
+          </div>
+          <div class="progress-text" id="progress-text">Uploading...</div>
+        </div>
+
+        <div class="photo-uploader-error" id="upload-error" style="display: none;"></div>
+        <div class="photo-uploader-success" id="upload-success" style="display: none;"></div>
+
+        ${this.options.showPreview ? '<div class="photo-uploader-preview" id="preview-container"></div>' : ''}
+      </div>
+    `;
+  }
+
+  /**
+   * ATTACH EVENTS
+   */
+  attachEvents() {
+    const uploadZone = this.container.querySelector('#upload-zone');
+    const fileInput = this.container.querySelector('#file-input');
+    const button = this.container.querySelector('.photo-uploader-button');
+
+    // Click to upload
+    button.addEventListener('click', () => fileInput.click());
+    uploadZone.addEventListener('click', (e) => {
+      if (e.target === uploadZone || e.target.closest('.photo-uploader-icon, .photo-uploader-title, .photo-uploader-subtitle')) {
+        fileInput.click();
+      }
+    });
+
+    // File selected
+    fileInput.addEventListener('change', (e) => {
+      const files = Array.from(e.target.files);
+      this.handleFiles(files);
+    });
+
+    // Drag and drop
+    uploadZone.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      uploadZone.classList.add('dragging');
+    });
+
+    uploadZone.addEventListener('dragleave', () => {
+      uploadZone.classList.remove('dragging');
+    });
+
+    uploadZone.addEventListener('drop', (e) => {
+      e.preventDefault();
+      uploadZone.classList.remove('dragging');
+      const files = Array.from(e.dataTransfer.files);
+      this.handleFiles(files);
+    });
+  }
+
+  /**
+   * HANDLE FILES
+   */
+  async handleFiles(files) {
+    // Validate file count
+    if (files.length > this.options.maxFiles) {
+      this.showError(`Maximum ${this.options.maxFiles} file${this.options.maxFiles > 1 ? 's' : ''} allowed`);
+      return;
+    }
+
+    // Validate file types
+    const acceptedTypes = this.options.acceptedFormats.split(',').map(f => f.trim());
+    for (const file of files) {
+      if (!acceptedTypes.some(type => {
+        if (type.endsWith('/*')) {
+          return file.type.startsWith(type.replace('/*', ''));
+        }
+        return file.type === type;
+      })) {
+        this.showError(`Invalid file type: ${file.name}`);
+        return;
+      }
+    }
+
+    // Upload files
+    this.hideError();
+    this.hideSuccess();
+
+    for (let i = 0; i < files.length; i++) {
+      await this.uploadFile(files[i], i, files.length);
+    }
+
+    this.showSuccess(`${files.length} file${files.length > 1 ? 's' : ''} uploaded successfully!`);
+  }
+
+  /**
+   * UPLOAD FILE
+   */
+  async uploadFile(file, index, total) {
+    const uploadZone = this.container.querySelector('#upload-zone');
+    uploadZone.classList.add('uploading');
+
+    this.showProgress();
+    this.updateProgress(0, `Uploading ${index + 1} of ${total}...`);
+
+    const formData = new FormData();
+    formData.append('photo', file);
+    formData.append('category', this.category);
+
+    try {
+      const endpoint = this.category === 'DOCUMENT'
+        ? '/api/upload/document'
+        : this.category === 'PROPERTY_PHOTO'
+        ? '/api/upload/property-photo'
+        : '/api/upload/profile-picture';
+
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${localStorage.getItem('authToken')}`
+        },
+        body: formData
+      });
+
+      if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.error || 'Upload failed');
+      }
+
+      const result = await response.json();
+      this.uploadedFiles.push(result);
+
+      this.updateProgress(100, 'Upload complete!');
+
+      // Show preview
+      if (this.options.showPreview) {
+        this.addPreview(result.url || result.fullSize?.url, result.publicId);
+      }
+
+      // Callback
+      this.options.onUploadComplete(result);
+
+    } catch (error) {
+      console.error('Upload error:', error);
+      this.showError(error.message);
+      this.options.onUploadError(error);
+    } finally {
+      uploadZone.classList.remove('uploading');
+      setTimeout(() => this.hideProgress(), 2000);
+    }
+  }
+
+  /**
+   * ADD PREVIEW
+   */
+  addPreview(url, publicId) {
+    const container = this.container.querySelector('#preview-container');
+    if (!container) return;
+
+    const preview = document.createElement('div');
+    preview.className = 'photo-preview';
+    preview.innerHTML = `
+      <img src="${url}" alt="Preview" />
+      <button class="photo-preview-remove" data-public-id="${publicId}">×</button>
+    `;
+
+    preview.querySelector('.photo-preview-remove').addEventListener('click', () => {
+      this.removePreview(publicId, preview);
+    });
+
+    container.appendChild(preview);
+  }
+
+  /**
+   * REMOVE PREVIEW
+   */
+  async removePreview(publicId, element) {
+    try {
+      await fetch(`/api/upload/${encodeURIComponent(publicId)}`, {
+        method: 'DELETE',
+        headers: {
+          'Authorization': `Bearer ${localStorage.getItem('authToken')}`
+        }
+      });
+
+      element.remove();
+      this.uploadedFiles = this.uploadedFiles.filter(f => f.publicId !== publicId);
+
+    } catch (error) {
+      console.error('Delete error:', error);
+      this.showError('Failed to delete file');
+    }
+  }
+
+  /**
+   * SHOW/HIDE PROGRESS
+   */
+  showProgress() {
+    const progress = this.container.querySelector('#upload-progress');
+    if (progress) progress.style.display = 'block';
+  }
+
+  hideProgress() {
+    const progress = this.container.querySelector('#upload-progress');
+    if (progress) progress.style.display = 'none';
+  }
+
+  updateProgress(percent, text) {
+    const fill = this.container.querySelector('#progress-fill');
+    const progressText = this.container.querySelector('#progress-text');
+
+    if (fill) fill.style.width = `${percent}%`;
+    if (progressText) progressText.textContent = text;
+  }
+
+  /**
+   * SHOW/HIDE ERROR
+   */
+  showError(message) {
+    const error = this.container.querySelector('#upload-error');
+    if (error) {
+      error.textContent = message;
+      error.style.display = 'block';
+    }
+  }
+
+  hideError() {
+    const error = this.container.querySelector('#upload-error');
+    if (error) error.style.display = 'none';
+  }
+
+  /**
+   * SHOW/HIDE SUCCESS
+   */
+  showSuccess(message) {
+    const success = this.container.querySelector('#upload-success');
+    if (success) {
+      success.textContent = message;
+      success.style.display = 'block';
+      setTimeout(() => this.hideSuccess(), 5000);
+    }
+  }
+
+  hideSuccess() {
+    const success = this.container.querySelector('#upload-success');
+    if (success) success.style.display = 'none';
+  }
+
+  /**
+   * GET UPLOADED FILES
+   */
+  getUploadedFiles() {
+    return this.uploadedFiles;
+  }
+
+  /**
+   * RESET
+   */
+  reset() {
+    this.uploadedFiles = [];
+    const container = this.container.querySelector('#preview-container');
+    if (container) container.innerHTML = '';
+    this.hideError();
+    this.hideSuccess();
+    this.hideProgress();
+  }
+
+  /**
+   * STATIC INIT METHOD
+   */
+  static init(container, category, options = {}) {
+    return new PhotoUploader(container, category, options);
+  }
+}
+
+// Export globally
+window.PhotoUploader = PhotoUploader;
+</script>

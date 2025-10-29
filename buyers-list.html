@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Our Buyer's List | Home Liberation Winnipeg</title>
+    <meta name="description" content="Get first access to off-market Winnipeg properties. Join our exclusive buyer's list for cash buyers and investors.">
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23f97316'/%3E%3Cstop offset='100%25' style='stop-color:%233b82f6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='20' fill='url(%23g)'/%3E%3Cpath d='M50 25 L70 42 L62 42 L62 70 L38 70 L38 42 L30 42 Z' fill='white'/%3E%3Cpath d='M35 52 L65 52 M50 37 L50 67' stroke='white' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --midnight: #0a0f1c;
+            --slate: #1e293b;
+            --orange: #f97316;
+            --blue: #3b82f6;
+            --green: #10b981;
+            --white: #ffffff;
+            --silver: #cbd5e1;
+            --gray: #64748b;
+            --gold: #fbbf24;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--midnight);
+            color: var(--white);
+            line-height: 1.6;
+        }
+
+        .bg-gradient {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background: radial-gradient(ellipse at top, rgba(249,115,22,0.1), transparent 50%),
+                        linear-gradient(180deg, var(--midnight), var(--slate));
+        }
+
+        header {
+            background: rgba(10,15,28,0.98);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(249,115,22,0.2);
+            padding: 1.2rem 0;
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+            color: var(--white);
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--orange), var(--blue));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-icon svg {
+            width: 28px;
+            height: 28px;
+            fill: white;
+        }
+
+        .logo-text {
+            font-size: 1.3rem;
+            font-weight: 800;
+        }
+
+        .logo-text span {
+            background: linear-gradient(135deg, var(--orange), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero {
+            padding: 6rem 2rem 4rem;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -2px;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, var(--orange), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: var(--silver);
+            margin-bottom: 3rem;
+            line-height: 1.7;
+        }
+
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .benefit {
+            text-align: left;
+            padding: 1.5rem;
+            background: rgba(30,41,59,0.5);
+            border: 1px solid rgba(249,115,22,0.2);
+            border-radius: 12px;
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .benefit h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .benefit p {
+            color: var(--silver);
+            font-size: 0.95rem;
+        }
+
+        .form-card {
+            background: rgba(30,41,59,0.6);
+            border: 2px solid var(--orange);
+            border-radius: 16px;
+            padding: 3rem;
+            margin: 3rem 0;
+        }
+
+        .form-card h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--orange);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--white);
+        }
+
+        input, select {
+            width: 100%;
+            padding: 1rem 1.2rem;
+            background: rgba(15,23,42,0.8);
+            border: 1px solid rgba(249,115,22,0.3);
+            border-radius: 8px;
+            color: var(--white);
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--orange);
+            box-shadow: 0 0 0 3px rgba(249,115,22,0.2);
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(135deg, var(--orange), #ea580c);
+            color: white;
+            padding: 1.3rem;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 10px 40px rgba(249,115,22,0.4);
+            text-transform: uppercase;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 50px rgba(249,115,22,0.6);
+        }
+
+        .privacy {
+            text-align: center;
+            color: var(--gray);
+            font-size: 0.85rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .benefits { grid-template-columns: 1fr; }
+            .form-card { padding: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 3L4 9v12h5v-7h6v7h5V9l-8-6z"/>
+                        <line x1="7" y1="12" x2="17" y2="12" stroke="white" stroke-width="2"/>
+                        <line x1="12" y1="7" x2="12" y2="17" stroke="white" stroke-width="2"/>
+                    </svg>
+                </div>
+                <div class="logo-text">Home <span>Liberation</span></div>
+            </a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Get <span class="highlight">First Access</span> to Winnipeg Deals</h1>
+
+            <p class="subtitle">
+                Join our exclusive buyer's list and receive off-market properties before they hit the market.
+                Perfect for cash buyers, investors, and house flippers.
+            </p>
+
+            <div class="benefits">
+                <div class="benefit">
+                    <div class="benefit-icon">🏡</div>
+                    <h3>Off-Market Deals</h3>
+                    <p>Properties you won't find on MLS or Realtor.ca</p>
+                </div>
+
+                <div class="benefit">
+                    <div class="benefit-icon">⚡</div>
+                    <h3>First Access</h3>
+                    <p>Get notified before anyone else</p>
+                </div>
+
+                <div class="benefit">
+                    <div class="benefit-icon">💰</div>
+                    <h3>Below Market Pricing</h3>
+                    <p>Deeply discounted properties with profit potential</p>
+                </div>
+
+                <div class="benefit">
+                    <div class="benefit-icon">🎯</div>
+                    <h3>Match Your Criteria</h3>
+                    <p>Only get deals that fit your investment strategy</p>
+                </div>
+            </div>
+
+            <div class="form-card">
+                <h2>Join the Buyer's List</h2>
+                <p style="color: var(--silver); margin-bottom: 2rem; text-align: left;">
+                    Fill out the form below to start receiving exclusive Winnipeg property deals
+                </p>
+
+                <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <div class="form-group">
+                        <label>Full Name *</label>
+                        <input type="text" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email Address *</label>
+                        <input type="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Phone Number *</label>
+                        <input type="tel" name="phone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>I am a: *</label>
+                        <select name="buyer_type" required>
+                            <option value="">Select...</option>
+                            <option value="cash-buyer">Cash Buyer</option>
+                            <option value="investor">Real Estate Investor</option>
+                            <option value="flipper">House Flipper</option>
+                            <option value="landlord">Landlord/Rental Investor</option>
+                            <option value="wholesaler">Wholesaler</option>
+                            <option value="agent">Real Estate Agent</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Property Types I'm Interested In:</label>
+                        <select name="property_interest">
+                            <option value="">Select...</option>
+                            <option value="single-family">Single-Family Homes</option>
+                            <option value="multi-family">Multi-Family (2-4 units)</option>
+                            <option value="apartments">Apartment Buildings (5+ units)</option>
+                            <option value="commercial">Commercial Properties</option>
+                            <option value="land">Land/Lots</option>
+                            <option value="all">All Property Types</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Budget Range:</label>
+                        <select name="budget">
+                            <option value="">Select...</option>
+                            <option value="under-100k">Under $100K</option>
+                            <option value="100-200k">$100K - $200K</option>
+                            <option value="200-350k">$200K - $350K</option>
+                            <option value="350-500k">$350K - $500K</option>
+                            <option value="over-500k">Over $500K</option>
+                            <option value="flexible">Flexible</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Preferred Winnipeg Areas:</label>
+                        <input type="text" name="areas" placeholder="e.g., St. Boniface, Fort Garry, North End">
+                    </div>
+
+                    <input type="hidden" name="_subject" value="New Buyer List Signup">
+
+                    <button type="submit" class="submit-btn">Join Buyer's List</button>
+                </form>
+
+                <p class="privacy">
+                    Your information is confidential. We'll only email you about properties that match your criteria.
+                    Unsubscribe anytime.
+                </p>
+            </div>
+
+            <div style="background: rgba(16,185,129,0.1); border: 1px solid var(--green); border-radius: 12px; padding: 2rem; text-align: left;">
+                <h3 style="color: var(--green); margin-bottom: 1rem;">What You'll Receive:</h3>
+                <ul style="color: var(--silver); line-height: 2; padding-left: 1.5rem;">
+                    <li>Email alerts for new off-market properties</li>
+                    <li>Property photos, address, and key details</li>
+                    <li>Our asking price and estimated ARV</li>
+                    <li>Repair estimates when available</li>
+                    <li>First come, first served - deals move fast</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
