@@ -11,35 +11,55 @@
     "lint": "eslint .",
     "deploy": "vercel --prod"
   },
-  "keywords": ["real-estate", "wholesale", "winnipeg", "ai-matching", "automation"],
+  "keywords": [
+    "real-estate",
+    "wholesale",
+    "winnipeg",
+    "ai-matching",
+    "automation"
+  ],
   "author": "Velocity Real Estate",
   "license": "PROPRIETARY",
   "dependencies": {
-    "express": "^4.18.2",
-    "body-parser": "^1.20.2",
+    "@sendgrid/mail": "^7.7.0",
+    "axios": "^1.6.2",
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^3.0.3",
+    "body-parser": "^1.20.3",
+    "cloudinary": "^1.41.0",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
-    "jsonwebtoken": "^9.0.2",
-    "bcrypt": "^5.1.1",
-    "cloudinary": "^1.41.0",
-    "multer": "^1.4.5-lts.1",
-    "puppeteer": "^21.5.2",
-    "axios": "^1.6.2",
-    "twilio": "^4.19.0",
-    "@sendgrid/mail": "^7.7.0",
-    "google-spreadsheet": "^4.1.1",
+    "express": "^4.21.2",
     "google-auth-library": "^9.4.1",
+    "google-spreadsheet": "^4.1.1",
     "googleapis": "^128.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.1",
+    "node-cron": "^3.0.3",
+    "nodemailer": "^6.10.1",
+    "puppeteer": "^21.5.2",
     "stripe": "^14.8.0",
-    "node-cron": "^3.0.3"
+    "twilio": "^4.19.0"
   },
   "devDependencies": {
-    "nodemon": "^3.0.2",
-    "@playwright/test": "^1.40.1",
-    "eslint": "^8.56.0"
+    "@playwright/test": "^1.56.1",
+    "eslint": "^8.56.0",
+    "nodemon": "^3.0.2"
   },
   "engines": {
     "node": ">=18.0.0",
     "npm": ">=9.0.0"
-  }
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/homeliberationapp/homeliberation-winnipeg.git"
+  },
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/homeliberationapp/homeliberation-winnipeg/issues"
+  },
+  "homepage": "https://github.com/homeliberationapp/homeliberation-winnipeg#readme"
 }
