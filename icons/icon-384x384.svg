@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="384" height="384" viewBox="0 0 384 384" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f97316;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background with gradient -->
+  <rect width="384" height="384" rx="76.80000000000001" fill="url(#grad)"/>
+
+  <!-- House icon -->
+  <path d="M192 96 L268.79999999999995 161.28 L238.07999999999998 161.28 L238.07999999999998 268.79999999999995 L145.92000000000002 268.79999999999995 L145.92000000000002 161.28 L115.19999999999999 161.28 Z" fill="white"/>
+
+  <!-- Liberation cross symbol -->
+  <line x1="134.39999999999998" y1="199.68" x2="249.60000000000002" y2="199.68" stroke="white" stroke-width="15.36" stroke-linecap="round"/>
+  <line x1="192" y1="142.07999999999998" x2="192" y2="257.28000000000003" stroke="white" stroke-width="15.36" stroke-linecap="round"/>
+</svg>
