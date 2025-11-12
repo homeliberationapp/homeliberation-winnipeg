@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Properties | Home Liberation Winnipeg</title>
+    <link rel="stylesheet" href="styles/modern-2025.css">
+
+    <!-- Google Analytics -->
+    
+    
+
+<style>
+/* PSYCHOLOGICAL TRIGGER COLOR SYSTEM - High Converting */
+:root {
+    --urgent-red: #DC2626;
+    --action-orange: #EA580C;
+    --warning-yellow: #F59E0B;
+    --success-green: #059669;
+    --trust-blue: #2563EB;
+    --dark-bg: #111827;
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 0.75rem;
+    --space-lg: 1rem;
+    --space-xl: 1.5rem;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: #111827;
+    line-height: 1.5;
+}
+
+.urgency-banner {
+    background: linear-gradient(135deg, var(--urgent-red), #991B1B);
+    color: white;
+    padding: var(--space-md) var(--space-lg);
+    text-align: center;
+    font-weight: 700;
+    font-size: 1rem;
+    animation: pulse 2s infinite;
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.4);
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.9; }
+}
+
+.cta-primary {
+    background: linear-gradient(135deg, var(--action-orange), var(--urgent-red));
+    color: white !important;
+    padding: 1rem 2.5rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1.125rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(234, 88, 12, 0.5);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.cta-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(234, 88, 12, 0.7);
+    background: linear-gradient(135deg, #FB923C, var(--action-orange));
+}
+
+.scarcity-badge {
+    background: var(--warning-yellow);
+    color: #111827;
+    padding: var(--space-sm) var(--space-lg);
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.875rem;
+    display: inline-block;
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+}
+
+.success-text {
+    color: var(--success-green);
+    font-weight: 700;
+}
+
+section {
+    padding: var(--space-xl) var(--space-lg);
+}
+
+h1 { font-size: 2.25rem; line-height: 1.2; margin-bottom: var(--space-lg); }
+h2 { font-size: 1.75rem; line-height: 1.2; margin-bottom: var(--space-md); }
+h3 { font-size: 1.25rem; line-height: 1.3; margin-bottom: var(--space-sm); }
+p { margin-bottom: var(--space-md); }
+</style>
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PQ7WM9ZYKH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-PQ7WM9ZYKH', {
+            'page_title': document.title,
+            'page_path': window.location.pathname
+        });
+
+        // Track form submissions
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('form').forEach(function(form) {
+                form.addEventListener('submit', function(e) {
+                    gtag('event', 'form_submit', {
+                        'form_id': this.id || 'contact_form',
+                        'page_url': window.location.href
+                    });
+                });
+            });
+
+            // Track phone clicks
+            document.querySelectorAll('a[href^="tel:"]').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    gtag('event', 'phone_call', {
+                        'phone_number': this.href.replace('tel:', '')
+                    });
+                });
+            });
+
+            // Track CTA clicks
+            document.querySelectorAll('.cta-primary, .cta-secondary, a[href*="contact"]').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    gtag('event', 'cta_click', {
+                        'button_text': this.textContent.trim(),
+                        'button_url': this.href || 'button'
+                    });
+                });
+            });
+        });
+    </script>
+
+</head>
+<body>
+
+    <!-- Urgency Banner -->
+    
+
+<section class="hero" style="
+    background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)),
+                      url('https://source.unsplash.com/1920x1080/?winnipeg,houses,properties');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 550px;
+    display: flex;
+    align-items: center;
+    padding: 2rem 1rem;
+">
+    <div style="max-width: 1200px; margin: 0 auto; width: 100%;">
+        <h1 style="color: white; font-size: 2.5rem; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
+            Winnipeg Wholesale Investment Properties
+        </h1>
+        <p style="color: #E5E7EB; font-size: 1.25rem; margin-bottom: 2rem; max-width: 600px;">
+            Off-market deals  buyers and real estate investors. Get first access to wholesale properties below market value.
+        </p>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="buyers-list.html" class="cta-primary">
+                Join Buyers List →
+            </a>
+            <a href="tel:" style="
+                background: rgba(255,255,255,0.15);
+                backdrop-filter: blur(10px);
+                color: white;
+                padding: 1rem 2rem;
+                border-radius: 8px;
+                font-weight: 700;
+                text-decoration: none;
+                border: 2px solid white;
+                transition: all 0.3s;
+            " onmouseover="this.style.background='rgba(255,255,255,0.25)'" onmouseout="this.style.background='rgba(255,255,255,0.15)'">
+                 Call 
+            </a>
+        </div>
+        <div style="display: flex; gap: 1.2rem; margin-top: 2rem; flex-wrap: wrap;">
+            <div style="color: white;">
+                <div style="font-size: 2rem; color: #10B981;">✓</div>
+                <strong>Below Market Value</strong>
+            </div>
+            <div style="color: white;">
+                <div style="font-size: 2rem; color: #10B981;">✓</div>
+                <strong>Off-Market Deals</strong>
+            </div>
+            <div style="color: white;">
+                <div style="font-size: 2rem; color: #10B981;">✓</div>
+                <strong>VIP Access</strong>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Current Inventory</h2>
+            <p style="text-align: center; max-width: 600px; margin: 0 auto 2rem;">
+                Wholesale deals in Winnipeg  buyers and investors. Updated weekly.
+            </p>
+
+            <div class="grid">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon"></div>
+                        <div>
+                            <h3 class="card-title">Coming Soon</h3>
+                            <span class="badge">Under Construction</span>
+                        </div>
+                    </div>
+                    <p class="card-description">
+                        We're currently building our inventory system. Check back soon for wholesale property listings!
+                    </p>
+                    <a href="buyers.html" class="btn-primary" style="margin-top: var(--space-6);">
+                        Join Buyers List →
+                    </a>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">📧</div>
+                        <div>
+                            <h3 class="card-title">Get Email Alerts</h3>
+                            <span class="badge">Free Service</span>
+                        </div>
+                    </div>
+                    <p class="card-description">
+                        Be the first to know when new wholesale deals become available. Join our VIP buyers list.
+                    </p>
+                    <a href="buyers-list.html" class="btn-primary" style="margin-top: var(--space-6);">
+                        Subscribe Now →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Scarcity Section -->
+<section style="background: linear-gradient(135deg, #FEF3C7, #FDE68A); padding: 1.5rem; text-align: center;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <span class="scarcity-badge"> </span>
+        <p style="font-weight: 700; margin-top: 1rem; font-size: 1.125rem; color: #111827;">
+            We're only taking on 15 more properties this quarter. Competition  buyers is HIGH right now.
+        </p>
+        <a href="buyers-list.html" class="cta-primary" style="margin-top: 1rem;">
+            Join VIP Buyers List →
+        </a>
+    </div>
+</section>
+
+<!-- Complete Contact Footer -->
+<footer style="background: #111827; color: white; padding: 2rem 1rem 1.5rem;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 1rem;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.2rem; margin-bottom: 2rem;">
+            <!-- Company -->
+            <div>
+                <h3 style="color: white; margin-bottom: 1rem; font-size: 1.25rem;">Home Liberation Winnipeg</h3>
+                <p style="color: #9CA3AF; line-height: 1.6;">
+                    Helping Winnipeg homeowners sell fast  . No repairs, no fees, no hassles.
+                </p>
+                <div style="margin-top: 1rem;">
+                    <span style="background: #10B981; color: white; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.875rem; font-weight: 600;"> Rating</span>
+                </div>
+            </div>
+
+            <!-- Contact -->
+            <div>
+                <h3 style="color: white; margin-bottom: 1rem; font-size: 1.25rem;">Schedule Consultation</h3>
+                <p style="margin-bottom: 0.5rem;">
+                    <a href="tel:" style="color: #F59E0B; text-decoration: none; font-weight: 700; font-size: 1.125rem; display: inline-block;">
+                         
+                    </a>
+                </p>
+                <p style="margin-bottom: 0.5rem;">
+                    <a href="mailto:hello@homeliberationwinnipeg.com" style="color: #10B981; text-decoration: none; font-weight: 600;">
+                        📧 hello@homeliberationwinnipeg.com
+                    </a>
+                </p>
+                <p style="color: #9CA3AF; margin-top: 1rem;">
+                    📍 Serving Winnipeg & Surrounding Areas<br>Manitoba, Canada
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h3 style="color: white; margin-bottom: 1rem; font-size: 1.25rem;">Quick Links</h3>
+                <p style="margin-bottom: 0.5rem;"><a href="foreclosure.html" style="color: #9CA3AF; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#F59E0B'" onmouseout="this.style.color='#9CA3AF'">Foreclosure Help</a></p>
+                <p style="margin-bottom: 0.5rem;"><a href="repairs.html" style="color: #9CA3AF; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#F59E0B'" onmouseout="this.style.color='#9CA3AF'">Sell As-Is</a></p>
+                <p style="margin-bottom: 0.5rem;"><a href="quick-sale.html" style="color: #9CA3AF; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#F59E0B'" onmouseout="this.style.color='#9CA3AF'">Fast Cash Sale</a></p>
+                <p style="margin-bottom: 0.5rem;"><a href="inherited.html" style="color: #9CA3AF; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#F59E0B'" onmouseout="this.style.color='#9CA3AF'">Inherited Property</a></p>
+                <p style="margin-bottom: 0.5rem;"><a href="faq.html" style="color: #9CA3AF; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#F59E0B'" onmouseout="this.style.color='#9CA3AF'">FAQ</a></p>
+            </div>
+
+            <!-- Social & Trust -->
+            <div>
+                <h3 style="color: white; margin-bottom: 1rem; font-size: 1.25rem;">Follow Us</h3>
+                <div style="display: flex; gap: 0.75rem; margin-bottom: 1.5rem;">
+                    <a href="https://facebook.com/homeliberationwinnipeg" target="_blank" style="width: 44px; height: 44px; background: #2563EB; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; font-weight: 700; font-size: 1.25rem; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">f</a>
+                    <a href="https://instagram.com/homeliberationwpg" target="_blank" style="width: 44px; height: 44px; background: linear-gradient(45deg, #F59E0B, #DC2626, #8B5CF6); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; font-size: 1.25rem; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">📷</a>
+                    <a href="https://linkedin.com/company/home-liberation-winnipeg" target="_blank" style="width: 44px; height: 44px; background: #2563EB; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; font-weight: 700; font-size: 1.125rem; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">in</a>
+                </div>
+                <p style="color: #9CA3AF; font-size: 0.875rem; line-height: 1.6;">
+                     <br>
+                      & Insured<br>
+                     247 Properties Purchased
+                </p>
+            </div>
+        </div>
+
+        <div style="border-top: 1px solid #374151; padding-top: 1.5rem; text-align: center; color: #6B7280; font-size: 0.875rem;">
+            <p style="margin-bottom: 0.5rem;">&copy; 2025 Home Liberation Winnipeg. All rights reserved.</p>
+            <p>
+                <a href="privacy.html" style="color: #6B7280; text-decoration: none;" onmouseover="this.style.color='#F59E0B'" onmouseout="this.style.color='#6B7280'">Privacy Policy</a> |
+                <a href="terms.html" style="color: #6B7280; text-decoration: none;" onmouseover="this.style.color='#F59E0B'" onmouseout="this.style.color='#6B7280'">Terms of Service</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

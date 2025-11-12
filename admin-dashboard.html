@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Home Liberation Winnipeg</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PQ7WM9ZYKH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-PQ7WM9ZYKH');
+    </script>
+
+    <!-- Chart.js for Analytics -->
+    <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary: #10b981;
+            --background: #f8fafc;
+            --surface: #ffffff;
+            --text-primary: #1e293b;
+            --text-secondary: #94a3b8;
+            --border: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--background);
+            color: var(--text-primary);
+            min-height: 100vh;
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 260px;
+            background: var(--surface);
+            border-right: 1px solid var(--border);
+            padding: 2rem 1.5rem;
+            z-index: 1000;
+            overflow-y: auto;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-icon svg {
+            width: 28px;
+            height: 28px;
+            fill: white;
+        }
+
+        .logo-text {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--text-primary);
+        }
+
+        .nav-menu {
+            list-style: none;
+        }
+
+        .nav-item {
+            margin-bottom: 0.5rem;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 0.9rem 1rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary);
+        }
+
+        .nav-icon {
+            font-size: 1.3rem;
+        }
+
+        .user-profile {
+            margin-top: auto;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .user-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: white;
+        }
+
+        .user-details h4 {
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            margin-bottom: 0.2rem;
+        }
+
+        .user-details p {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .logout-btn {
+            width: 100%;
+            padding: 0.7rem;
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid #ef4444;
+            color: #ef4444;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .logout-btn:hover {
+            background: #ef4444;
+            color: white;
+        }
+
+        /* MAIN CONTENT */
+        .main-content {
+            margin-left: 260px;
+            padding: 2rem;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2.5rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--text-primary);
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* STATS GRID */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .stat-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .stat-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .stat-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-change {
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .stat-change.positive {
+            color: var(--secondary);
+        }
+
+        .stat-change.negative {
+            color: #ef4444;
+        }
+
+        /* CONTENT GRID */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .card-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .btn-small {
+            padding: 0.5rem 1rem;
+            background: rgba(37, 99, 235, 0.1);
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            border-radius: 6px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .btn-small:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* LEADS TABLE */
+        .table-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            text-align: left;
+            padding: 0.8rem;
+            background: var(--background);
+            color: var(--text-secondary);
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        td {
+            padding: 1rem 0.8rem;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        tr:hover td {
+            background: var(--background);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.3rem 0.7rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .badge-high {
+            background: rgba(16, 185, 129, 0.2);
+            color: var(--secondary);
+        }
+
+        .badge-medium {
+            background: rgba(251, 191, 36, 0.2);
+            color: #fbbf24;
+        }
+
+        .badge-low {
+            background: rgba(239, 68, 68, 0.2);
+            color: #ef4444;
+        }
+
+        /* CHARTS */
+        .chart-container {
+            position: relative;
+            height: 300px;
+        }
+
+        /* COMPARABLES */
+        .comparable-list {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .comparable-item {
+            padding: 1rem;
+            background: var(--background);
+            border-radius: 8px;
+            margin-bottom: 0.8rem;
+            border: 1px solid var(--border);
+        }
+
+        .comparable-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .comparable-address {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .comparable-price {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .comparable-details {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* Google Maps Integration */
+        .dashboard-section {
+            margin-top: 2rem;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-header h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .btn-secondary {
+            padding: 0.5rem 1rem;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .btn-secondary:hover {
+            background: var(--background);
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        #map {
+            width: 100%;
+            height: 600px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        #analysisPanel {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1280px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="logo">
+            <div class="logo-icon">
+                <svg viewBox="0 0 24 24" fill="white">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+                </svg>
+            </div>
+            <div class="logo-text">Admin Dashboard</div>
+        </div>
+
+        <nav>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#overview" class="nav-link active" data-section="overview">
+                        <span class="nav-icon">📊</span>
+                        <span>Overview</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#leads" class="nav-link" data-section="leads">
+                        <span class="nav-icon">👥</span>
+                        <span>Seller Leads</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#buyers" class="nav-link" data-section="buyers">
+                        <span class="nav-icon">💼</span>
+                        <span>Buyer List</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#analytics" class="nav-link" data-section="analytics">
+                        <span class="nav-icon">📈</span>
+                        <span>Analytics</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#comparables" class="nav-link" data-section="comparables">
+                        <span class="nav-icon">🏘️</span>
+                        <span>Comparables</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#market-data" class="nav-link" data-section="market-data">
+                        <span class="nav-icon">📉</span>
+                        <span>Market Data</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="user-profile">
+            <div class="user-info">
+                <div class="user-avatar" id="userAvatar">A</div>
+                <div class="user-details">
+                    <h4 id="userName">Admin User</h4>
+                    <p id="userRole">Super Admin</p>
+                </div>
+            </div>
+            <button class="logout-btn" onclick="logout()">Sign Out</button>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+        <div class="header">
+            <div>
+                <h1>Welcome back, <span class="highlight" id="welcomeName">Admin</span>!</h1>
+                <p style="color: var(--text-secondary); margin-top: 0.5rem;">Here's your property analytics overview</p>
+            </div>
+            <div style="color: var(--text-secondary); font-size: 0.9rem;">
+                Last updated: <strong id="lastUpdated">Just now</strong>
+            </div>
+        </div>
+
+        <!-- STATS GRID -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span class="stat-label">Total Leads</span>
+                    <div class="stat-icon" style="background: rgba(37, 99, 235, 0.2); color: var(--primary);">
+                        👥
+                    </div>
+                </div>
+                <div class="stat-value">127</div>
+                <div class="stat-change positive">↑ 23% this month</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span class="stat-label">Active Buyers</span>
+                    <div class="stat-icon" style="background: rgba(16, 185, 129, 0.2); color: var(--secondary);">
+                        💼
+                    </div>
+                </div>
+                <div class="stat-value">89</div>
+                <div class="stat-change positive">↑ 12% this month</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span class="stat-label">Closed Deals</span>
+                    <div class="stat-icon" style="background: rgba(16, 185, 129, 0.2); color: var(--secondary);">
+                        ✅
+                    </div>
+                </div>
+                <div class="stat-value">43</div>
+                <div class="stat-change positive">↑ 8% this month</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span class="stat-label">Avg. Score</span>
+                    <div class="stat-icon" style="background: rgba(251, 191, 36, 0.2); color: #fbbf24;">
+                        ⭐
+                    </div>
+                </div>
+                <div class="stat-value">67/100</div>
+                <div class="stat-change negative">↓ 3% this month</div>
+            </div>
+        </div>
+
+        <!-- CONTENT GRID -->
+        <div class="content-grid">
+            <!-- RECENT LEADS -->
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Recent Seller Leads</h2>
+                    <div class="card-actions">
+                        <button class="btn-small" onclick="exportLeads()">Export CSV</button>
+                        <button class="btn-small" onclick="refreshLeads()">Refresh</button>
+                    </div>
+                </div>
+                <div class="table-container">
+                    <table id="leadsTable">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Property</th>
+                                <th>Score</th>
+                                <th>Timeline</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="leadsTableBody">
+                            <!-- Dynamic content -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- LEAD DISTRIBUTION -->
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Lead Distribution</h2>
+                </div>
+                <div class="chart-container">
+                    <canvas id="leadDistributionChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- ANALYTICS ROW -->
+        <div class="content-grid">
+            <!-- REVENUE CHART -->
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Monthly Analytics</h2>
+                </div>
+                <div class="chart-container">
+                    <canvas id="analyticsChart"></canvas>
+                </div>
+            </div>
+
+            <!-- NEIGHBORHOOD COMPARABLES -->
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Winnipeg Comparables</h2>
+                    <button class="btn-small" onclick="loadComparables()">Refresh Data</button>
+                </div>
+                <div class="comparable-list" id="comparablesList">
+                    <!-- Dynamic content -->
+                </div>
+            </div>
+        </div>
+
+        <!-- GOOGLE MAPS PROPERTY ANALYSIS -->
+        <div class="dashboard-section" id="mapSection" style="margin-top: 2rem;">
+            <div class="section-header">
+                <h2>🗺️ Property Map & Analysis</h2>
+                <div style="display: flex; gap: 1rem;">
+                    <button onclick="toggleMapView('satellite')" class="btn-secondary">Satellite</button>
+                    <button onclick="toggleMapView('roadmap')" class="btn-secondary">Map</button>
+                    <button onclick="toggleMapView('hybrid')" class="btn-secondary">Hybrid</button>
+                    <button onclick="showHeatMap()" class="btn-secondary">Heat Map</button>
+                </div>
+            </div>
+
+            <!-- Map Search Bar -->
+            <div style="background: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <div style="display: grid; grid-template-columns: 1fr auto; gap: 1rem;">
+                    <input
+                        type="text"
+                        id="mapSearchInput"
+                        placeholder="Search address in Winnipeg (e.g., 123 Main St, Winnipeg)"
+                        style="padding: 0.75rem; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 1rem;"
+                        onkeypress="if(event.key==='Enter') searchAddress()"
+                    />
+                    <button onclick="searchAddress()" style="padding: 0.75rem 2rem; background: #2563eb; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: 600;">
+                        🔍 Search
+                    </button>
+                </div>
+                <div style="display: flex; gap: 1rem; margin-top: 0.5rem; flex-wrap: wrap;">
+                    <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                        <input type="checkbox" id="showComps" onchange="toggleComps(this.checked)" checked/>
+                        <span>Show Comparables</span>
+                    </label>
+                    <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                        <input type="checkbox" id="showNeighborhoods" onchange="toggleNeighborhoods(this.checked)" checked/>
+                        <span>Show Neighborhoods</span>
+                    </label>
+                    <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                        <input type="checkbox" id="showDistressed" onchange="toggleDistressed(this.checked)"/>
+                        <span>Show Distressed Properties</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Map Container -->
+            <div id="map"></div>
+
+            <!-- Property Analysis Panel -->
+            <div id="analysisPanel" style="display: none;">
+                <h3 style="margin-bottom: 1rem; color: var(--primary);">📊 Property Analysis</h3>
+                <div id="analysisContent"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&libraries=places,drawing,geometry&callback=initMap" async defer></script>
+
+    <script>
+        // Google Maps Integration (keeping existing functionality)
+        let map, geocoder, currentMarker, compMarkers = [], neighborhoodOverlays = [], infoWindow;
+
+        const winnipegNeighborhoods = {
+            'Tuxedo': {
+                center: { lat: 49.8650, lng: -97.1850 },
+                bounds: [
+                    { lat: 49.8750, lng: -97.2050 },
+                    { lat: 49.8750, lng: -97.1650 },
+                    { lat: 49.8550, lng: -97.1650 },
+                    { lat: 49.8550, lng: -97.2050 }
+                ],
+                avgPrice: 875000,
+                color: '#10b981'
+            },
+            'River Heights': {
+                center: { lat: 49.8750, lng: -97.1550 },
+                bounds: [
+                    { lat: 49.8850, lng: -97.1750 },
+                    { lat: 49.8850, lng: -97.1350 },
+                    { lat: 49.8650, lng: -97.1350 },
+                    { lat: 49.8650, lng: -97.1750 }
+                ],
+                avgPrice: 520000,
+                color: '#3b82f6'
+            }
+        };
+
+        const sampleComps = [
+            { lat: 49.8650, lng: -97.1850, price: 850000, address: '123 Wellington Cres', status: 'sold', sqft: 2400 },
+            { lat: 49.8680, lng: -97.1870, price: 890000, address: '456 Harrow St', status: 'sold', sqft: 2600 },
+            { lat: 49.8750, lng: -97.1550, price: 510000, address: '789 Oak St', status: 'active', sqft: 1800 }
+        ];
+
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: 49.8951, lng: -97.1384 },
+                zoom: 11,
+                mapTypeId: 'roadmap'
+            });
+
+            geocoder = new google.maps.Geocoder();
+            infoWindow = new google.maps.InfoWindow();
+
+            showNeighborhoods();
+            showComparables();
+        }
+
+        function searchAddress() {
+            const address = document.getElementById('mapSearchInput').value;
+            if (!address) {
+                alert('Please enter an address');
+                return;
+            }
+
+            const fullAddress = address.includes('Winnipeg') ? address : address + ', Winnipeg, MB';
+
+            geocoder.geocode({ address: fullAddress }, (results, status) => {
+                if (status === 'OK') {
+                    const location = results[0].geometry.location;
+                    map.setCenter(location);
+                    map.setZoom(15);
+
+                    if (currentMarker) {
+                        currentMarker.setMap(null);
+                    }
+
+                    currentMarker = new google.maps.Marker({
+                        map: map,
+                        position: location,
+                        title: results[0].formatted_address,
+                        animation: google.maps.Animation.DROP
+                    });
+                } else {
+                    alert('Address not found: ' + status);
+                }
+            });
+        }
+
+        function toggleMapView(type) {
+            map.setMapTypeId(type);
+        }
+
+        function showHeatMap() {
+            alert('Heat map visualization will show property value density across Winnipeg');
+        }
+
+        function toggleComps(show) {
+            compMarkers.forEach(marker => marker.setMap(show ? map : null));
+        }
+
+        function toggleNeighborhoods(show) {
+            neighborhoodOverlays.forEach(overlay => overlay.setMap(show ? map : null));
+        }
+
+        function toggleDistressed(show) {
+            console.log('Distressed properties feature coming soon...');
+        }
+
+        function showNeighborhoods() {
+            neighborhoodOverlays.forEach(overlay => overlay.setMap(null));
+            neighborhoodOverlays = [];
+
+            Object.entries(winnipegNeighborhoods).forEach(([name, data]) => {
+                const polygon = new google.maps.Polygon({
+                    paths: data.bounds,
+                    strokeColor: data.color,
+                    strokeOpacity: 0.8,
+                    strokeWeight: 2,
+                    fillColor: data.color,
+                    fillOpacity: 0.15,
+                    map: map
+                });
+
+                neighborhoodOverlays.push(polygon);
+            });
+        }
+
+        function showComparables() {
+            compMarkers.forEach(marker => marker.setMap(null));
+            compMarkers = [];
+
+            sampleComps.forEach(comp => {
+                const marker = new google.maps.Marker({
+                    position: { lat: comp.lat, lng: comp.lng },
+                    map: map,
+                    title: `${comp.address} - $${(comp.price / 1000).toFixed(0)}K`
+                });
+
+                marker.addListener('click', () => {
+                    infoWindow.setContent(`
+                        <div style="padding: 0.5rem;">
+                            <h4 style="margin-bottom: 0.5rem;">${comp.address}</h4>
+                            <p><strong>Price:</strong> $${comp.price.toLocaleString()}</p>
+                            <p><strong>Size:</strong> ${comp.sqft} sqft</p>
+                            <p><strong>Status:</strong> ${comp.status.toUpperCase()}</p>
+                        </div>
+                    `);
+                    infoWindow.open(map, marker);
+                });
+
+                compMarkers.push(marker);
+            });
+        }
+
+        // Authentication Check
+        window.onload = function() {
+            const adminUser = JSON.parse(sessionStorage.getItem('adminUser'));
+
+            if (!adminUser) {
+                window.location.href = 'admin-login.html';
+                return;
+            }
+
+            document.getElementById('userName').textContent = adminUser.name;
+            document.getElementById('userRole').textContent = adminUser.role.replace('_', ' ').toUpperCase();
+            document.getElementById('welcomeName').textContent = adminUser.name.split(' ')[0];
+            document.getElementById('userAvatar').textContent = adminUser.name.charAt(0);
+
+            updateTimestamp();
+            setInterval(updateTimestamp, 60000);
+
+            loadLeadsData();
+            loadComparables();
+            initializeCharts();
+
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'dashboard_view', {
+                    event_category: 'Admin',
+                    event_label: adminUser.role
+                });
+            }
+        };
+
+        function logout() {
+            if (confirm('Are you sure you want to sign out?')) {
+                sessionStorage.removeItem('adminUser');
+                window.location.href = 'admin-login.html';
+            }
+        }
+
+        function updateTimestamp() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+            document.getElementById('lastUpdated').textContent = timeString;
+        }
+
+        function loadLeadsData() {
+            const mockLeads = [
+                { name: 'Michael T.', property: '123 Main St, St. Boniface', score: 85, timeline: 'Urgent', status: 'high' },
+                { name: 'Sarah K.', property: '456 Oak Ave, Wolseley', score: 72, timeline: '1-2 weeks', status: 'medium' },
+                { name: 'David R.', property: '789 Elm St, Fort Garry', score: 91, timeline: 'Urgent', status: 'high' },
+                { name: 'Jennifer L.', property: '321 Pine Rd, River Heights', score: 68, timeline: '2-4 weeks', status: 'medium' },
+                { name: 'Robert M.', property: '654 Maple Dr, North End', score: 45, timeline: 'Flexible', status: 'low' }
+            ];
+
+            const tbody = document.getElementById('leadsTableBody');
+            tbody.innerHTML = '';
+
+            mockLeads.forEach(lead => {
+                const badgeClass = lead.status === 'high' ? 'badge-high' :
+                                  lead.status === 'medium' ? 'badge-medium' : 'badge-low';
+
+                tbody.innerHTML += `
+                    <tr>
+                        <td><strong>${lead.name}</strong></td>
+                        <td>${lead.property}</td>
+                        <td><strong>${lead.score}/100</strong></td>
+                        <td>${lead.timeline}</td>
+                        <td><span class="badge ${badgeClass}">${lead.status.toUpperCase()}</span></td>
+                    </tr>
+                `;
+            });
+        }
+
+        function loadComparables() {
+            const mockComparables = [
+                { address: '142 Walnut St, River Heights', price: '$385,000', beds: 3, baths: 2, sqft: '1,520', dom: '18 days' },
+                { address: '267 Oak St, Wolseley', price: '$412,000', beds: 4, baths: 2.5, sqft: '1,780', dom: '12 days' },
+                { address: '89 Elm Ave, St. Boniface', price: '$325,000', beds: 3, baths: 1.5, sqft: '1,340', dom: '25 days' }
+            ];
+
+            const container = document.getElementById('comparablesList');
+            container.innerHTML = '';
+
+            mockComparables.forEach(comp => {
+                container.innerHTML += `
+                    <div class="comparable-item">
+                        <div class="comparable-header">
+                            <span class="comparable-address">${comp.address}</span>
+                            <span class="comparable-price">${comp.price}</span>
+                        </div>
+                        <div class="comparable-details">
+                            <span>${comp.beds} beds</span>
+                            <span>${comp.baths} baths</span>
+                            <span>${comp.sqft} sqft</span>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        function initializeCharts() {
+            // Lead Distribution Pie Chart
+            const pieCtx = document.getElementById('leadDistributionChart').getContext('2d');
+            new Chart(pieCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['High Priority', 'Medium Priority', 'Low Priority', 'Closed'],
+                    datasets: [{
+                        data: [23, 45, 18, 41],
+                        backgroundColor: [
+                            'rgba(16, 185, 129, 0.8)',
+                            'rgba(251, 191, 36, 0.8)',
+                            'rgba(239, 68, 68, 0.8)',
+                            'rgba(59, 130, 246, 0.8)'
+                        ],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: { color: '#94a3b8', padding: 15 }
+                        }
+                    }
+                }
+            });
+
+            // Monthly Analytics Line Chart
+            const lineCtx = document.getElementById('analyticsChart').getContext('2d');
+            new Chart(lineCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                    datasets: [
+                        {
+                            label: 'Leads',
+                            data: [12, 19, 15, 22, 28, 25, 31, 29, 35, 38, 42, 43],
+                            borderColor: 'rgba(37, 99, 235, 1)',
+                            backgroundColor: 'rgba(37, 99, 235, 0.1)',
+                            tension: 0.4
+                        },
+                        {
+                            label: 'Closed Deals',
+                            data: [5, 8, 7, 9, 12, 11, 14, 13, 16, 17, 19, 20],
+                            borderColor: 'rgba(16, 185, 129, 1)',
+                            backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                            tension: 0.4
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: { color: '#94a3b8' },
+                            grid: { color: 'rgba(226, 232, 240, 0.5)' }
+                        },
+                        x: {
+                            ticks: { color: '#94a3b8' },
+                            grid: { color: 'rgba(226, 232, 240, 0.5)' }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            labels: { color: '#94a3b8', padding: 15 }
+                        }
+                    }
+                }
+            });
+        }
+
+        function exportLeads() {
+            alert('Exporting leads to CSV...\n\nThis would download a CSV file with all lead data from Google Sheets.');
+
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'export_leads', {
+                    event_category: 'Admin Actions',
+                    event_label: 'CSV Export'
+                });
+            }
+        }
+
+        function refreshLeads() {
+            loadLeadsData();
+            alert('Leads data refreshed!');
+        }
+
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+
+                const section = this.dataset.section;
+
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'dashboard_navigation', {
+                        event_category: 'Navigation',
+                        event_label: section
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

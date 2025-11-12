@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline - Home Liberation Winnipeg</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #2a3546, #475569);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            color: white;
+        }
+
+        .offline-container {
+            text-align: center;
+            max-width: 500px;
+        }
+
+        .offline-icon {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 2rem;
+            background: linear-gradient(135deg, #f97316, #ea580c);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #f97316, #fbbf24);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #cbd5e1;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .retry-btn {
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, #f97316, #ea580c);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(249,115,22,0.4);
+        }
+
+        .retry-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(249,115,22,0.6);
+        }
+
+        .status {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+    </style>
+
+    <!-- Performance: Preconnect to external domains -->
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Performance: DNS Prefetch -->
+    <link rel="dns-prefetch" href="//www.googletagmanager.com">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+
+    <!-- Mobile: Touch Target Optimization -->
+    <style>
+    .touch-target-optimization {
+        /* Ensure all interactive elements are min 44x44px */
+    }
+    button, .btn, a.header-cta, .nav-link, input[type="submit"] {
+        min-height: 44px;
+        min-width: 44px;
+        padding: 0.75rem 1.5rem;
+    }
+
+    /* Mobile-specific enhancements */
+    @media (max-width: 768px) {
+        /* Larger touch targets on mobile */
+        button, .btn, a.header-cta {
+            min-height: 48px;
+            font-size: 1rem;
+        }
+
+        /* Prevent zoom on focus */
+        input, select, textarea {
+            font-size: 16px !important;
+        }
+
+        /* Better spacing for fingers */
+        form .form-group {
+            margin-bottom: 1.5rem;
+        }
+    }
+    </style>
+
+    <!-- AI Visual Enhancement System -->
+    <style>
+    /* ===== ADVANCED TYPOGRAPHY SYSTEM ===== */
+    :root {
+        /* Fluid typography */
+        --text-hero: clamp(2.5rem, 8vw, 5rem);
+        --text-h1: clamp(2rem, 5vw, 3.5rem);
+        --text-h2: clamp(1.5rem, 4vw, 2.5rem);
+        --text-h3: clamp(1.2rem, 3vw, 1.8rem);
+        --text-body: clamp(1rem, 2vw, 1.125rem);
+        --text-small: clamp(0.875rem, 1.5vw, 1rem);
+
+        /* Enhanced spacing system */
+        --space-xs: 0.5rem;
+        --space-sm: 1rem;
+        --space-md: 2rem;
+        --space-lg: 4rem;
+        --space-xl: 6rem;
+
+        /* Shadow system for depth */
+        --shadow-sm: 0 2px 8px rgba(0,0,0,0.1);
+        --shadow-md: 0 4px 20px rgba(0,0,0,0.15);
+        --shadow-lg: 0 10px 40px rgba(0,0,0,0.2);
+        --shadow-xl: 0 20px 60px rgba(0,0,0,0.3);
+
+        /* Glow effects */
+        --glow-orange: 0 0 20px rgba(249,115,22,0.4);
+        --glow-blue: 0 0 20px rgba(59,130,246,0.4);
+        --glow-green: 0 0 20px rgba(16,185,129,0.4);
+    }
+
+    /* ===== ADVANCED ANIMATIONS ===== */
+    @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-20px); }
+    }
+
+    @keyframes pulse-glow {
+        0%, 100% { box-shadow: 0 0 20px rgba(249,115,22,0.4); }
+        50% { box-shadow: 0 0 40px rgba(249,115,22,0.8); }
+    }
+
+    @keyframes slide-in-up {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes shimmer {
+        0% { background-position: -1000px 0; }
+        100% { background-position: 1000px 0; }
+    }
+
+    /* ===== ENHANCED VISUAL COMPONENTS ===== */
+
+    /* Glassmorphism effect */
+    .glass-effect {
+        background: rgba(30, 41, 59, 0.7);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(249, 115, 22, 0.2);
+        box-shadow: var(--shadow-lg);
+    }
+
+    /* Gradient text effect */
+    .gradient-text {
+        background: linear-gradient(135deg, var(--orange), var(--gold));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    /* Magnetic hover effect for CTAs */
+    .magnetic-button {
+        position: relative;
+        transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .magnetic-button:hover {
+        transform: translateY(-5px) scale(1.05);
+        box-shadow: 0 15px 50px rgba(249,115,22,0.6);
+    }
+
+    .magnetic-button:active {
+        transform: translateY(-2px) scale(1.02);
+    }
+
+    /* Reveal on scroll animation */
+    .reveal-on-scroll {
+        opacity: 0;
+        animation: slide-in-up 0.8s ease-out forwards;
+    }
+
+    .reveal-on-scroll:nth-child(1) { animation-delay: 0.1s; }
+    .reveal-on-scroll:nth-child(2) { animation-delay: 0.2s; }
+    .reveal-on-scroll:nth-child(3) { animation-delay: 0.3s; }
+    .reveal-on-scroll:nth-child(4) { animation-delay: 0.4s; }
+
+    /* Pulsing attention grabber */
+    .pulse-attention {
+        animation: pulse-glow 2s infinite;
+    }
+
+    /* 3D card effect */
+    .card-3d {
+        transform-style: preserve-3d;
+        transition: transform 0.6s;
+    }
+
+    .card-3d:hover {
+        transform: rotateY(5deg) rotateX(5deg) scale(1.05);
+    }
+
+    /* Skeleton loading shimmer */
+    .skeleton-shimmer {
+        background: linear-gradient(90deg,
+            rgba(30,41,59,0.5) 0%,
+            rgba(249,115,22,0.3) 50%,
+            rgba(30,41,59,0.5) 100%
+        );
+        background-size: 1000px 100%;
+        animation: shimmer 2s infinite;
+    }
+
+    /* ===== PSYCHOLOGICAL VISUAL CUES ===== */
+
+    /* Trust badge styling */
+    .trust-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        background: rgba(16, 185, 129, 0.1);
+        border: 1px solid var(--green);
+        border-radius: 50px;
+        color: var(--green);
+        font-weight: 600;
+        font-size: 0.875rem;
+    }
+
+    .trust-badge::before {
+        content: '✓';
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 20px;
+        height: 20px;
+        background: var(--green);
+        color: white;
+        border-radius: 50%;
+        font-size: 0.75rem;
+    }
+
+    /* Urgency indicator */
+    .urgency-indicator {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.4rem 0.8rem;
+        background: rgba(239, 68, 68, 0.1);
+        border: 1px solid var(--red);
+        border-radius: 6px;
+        color: var(--red);
+        font-weight: 600;
+        font-size: 0.75rem;
+        animation: pulse-glow 2s infinite;
+    }
+
+    .urgency-indicator::before {
+        content: '';
+        font-size: 1rem;
+    }
+
+    /* Social proof counter */
+    .social-proof-counter {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        background: rgba(59, 130, 246, 0.1);
+        border: 1px solid var(--blue);
+        border-radius: 8px;
+        color: var(--silver);
+        font-weight: 500;
+    }
+
+    .social-proof-counter::before {
+        content: '👥';
+        font-size: 1.2rem;
+    }
+
+    /* ===== ENHANCED FORM DESIGN ===== */
+
+    /* Floating label inputs */
+    .floating-label-group {
+        position: relative;
+        margin-bottom: 1.5rem;
+    }
+
+    .floating-label-group input:focus ~ label,
+    .floating-label-group input:not(:placeholder-shown) ~ label {
+        transform: translateY(-1.5rem) scale(0.85);
+        color: var(--orange);
+    }
+
+    .floating-label-group label {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        transition: all 0.3s;
+        pointer-events: none;
+        color: var(--gray);
+    }
+
+    /* Progress indicators */
+    .progress-bar {
+        width: 100%;
+        height: 8px;
+        background: var(--surface);
+        border-radius: 4px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .progress-fill {
+        height: 100%;
+        background: linear-gradient(90deg, var(--orange), var(--gold));
+        border-radius: 4px;
+        transition: width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .progress-fill::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(90deg,
+            transparent,
+            rgba(255,255,255,0.3),
+            transparent
+        );
+        animation: shimmer 2s infinite;
+    }
+
+    /* ===== ACCESSIBILITY ENHANCEMENTS ===== */
+
+    /* Focus visible for keyboard navigation */
+    *:focus-visible {
+        outline: 3px solid var(--orange);
+        outline-offset: 3px;
+        border-radius: 4px;
+    }
+
+    /* High contrast mode support */
+    @media (prefers-contrast: high) {
+        :root {
+            --midnight: #000000;
+            --orange: #ff8800;
+        }
+    }
+
+    /* Reduced motion support */
+    @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+        }
+    }
+
+    /* ===== MOBILE VISUAL OPTIMIZATIONS ===== */
+    @media (max-width: 768px) {
+        :root {
+            --space-lg: 2rem;
+            --space-xl: 3rem;
+        }
+
+        /* Larger tap targets */
+        button, .btn, a.header-cta {
+            min-height: 48px;
+            padding: 1rem 1.5rem;
+        }
+
+        /* Better card spacing */
+        .card, .stat-card {
+            margin-bottom: 1rem;
+        }
+
+        /* Simplified animations for performance */
+        .card-3d:hover {
+            transform: scale(1.02);
+        }
+    }
+
+    /* ===== DARK MODE ENHANCEMENTS ===== */
+    @media (prefers-color-scheme: dark) {
+        :root {
+            /* Enhanced contrast for dark mode */
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.3);
+            --shadow-md: 0 4px 20px rgba(0,0,0,0.4);
+            --shadow-lg: 0 10px 40px rgba(0,0,0,0.5);
+        }
+
+        .glass-effect {
+            background: rgba(10, 15, 28, 0.9);
+        }
+    }
+
+    /* ===== PERFORMANCE OPTIMIZATIONS ===== */
+
+    /* GPU acceleration for animations */
+    .magnetic-button,
+    .card-3d,
+    .reveal-on-scroll {
+        will-change: transform;
+        transform: translateZ(0);
+    }
+
+    /* Lazy load images with blur-up effect */
+    img[loading="lazy"] {
+        filter: blur(20px);
+        transition: filter 0.5s;
+    }
+
+    img[loading="lazy"].loaded {
+        filter: blur(0);
+    }
+    </style>
+
+    <!-- Intersection Observer for scroll animations -->
+    <script>
+    (function() {
+        // Auto-apply reveal animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal-on-scroll');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Auto-observe sections and cards
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('section, .card, .stat-card, .benefit').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Image blur-up effect
+            document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+                img.addEventListener('load', () => {
+                    img.classList.add('loaded');
+                });
+            });
+        });
+    })();
+    </script>
+
+    <style>
+    
+    /* Winnipeg-Themed Backgrounds for Each Page */
+
+    /* Homepage - Winnipeg Skyline */
+    body.home-page {
+        background-image:
+            linear-gradient(rgba(10, 15, 28, 0.85), rgba(10, 15, 28, 0.92)),
+            url('https://images.unsplash.com/photo-1601815801049-b7f2e3a1c87e?w=1920&q=80');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }
+
+    /* Consultation - The Forks Winnipeg */
+    body.contact-page {
+        background-image:
+            linear-gradient(rgba(10, 15, 28, 0.88), rgba(10, 15, 28, 0.94)),
+            url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1920&q=80');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }
+
+    /* Services Page - Downtown Winnipeg */
+    body.services-page {
+        background-image:
+            linear-gradient(rgba(10, 15, 28, 0.88), rgba(10, 15, 28, 0.94)),
+            url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }
+
+    /* About Page - Community/Residential */
+    body.about-page {
+        background-image:
+            linear-gradient(rgba(10, 15, 28, 0.88), rgba(10, 15, 28, 0.94)),
+            url('https://images.unsplash.com/photo-1523217582562-09d0def993a6?w=1920&q=80');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }
+
+    /* Situation Pages - Manitoba Winter/Architecture */
+    body.situation-page {
+        background-image:
+            linear-gradient(rgba(10, 15, 28, 0.90), rgba(10, 15, 28, 0.95)),
+            url('https://images.unsplash.com/photo-1449844908441-8829872d2607?w=1920&q=80');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }
+
+    /* Fallback for pages without specific class */
+    body:not([class*="-page"]) {
+        background-image:
+            linear-gradient(rgba(10, 15, 28, 0.88), rgba(10, 15, 28, 0.94)),
+            url('https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=1920&q=80');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }
+
+    /* Ensure content is readable over backgrounds */
+    .bg-gradient {
+        display: none; /* Disable old gradient, use photo backgrounds */
+    }
+
+    /* Mobile optimization - simpler backgrounds */
+    @media (max-width: 768px) {
+        body {
+            background-attachment: scroll; /* Better mobile performance */
+        }
+    }
+
+    </style>
+
+<style>
+/* PSYCHOLOGICAL TRIGGER COLOR SYSTEM - High Converting */
+:root {
+    --urgent-red: #DC2626;
+    --action-orange: #EA580C;
+    --warning-yellow: #F59E0B;
+    --success-green: #059669;
+    --trust-blue: #2563EB;
+    --dark-bg: #111827;
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 0.75rem;
+    --space-lg: 1rem;
+    --space-xl: 1.5rem;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: #111827;
+    line-height: 1.5;
+}
+
+.urgency-banner {
+    background: linear-gradient(135deg, var(--urgent-red), #991B1B);
+    color: white;
+    padding: var(--space-md) var(--space-lg);
+    text-align: center;
+    font-weight: 700;
+    font-size: 1rem;
+    animation: pulse 2s infinite;
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.4);
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.9; }
+}
+
+.cta-primary {
+    background: linear-gradient(135deg, var(--action-orange), var(--urgent-red));
+    color: white !important;
+    padding: 1rem 2.5rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1.125rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(234, 88, 12, 0.5);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.cta-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(234, 88, 12, 0.7);
+    background: linear-gradient(135deg, #FB923C, var(--action-orange));
+}
+
+.scarcity-badge {
+    background: var(--warning-yellow);
+    color: #111827;
+    padding: var(--space-sm) var(--space-lg);
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.875rem;
+    display: inline-block;
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+}
+
+.success-text {
+    color: var(--success-green);
+    font-weight: 700;
+}
+
+section {
+    padding: var(--space-xl) var(--space-lg);
+}
+
+h1 { font-size: 2.25rem; line-height: 1.2; margin-bottom: var(--space-lg); }
+h2 { font-size: 1.75rem; line-height: 1.2; margin-bottom: var(--space-md); }
+h3 { font-size: 1.25rem; line-height: 1.3; margin-bottom: var(--space-sm); }
+p { margin-bottom: var(--space-md); }
+</style>
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PQ7WM9ZYKH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-PQ7WM9ZYKH', {
+            'page_title': document.title,
+            'page_path': window.location.pathname
+        });
+
+        // Track form submissions
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('form').forEach(function(form) {
+                form.addEventListener('submit', function(e) {
+                    gtag('event', 'form_submit', {
+                        'form_id': this.id || 'contact_form',
+                        'page_url': window.location.href
+                    });
+                });
+            });
+
+            // Track phone clicks
+            document.querySelectorAll('a[href^="tel:"]').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    gtag('event', 'phone_call', {
+                        'phone_number': this.href.replace('tel:', '')
+                    });
+                });
+            });
+
+            // Track CTA clicks
+            document.querySelectorAll('.cta-primary, .cta-secondary, a[href*="contact"]').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    gtag('event', 'cta_click', {
+                        'button_text': this.textContent.trim(),
+                        'button_url': this.href || 'button'
+                    });
+                });
+            });
+        });
+    </script>
+
+</head>
+<body>
+
+    <!-- Urgency Banner -->
+    
+
+<section class="hero" style="
+    background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)),
+                      url('https://source.unsplash.com/1920x1080/?offline,wait');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 550px;
+    display: flex;
+    align-items: center;
+    padding: 2rem 1rem;
+">
+    <div style="max-width: 1200px; margin: 0 auto; width: 100%;">
+        <h1 style="color: white; font-size: 2.5rem; margin-bottom: 1rem;">PLACEHOLDER HEADLINE</h1>
+        <p style="color: #E5E7EB; font-size: 1.25rem; margin-bottom: 2rem;">PLACEHOLDER TEXT</p>
+        <a href="contact.html" class="cta-primary">Get Your Offer Now →</a>
+    </div>
+</section>
+
+
+    <div class="offline-container">
+        <div class="offline-icon">📡</div>
+        <h1>You're Offline</h1>
+        <p>It looks like you've lost your internet connection. Don't worry, we'll try to reconnect you automatically.</p>
+        <button class="retry-btn" onclick="window.location.reload()">Try Again</button>
+        <div class="status">
+            Checking connection status...
+        </div>
+    </div>
+
+    <script>
+        // Auto-reload when connection is restored
+        window.addEventListener('online', () => {
+            window.location.reload();
+        });
+
+        // Update status
+        const statusElement = document.querySelector('.status');
+
+        setInterval(() => {
+            if (navigator.onLine) {
+                statusElement.textContent = 'Connection restored! Refreshing...';
+                setTimeout(() => window.location.reload(), 1000);
+            } else {
+                statusElement.textContent = 'Still offline. We\'ll keep trying...';
+            }
+        }, 3000);
+    </script>
+
+<!-- Complete Contact Footer -->
+<footer style="background: #111827; color: white; padding: 2rem 1rem 1.5rem;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 1rem;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.2rem; margin-bottom: 2rem;">
+            <!-- Company -->
+            <div>
+                <h3 style="color: white; margin-bottom: 1rem; font-size: 1.25rem;">Home Liberation Winnipeg</h3>
+                <p style="color: #9CA3AF; line-height: 1.6;">
+                    Helping Winnipeg homeowners sell fast  . No repairs, no fees, no hassles.
+                </p>
+                <div style="margin-top: 1rem;">
+                    <span style="background: #10B981; color: white; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.875rem; font-weight: 600;"> Rating</span>
+                </div>
+            </div>
+
+            <!-- Contact -->
+            <div>
+                <h3 style="color: white; margin-bottom: 1rem; font-size: 1.25rem;">Schedule Consultation</h3>
+                <p style="margin-bottom: 0.5rem;">
+                    <a href="tel:" style="color: #F59E0B; text-decoration: none; font-weight: 700; font-size: 1.125rem; display: inline-block;">
+                         
+                    </a>
+                </p>
+                <p style="margin-bottom: 0.5rem;">
+                    <a href="mailto:hello@homeliberationwinnipeg.com" style="color: #10B981; text-decoration: none; font-weight: 600;">
+                        📧 hello@homeliberationwinnipeg.com
+                    </a>
+                </p>
+                <p style="color: #9CA3AF; margin-top: 1rem;">
+                    📍 Serving Winnipeg & Surrounding Areas<br>Manitoba, Canada
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h3 style="color: white; margin-bottom: 1rem; font-size: 1.25rem;">Quick Links</h3>
+                <p style="margin-bottom: 0.5rem;"><a href="foreclosure.html" style="color: #9CA3AF; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#F59E0B'" onmouseout="this.style.color='#9CA3AF'">Foreclosure Help</a></p>
+                <p style="margin-bottom: 0.5rem;"><a href="repairs.html" style="color: #9CA3AF; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#F59E0B'" onmouseout="this.style.color='#9CA3AF'">Sell As-Is</a></p>
+                <p style="margin-bottom: 0.5rem;"><a href="quick-sale.html" style="color: #9CA3AF; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#F59E0B'" onmouseout="this.style.color='#9CA3AF'">Fast Cash Sale</a></p>
+                <p style="margin-bottom: 0.5rem;"><a href="inherited.html" style="color: #9CA3AF; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#F59E0B'" onmouseout="this.style.color='#9CA3AF'">Inherited Property</a></p>
+                <p style="margin-bottom: 0.5rem;"><a href="faq.html" style="color: #9CA3AF; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#F59E0B'" onmouseout="this.style.color='#9CA3AF'">FAQ</a></p>
+            </div>
+
+            <!-- Social & Trust -->
+            <div>
+                <h3 style="color: white; margin-bottom: 1rem; font-size: 1.25rem;">Follow Us</h3>
+                <div style="display: flex; gap: 0.75rem; margin-bottom: 1.5rem;">
+                    <a href="https://facebook.com/homeliberationwinnipeg" target="_blank" style="width: 44px; height: 44px; background: #2563EB; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; font-weight: 700; font-size: 1.25rem; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">f</a>
+                    <a href="https://instagram.com/homeliberationwpg" target="_blank" style="width: 44px; height: 44px; background: linear-gradient(45deg, #F59E0B, #DC2626, #8B5CF6); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; font-size: 1.25rem; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">📷</a>
+                    <a href="https://linkedin.com/company/home-liberation-winnipeg" target="_blank" style="width: 44px; height: 44px; background: #2563EB; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; font-weight: 700; font-size: 1.125rem; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">in</a>
+                </div>
+                <p style="color: #9CA3AF; font-size: 0.875rem; line-height: 1.6;">
+                     <br>
+                      & Insured<br>
+                     247 Properties Purchased
+                </p>
+            </div>
+        </div>
+
+        <div style="border-top: 1px solid #374151; padding-top: 1.5rem; text-align: center; color: #6B7280; font-size: 0.875rem;">
+            <p style="margin-bottom: 0.5rem;">&copy; 2025 Home Liberation Winnipeg. All rights reserved.</p>
+            <p>
+                <a href="privacy.html" style="color: #6B7280; text-decoration: none;" onmouseover="this.style.color='#F59E0B'" onmouseout="this.style.color='#6B7280'">Privacy Policy</a> |
+                <a href="terms.html" style="color: #6B7280; text-decoration: none;" onmouseover="this.style.color='#F59E0B'" onmouseout="this.style.color='#6B7280'">Terms of Service</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
