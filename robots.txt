@@ -1,0 +1,28 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://homeliberation.app/sitemap.xml
+
+# Block admin areas
+Disallow: /admin/
+
+# Block old versions
+Disallow: /index_dark.html
+Disallow: /tax-liens.html
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /

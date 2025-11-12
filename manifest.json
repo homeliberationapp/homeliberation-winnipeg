@@ -1,0 +1,110 @@
+{
+  "name": "Home Liberation Winnipeg",
+  "short_name": "HomeLiberation",
+  "description": "Wholesale real estate solutions for Winnipeg homeowners - sell your property fast, any condition",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#0a0f1c",
+  "theme_color": "#f97316",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icons/icon-72x72.svg",
+      "sizes": "72x72",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-96x96.svg",
+      "sizes": "96x96",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-128x128.svg",
+      "sizes": "128x128",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-144x144.svg",
+      "sizes": "144x144",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-152x152.svg",
+      "sizes": "152x152",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-192x192.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-384x384.svg",
+      "sizes": "384x384",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512x512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshots/home-desktop.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/screenshots/home-mobile.png",
+      "sizes": "750x1334",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ],
+  "categories": ["business", "finance", "lifestyle"],
+  "shortcuts": [
+    {
+      "name": "Sell Property",
+      "short_name": "Sell",
+      "description": "Start property inquiry form",
+      "url": "/contact.html",
+      "icons": [{ "src": "/icons/sell-96x96.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Join Buyer List",
+      "short_name": "Buy",
+      "description": "Subscribe to wholesale deals",
+      "url": "/buyers.html",
+      "icons": [{ "src": "/icons/buy-96x96.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Admin Login",
+      "short_name": "Admin",
+      "description": "Access admin dashboard",
+      "url": "/admin-login.html",
+      "icons": [{ "src": "/icons/admin-96x96.png", "sizes": "96x96" }]
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=com.homeliberationwinnipeg.app",
+      "id": "com.homeliberationwinnipeg.app"
+    },
+    {
+      "platform": "itunes",
+      "url": "https://apps.apple.com/app/home-liberation-winnipeg/idXXXXXXXXXX"
+    }
+  ],
+  "prefer_related_applications": false
+}
