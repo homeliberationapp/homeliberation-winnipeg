@@ -48,6 +48,7 @@
 }
 
 body {
+    padding-top: 50px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
     background: var(--navy);
     color: var(--white);
@@ -68,28 +69,13 @@ body {
     align-items: center;
 }
 
-.nav-logo {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--gold);
-}
 
-.nav-links {
-    display: flex;
-    gap: 25px;
-}
 
-.nav-link {
-    color: var(--white);
-    text-decoration: none;
-    padding: 8px 15px;
-    transition: all 0.3s ease;
-    font-weight: 500;
-}
 
-.nav-link:hover {
-    color: var(--gold);
-}
+
+
+
+
 
 /* COMPACT HERO */
 .hero, .hero-section {
@@ -280,6 +266,39 @@ ul, ol {
 
 </head>
 <body>
+    <!-- Top Info Bar (no header/nav) -->
+    <div style="
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: rgba(15, 34, 64, 0.95);
+        padding: 12px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #d4af37;
+        z-index: 1000;
+    ">
+        <div style="color: #d4af37; font-weight: 700; font-size: 1.1rem;">
+            Home Liberation Winnipeg
+        </div>
+        <div style="display: flex; gap: 2rem; align-items: center;">
+            <a href="mailto:hello@homeliberationwinnipeg.com" style="color: #c0c0c0; text-decoration: none; font-size: 0.95rem;">
+                hello@homeliberationwinnipeg.com
+            </a>
+            <a href="contact.html" style="
+                background: #d4af37;
+                color: #0f2240;
+                padding: 8px 20px;
+                border-radius: 6px;
+                text-decoration: none;
+                font-weight: 600;
+                font-size: 0.9rem;
+            ">Get Your Offer</a>
+        </div>
+    </div>
+
     <!-- SIDEBAR -->
     <aside class="sidebar">
         <div class="logo">
@@ -291,46 +310,7 @@ ul, ol {
             <div class="logo-text">Admin Dashboard</div>
         </div>
 
-        <nav>
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="#overview" class="nav-link active" data-section="overview">
-                        <span class="nav-icon">📊</span>
-                        <span>Overview</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#leads" class="nav-link" data-section="leads">
-                        <span class="nav-icon">👥</span>
-                        <span>Seller Leads</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#buyers" class="nav-link" data-section="buyers">
-                        <span class="nav-icon"><svg class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></span>
-                        <span>Buyer List</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#analytics" class="nav-link" data-section="analytics">
-                        <span class="nav-icon">📈</span>
-                        <span>Analytics</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#comparables" class="nav-link" data-section="comparables">
-                        <span class="nav-icon">🏘️</span>
-                        <span>Comparables</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#market-data" class="nav-link" data-section="market-data">
-                        <span class="nav-icon">📉</span>
-                        <span>Market Data</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
+        
 
         <div class="user-profile">
             <div class="user-info">
@@ -858,19 +838,7 @@ ul, ol {
             alert('Leads data refreshed!');
         }
 
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-                this.classList.add('active');
-
-                const section = this.dataset.section;
-
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', 'dashboard_navigation', {
-                        event_category: 'Navigation',
-                        event_label: section
-                    });
+        document.querySelectorAll(');
                 }
             });
         });
