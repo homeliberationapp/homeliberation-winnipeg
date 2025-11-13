@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" width="200" height="60">
+  <!-- House icon -->
+  <g>
+    <path d="M20 30L30 20L40 30V45H35V35H25V45H20V30Z" fill="#1e40af"/>
+    <path d="M28 40H32V45H28V40Z" fill="#f59e0b"/>
+    <rect x="26" y="25" width="3" height="4" fill="#f59e0b"/>
+    <rect x="31" y="25" width="3" height="4" fill="#f59e0b"/>
+  </g>
+
+  <!-- Text -->
+  <text x="48" y="32" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1e40af">
+    Home Liberation
+  </text>
+  <text x="48" y="48" font-family="Arial, sans-serif" font-size="12" fill="#6b7280">
+    WINNIPEG PROPERTY SOLUTIONS
+  </text>
+</svg>
