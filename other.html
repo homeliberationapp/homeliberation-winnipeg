@@ -126,11 +126,7 @@
             });
 
             // Track phone clicks
-            document.querySelectorAll('a[href^="tel:"]').forEach(function(link) {
-                link.addEventListener('click', function() {
-                    gtag('event', 'phone_call', {
-                        'phone_number': this.href.replace('tel:', '')
-                    });
+            
                 });
             });
 
@@ -444,19 +440,7 @@ ul, ol {
             <a href="contact.html" class="cta-primary">
                 Get Your Offer Now →
             </a>
-            <a href="tel:" style="
-                background: rgba(255,255,255,0.15);
-                backdrop-filter: blur(10px);
-                color: white;
-                padding: 1rem 2rem;
-                border-radius: 8px;
-                font-weight: 700;
-                text-decoration: none;
-                border: 2px solid white;
-                transition: all 0.3s;
-            " onmouseover="this.style.background='rgba(255,255,255,0.25)'" onmouseout="this.style.background='rgba(255,255,255,0.15)'">
-                 Call 
-            </a>
+            
         </div>
         <div style="display: flex; gap: 1.2rem; margin-top: 2rem; flex-wrap: wrap;">
             <div style="color: white;">
@@ -611,9 +595,7 @@ ul, ol {
             <div>
                 <h3 style="color: white; margin-bottom: 1rem; font-size: 1.25rem;">Schedule Consultation</h3>
                 <p style="margin-bottom: 0.5rem;">
-                    <a href="tel:" style="color: #F59E0B; text-decoration: none; font-weight: 700; font-size: 1.125rem; display: inline-block;">
-                         
-                    </a>
+                    
                 </p>
                 <p style="margin-bottom: 0.5rem;">
                     <a href="mailto:hello@homeliberationwinnipeg.com" style="color: #10B981; text-decoration: none; font-weight: 600;">
