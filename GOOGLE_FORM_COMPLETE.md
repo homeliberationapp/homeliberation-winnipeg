@@ -116,11 +116,11 @@ Tell us about your property and situation. We'll analyze it and provide a fair c
 - Type: Multiple choice
 - Required: YES
 - Options:
-  - ⭐⭐⭐⭐⭐ Excellent (Move-in ready, recently updated, like new)
-  - ⭐⭐⭐⭐ Good (Well maintained, minor cosmetic updates needed)
-  - ⭐⭐⭐ Fair (Needs updating - kitchen, bathrooms, flooring, paint)
-  - ⭐⭐ Poor (Major repairs needed - roof, foundation, systems, extensive work)
-  - ⭐ Very Poor (Uninhabitable, fire damage, condemned, tear-down candidate)
+  - ⭐⭐⭐⭐⭐ Excellent - Move-in ready, recently renovated (0-5 years), modern finishes, no work needed
+  - ⭐⭐⭐⭐ Good - Well maintained, functional (5-15 years), minor cosmetic updates (paint, fixtures, carpet)
+  - ⭐⭐⭐ Fair - Dated but livable (15-30 years), needs significant updates (kitchen, bathrooms, flooring), functional systems
+  - ⭐⭐ Poor - Major deferred maintenance, multiple critical repairs needed (roof, HVAC, electrical, plumbing), structural concerns
+  - ⭐ Very Poor - Uninhabitable/condemned, severe damage (fire, flood, foundation failure), likely tear-down, major code violations
 
 ---
 
