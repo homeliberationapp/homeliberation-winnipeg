@@ -374,21 +374,46 @@ ul, ol {
 
     <style>
         .contact-hero {
-            background: linear-gradient(rgba(15, 34, 64, 0.88), rgba(15, 34, 64, 0.92)),
-                        url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1600&q=85');
+            background: linear-gradient(rgba(15, 34, 64, 0.75), rgba(15, 34, 64, 0.85)),
+                        url('https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=2000&q=90');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            padding: 4rem 0 3rem 0;
+            padding: 5rem 0 4rem 0;
             margin-top: 60px;
+            position: relative;
+        }
+
+        .contact-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at top right, rgba(212, 175, 55, 0.15), transparent 50%);
+            pointer-events: none;
         }
 
         .form-container {
-            background: linear-gradient(135deg, rgba(15, 34, 64, 0.95) 0%, rgba(30, 41, 59, 0.95) 100%);
-            border-radius: 16px;
-            padding: 3rem;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
-            border: 1px solid rgba(212, 175, 55, 0.2);
+            background: linear-gradient(135deg, rgba(15, 34, 64, 0.98) 0%, rgba(20, 30, 48, 0.98) 100%);
+            border-radius: 20px;
+            padding: 4rem;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.5), 0 10px 40px rgba(212, 175, 55, 0.1);
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            position: relative;
+            backdrop-filter: blur(10px);
+        }
+
+        .form-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #d4af37, transparent);
+            border-radius: 20px 20px 0 0;
         }
 
         .form-section {
@@ -468,15 +493,16 @@ ul, ol {
 <body class="contact-page" class="contact-page">
 
     <section class="hero" style="
-    background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)),
-                      url('https://source.unsplash.com/1920x1080/?winnipeg,office,consultation');
+    background-image: linear-gradient(rgba(15, 34, 64, 0.85), rgba(15, 34, 64, 0.90)),
+                      url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=2400&q=95');
     background-size: cover;
-    background-position: center;
+    background-position: center center;
     background-attachment: fixed;
-    min-height: 550px;
+    min-height: 600px;
     display: flex;
     align-items: center;
-    padding: 2rem 1rem;
+    padding: 4rem 1rem;
+    position: relative;
 ">
     <div style="max-width: 1200px; margin: 0 auto; width: 100%;">
         <h1 style="color: white; font-size: 2.5rem; margin-bottom: 1rem;">Professional Property Solutions</h1>
@@ -495,28 +521,28 @@ ul, ol {
         
     </header>
 
-    <div class="contact-hero"><div class="container"><h1 style="font-size: 3rem; font-weight: 900; margin-bottom: 1rem;">Get Your Free <span class="highlight">Property Analysis</span></h1>
-        <p class="subtitle" style="font-size: 1.25rem; color: rgba(255,255,255,0.9); max-width: 700px; margin: 0 auto 3rem auto; line-height: 1.6;">
-        Tell us about your property and situation. We'll analyze it and provide you with a comprehensive property solution within 24-48 hours. <strong style="color: #d4af37;">Completely confidential, no obligation.</strong>
+    <div class="contact-hero"><div class="container" style="position: relative; z-index: 1;"><h1 style="font-size: 3.5rem; font-weight: 900; margin-bottom: 1.5rem; text-shadow: 0 4px 12px rgba(0,0,0,0.4); letter-spacing: -1px;">Get Your Free <span class="highlight" style="background: linear-gradient(135deg, #d4af37 0%, #f4c542 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Property Analysis</span></h1>
+        <p class="subtitle" style="font-size: 1.35rem; color: rgba(255,255,255,0.95); max-width: 800px; margin: 0 auto 3rem auto; line-height: 1.7; text-shadow: 0 2px 8px rgba(0,0,0,0.3); font-weight: 400;">
+        Tell us about your property and situation. We'll analyze it and provide you with a comprehensive property solution within 24-48 hours. <strong style="color: #f4c542; font-weight: 700;">Completely confidential, no obligation.</strong>
     </p>
 
         
-<div style="background: rgba(212, 175, 55, 0.1); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 12px; padding: 2rem; margin: 2rem 0; text-align: center;">
-    <div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 2rem;">
-        <div>
-            <div style="font-size: 2rem; margin-bottom: 0.5rem;">🔒</div>
-            <div style="font-weight: 700; color: #d4af37; margin-bottom: 0.25rem;">100% Confidential</div>
-            <div style="font-size: 0.875rem; color: rgba(255,255,255,0.7);">Your information is secure</div>
+<div style="background: linear-gradient(135deg, rgba(212, 175, 55, 0.12) 0%, rgba(212, 175, 55, 0.08) 100%); border: 2px solid rgba(212, 175, 55, 0.4); border-radius: 16px; padding: 3rem 2rem; margin: 3rem 0; text-align: center; box-shadow: 0 10px 40px rgba(212, 175, 55, 0.15);">
+    <div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 3rem;">
+        <div style="flex: 1; min-width: 200px;">
+            <div style="font-size: 3rem; margin-bottom: 1rem; filter: drop-shadow(0 4px 8px rgba(212, 175, 55, 0.3));">🔒</div>
+            <div style="font-weight: 800; color: #d4af37; margin-bottom: 0.5rem; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px;">100% Confidential</div>
+            <div style="font-size: 0.95rem; color: rgba(255,255,255,0.85); line-height: 1.5;">Bank-level security protects your information</div>
         </div>
-        <div>
-            <div style="font-size: 2rem; margin-bottom: 0.5rem;">⚡</div>
-            <div style="font-weight: 700; color: #d4af37; margin-bottom: 0.25rem;">24-48 Hour Response</div>
-            <div style="font-size: 0.875rem; color: rgba(255,255,255,0.7);">Fast professional analysis</div>
+        <div style="flex: 1; min-width: 200px;">
+            <div style="font-size: 3rem; margin-bottom: 1rem; filter: drop-shadow(0 4px 8px rgba(212, 175, 55, 0.3));">⚡</div>
+            <div style="font-weight: 800; color: #d4af37; margin-bottom: 0.5rem; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px;">24-48 Hour Response</div>
+            <div style="font-size: 0.95rem; color: rgba(255,255,255,0.85); line-height: 1.5;">Expert analysis delivered promptly</div>
         </div>
-        <div>
-            <div style="font-size: 2rem; margin-bottom: 0.5rem;">✓</div>
-            <div style="font-weight: 700; color: #d4af37; margin-bottom: 0.25rem;">No Obligation</div>
-            <div style="font-size: 0.875rem; color: rgba(255,255,255,0.7);">Free consultation always</div>
+        <div style="flex: 1; min-width: 200px;">
+            <div style="font-size: 3rem; margin-bottom: 1rem; filter: drop-shadow(0 4px 8px rgba(212, 175, 55, 0.3));">✓</div>
+            <div style="font-weight: 800; color: #d4af37; margin-bottom: 0.5rem; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px;">No Obligation</div>
+            <div style="font-size: 0.95rem; color: rgba(255,255,255,0.85); line-height: 1.5;">Professional consultation, completely free</div>
         </div>
     </div>
 </div>
