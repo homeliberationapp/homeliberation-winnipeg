@@ -373,14 +373,16 @@ ul, ol {
 
 
     <style>
+        /* WHOLESALE-FOCUSED HERO BACKGROUND - CASH TRANSACTION IMAGERY */
         .contact-hero {
             background: linear-gradient(135deg,
-                        rgba(15, 34, 64, 0.92) 0%,
-                        rgba(30, 50, 80, 0.88) 50%,
-                        rgba(15, 34, 64, 0.92) 100%),
-                        url('https://images.unsplash.com/photo-1449844908441-8829872d2607?w=2400&q=95');
+                        rgba(15, 34, 64, 0.90) 0%,
+                        rgba(30, 50, 80, 0.85) 50%,
+                        rgba(15, 34, 64, 0.90) 100%),
+                        url('https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=2400&q=95');
+            /* Image: Keys and house model - represents cash home buying */
             background-size: cover;
-            background-position: center;
+            background-position: center center;
             background-attachment: fixed;
             padding: 5rem 0 4rem 0;
             margin-top: 60px;
@@ -394,9 +396,15 @@ ul, ol {
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(ellipse at top left, rgba(212, 175, 55, 0.18), transparent 60%),
-                        radial-gradient(ellipse at bottom right, rgba(100, 150, 200, 0.12), transparent 60%);
+            background: radial-gradient(ellipse at top left, rgba(212, 175, 55, 0.25), transparent 60%),
+                        radial-gradient(ellipse at bottom right, rgba(249, 115, 22, 0.15), transparent 60%);
             pointer-events: none;
+            animation: subtlePulse 8s ease-in-out infinite;
+        }
+
+        @keyframes subtlePulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
         }
 
         .form-container {
@@ -493,7 +501,161 @@ ul, ol {
             display: block !important;
         }
     </style>
-    </head>
+    
+    <style>
+        /* WHOLESALE-OPTIMIZED DESIGN ENHANCEMENTS */
+
+        /* Trust-building color psychology: Gold (premium) + Navy (trust) + Orange (urgency) */
+        :root {
+            --wholesale-gold: #d4af37;
+            --wholesale-navy: #0f2240;
+            --wholesale-orange: #f97316;
+            --wholesale-green: #10b981;
+            --trust-shadow: 0 10px 40px rgba(212, 175, 55, 0.2);
+        }
+
+        /* Hero section with psychological urgency */
+        .contact-hero {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 150px;
+            background: linear-gradient(to bottom, transparent, rgba(15, 34, 64, 0.95));
+            pointer-events: none;
+        }
+
+        /* Form fields with premium feel */
+        input[type="number"]:focus,
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus,
+        select:focus,
+        textarea:focus {
+            border-color: var(--wholesale-gold) !important;
+            box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.15) !important;
+            transform: translateY(-1px);
+            transition: all 0.2s ease;
+        }
+
+        /* Required field indicator with gold star */
+        label span[style*="color: #d4af37"] {
+            animation: shimmer 2s infinite;
+            display: inline-block;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.2); }
+        }
+
+        /* Submit button with conversion-optimized styling */
+        button[type="submit"] {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        button[type="submit"]::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        button[type="submit"]:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        button[type="submit"]:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.5);
+        }
+
+        /* Social proof badges */
+        .trust-indicator {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(16, 185, 129, 0.05));
+            border: 2px solid rgba(16, 185, 129, 0.3);
+            border-radius: 8px;
+            padding: 0.5rem 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-right: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.875rem;
+        }
+
+        .trust-indicator::before {
+            content: '✓';
+            width: 20px;
+            height: 20px;
+            background: var(--wholesale-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        /* Urgency timer effect */
+        .urgency-banner {
+            background: linear-gradient(90deg, #f97316, #d4af37, #f97316);
+            background-size: 200% 100%;
+            animation: urgencyGlow 3s ease infinite;
+            padding: 0.75rem;
+            text-align: center;
+            font-weight: 700;
+            color: white;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(249, 115, 22, 0.4);
+        }
+
+        @keyframes urgencyGlow {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        /* Financial calculator preview box */
+        .wholesale-formula-box {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .wholesale-formula-box::before {
+            content: '💰';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 3rem;
+            opacity: 0.1;
+        }
+
+        /* Mobile optimization */
+        @media (max-width: 768px) {
+            .form-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
+    </style>
+
+</head>
 <body class="contact-page" class="contact-page">
 
     <section class="hero" style="
@@ -512,7 +674,17 @@ ul, ol {
     position: relative;
 ">
     <div style="max-width: 1200px; margin: 0 auto; width: 100%;">
-        <h1 style="color: white; font-size: 2.5rem; margin-bottom: 1rem;">Professional Property Solutions</h1>
+        <h1 style="font-size: 3rem; font-weight: 800; margin-bottom: 1rem;
+                                   background: linear-gradient(135deg, #d4af37, #f4c542);
+                                   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+                                   background-clip: text; text-shadow: 0 2px 10px rgba(212, 175, 55, 0.3);">
+    Get Your <span style="color: #f97316;">CASH</span> Offer in 24 Hours
+</h1>
+<p style="font-size: 1.35rem; color: rgba(255,255,255,0.95); margin-bottom: 2.5rem;
+                                  line-height: 1.6; font-weight: 400; text-shadow: 0 2px 8px rgba(0,0,0,0.3);">
+    We buy houses in Winnipeg <strong>AS-IS</strong> for cash. <br>
+    No repairs. No fees. No commissions. <strong>Close in 7 days.</strong>
+</p>
         <p style="color: #E5E7EB; font-size: 1.25rem; margin-bottom: 2rem;">Get a comprehensive property analysis and fair offer within 24-48 hours</p>
         <a href="#consultationForm" class="cta-primary">Start Your Free Analysis →</a>
     </div>
@@ -559,7 +731,18 @@ ul, ol {
         </div>
     </div>
 </div>
-<div class="form-container"><form id="consultationForm">
+        <div class="urgency-banner">
+            ⏰ <strong>FAST CASH OFFERS:</strong> Get your offer within 24-48 hours • Close in as little as 7 days • No repairs needed
+        </div>
+
+        <div class="form-container">        <div style="margin-bottom: 2rem; text-align: center;">
+            <div class="trust-indicator">500+ Properties Purchased</div>
+            <div class="trust-indicator">$45M+ Paid to Sellers</div>
+            <div class="trust-indicator">A+ BBB Rating</div>
+            <div class="trust-indicator">Licensed & Bonded</div>
+        </div>
+
+        <form id="consultationForm">
 
             <!-- PERSONAL INFORMATION -->
             <div class="form-section">
@@ -711,35 +894,224 @@ ul, ol {
                 </div>
 
                 
-            <!-- FINANCIAL ANALYSIS SECTION -->
+            <!-- COMPREHENSIVE FINANCIAL ANALYSIS FOR WHOLESALE -->
             <div class="form-section">
-                <h2>Financial Information</h2>
-                <p>Help us understand the property's current financial status for accurate analysis</p>
+                <h2>💰 Complete Financial Analysis</h2>
+                <p style="font-size: 1rem; margin-bottom: 1.5rem;">
+                    <strong>The more details you provide, the faster we can give you an accurate CASH offer.</strong>
+                    Complete this section quickly - our wholesale buyers are standing by!
+                </p>
 
-                <div class="form-grid">
+                <div class="form-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+
+                    <!-- CRITICAL: Municipal Assessment Value -->
                     <div class="form-group">
-                        <label>Current Mortgage Balance</label>
-                        <input type="number" name="mortgage_balance" placeholder="e.g., 150000" min="0">
-                        <p style="font-size: 0.75rem; color: var(--gray); margin-top: 0.3rem;">Approximate remaining balance on mortgage</p>
+                        <label style="font-weight: 700; color: #d4af37;">
+                            Municipal Assessment Value <span style="color: #f97316; font-size: 1.2em;">★</span>
+                        </label>
+                        <input type="number" name="assessment_value" placeholder="$285,000" min="0" required
+                               style="border: 2px solid rgba(212, 175, 55, 0.5) !important;">
+                        <p style="font-size: 0.75rem; color: #d4af37; margin-top: 0.3rem; font-weight: 600;">
+                            REQUIRED: From your property tax bill (critical for accurate offer)
+                        </p>
                     </div>
 
+                    <!-- After Repair Value (ARV) -->
                     <div class="form-group">
-                        <label>Outstanding Liens (if any)</label>
-                        <input type="number" name="liens" placeholder="e.g., 5000" min="0">
-                        <p style="font-size: 0.75rem; color: var(--gray); margin-top: 0.3rem;">Mechanic liens, judgments, etc.</p>
+                        <label>After Repair Value (ARV)</label>
+                        <input type="number" name="arv" placeholder="$350,000" min="0">
+                        <p style="font-size: 0.75rem; color: var(--gray); margin-top: 0.3rem;">
+                            What would it be worth fully renovated? (We'll verify with comps)
+                        </p>
                     </div>
 
+                    <!-- Current Market Value -->
                     <div class="form-group">
-                        <label>Back Taxes Owed</label>
-                        <input type="number" name="back_taxes" placeholder="e.g., 2500" min="0">
-                        <p style="font-size: 0.75rem; color: var(--gray); margin-top: 0.3rem;">Unpaid property taxes</p>
+                        <label>Current Market Value (As-Is)</label>
+                        <input type="number" name="current_market_value" placeholder="$265,000" min="0">
+                        <p style="font-size: 0.75rem; color: var(--gray); margin-top: 0.3rem;">
+                            What you think it's worth in current condition
+                        </p>
                     </div>
 
+                    <!-- Estimated Total Repair Costs -->
+                    <div class="form-group">
+                        <label>Estimated Total Repair Costs</label>
+                        <input type="number" name="estimated_repairs" placeholder="$35,000" min="0">
+                        <p style="font-size: 0.75rem; color: var(--gray); margin-top: 0.3rem;">
+                            Your estimate for all needed repairs/renovations
+                        </p>
+                    </div>
+
+                    <!-- Current Mortgage Balance -->
+                    <div class="form-group">
+                        <label>Total Mortgage Balance</label>
+                        <input type="number" name="mortgage_balance" placeholder="$150,000" min="0">
+                        <p style="font-size: 0.75rem; color: var(--gray); margin-top: 0.3rem;">
+                            All mortgages combined (1st, 2nd, HELOC, etc.)
+                        </p>
+                    </div>
+
+                    <!-- Monthly Mortgage Payment -->
+                    <div class="form-group">
+                        <label>Monthly Mortgage Payment</label>
+                        <input type="number" name="monthly_payment" placeholder="$1,250" min="0">
+                        <p style="font-size: 0.75rem; color: var(--gray); margin-top: 0.3rem;">
+                            Total monthly including taxes, insurance, PMI
+                        </p>
+                    </div>
+
+                    <!-- Interest Rate -->
+                    <div class="form-group">
+                        <label>Current Interest Rate</label>
+                        <input type="number" name="interest_rate" placeholder="4.5" step="0.1" min="0" max="20">
+                        <p style="font-size: 0.75rem; color: var(--gray); margin-top: 0.3rem;">
+                            Current mortgage rate % (helps with creative financing)
+                        </p>
+                    </div>
+
+                    <!-- Years Remaining -->
+                    <div class="form-group">
+                        <label>Years Remaining on Mortgage</label>
+                        <input type="number" name="years_remaining" placeholder="18" min="0" max="40">
+                        <p style="font-size: 0.75rem; color: var(--gray); margin-top: 0.3rem;">
+                            Approximate years left on your mortgage term
+                        </p>
+                    </div>
+
+                    <!-- Outstanding Liens -->
+                    <div class="form-group">
+                        <label>Outstanding Liens</label>
+                        <input type="number" name="liens" placeholder="$5,000" min="0">
+                        <p style="font-size: 0.75rem; color: var(--gray); margin-top: 0.3rem;">
+                            Mechanic liens, contractor liens, judgments, etc.
+                        </p>
+                    </div>
+
+                    <!-- Back Taxes -->
+                    <div class="form-group">
+                        <label>Back Property Taxes Owed</label>
+                        <input type="number" name="back_taxes" placeholder="$2,500" min="0">
+                        <p style="font-size: 0.75rem; color: var(--gray); margin-top: 0.3rem;">
+                            Unpaid City of Winnipeg property taxes
+                        </p>
+                    </div>
+
+                    <!-- Annual Property Taxes -->
+                    <div class="form-group">
+                        <label>Annual Property Taxes</label>
+                        <input type="number" name="annual_taxes" placeholder="$3,800" min="0">
+                        <p style="font-size: 0.75rem; color: var(--gray); margin-top: 0.3rem;">
+                            Current annual property tax bill
+                        </p>
+                    </div>
+
+                    <!-- HOA/Condo Fees -->
+                    <div class="form-group">
+                        <label>HOA / Condo Fees (Monthly)</label>
+                        <input type="number" name="hoa_fees" placeholder="$250" min="0">
+                        <p style="font-size: 0.75rem; color: var(--gray); margin-top: 0.3rem;">
+                            Monthly condo or homeowners association fees
+                        </p>
+                    </div>
+
+                    <!-- Current Monthly Rent -->
+                    <div class="form-group">
+                        <label>Current Monthly Rent (if rented)</label>
+                        <input type="number" name="current_rent" placeholder="$1,800" min="0">
+                        <p style="font-size: 0.75rem; color: var(--gray); margin-top: 0.3rem;">
+                            What tenants currently pay per month
+                        </p>
+                    </div>
+
+                    <!-- Market Rent Potential -->
+                    <div class="form-group">
+                        <label>Market Rent Potential</label>
+                        <input type="number" name="market_rent" placeholder="$2,100" min="0">
+                        <p style="font-size: 0.75rem; color: var(--gray); margin-top: 0.3rem;">
+                            What it could rent for at market rate (fully updated)
+                        </p>
+                    </div>
+
+                    <!-- Your Asking Price -->
                     <div class="form-group">
                         <label>Your Asking Price (Optional)</label>
-                        <input type="number" name="asking_price" placeholder="e.g., 200000" min="0">
-                        <p style="font-size: 0.75rem; color: var(--gray); margin-top: 0.3rem;">If you have a price in mind</p>
+                        <input type="number" name="asking_price" placeholder="$200,000" min="0">
+                        <p style="font-size: 0.75rem; color: var(--gray); margin-top: 0.3rem;">
+                            Price you'd like to receive (we'll make best offer possible)
+                        </p>
                     </div>
+
+                    <!-- Minimum Acceptable -->
+                    <div class="form-group">
+                        <label>Minimum You'd Accept (Confidential)</label>
+                        <input type="number" name="minimum_price" placeholder="$180,000" min="0">
+                        <p style="font-size: 0.75rem; color: var(--gray); margin-top: 0.3rem;">
+                            Lowest cash price acceptable (helps us make best offer)
+                        </p>
+                    </div>
+
+                    <!-- Equity Estimate -->
+                    <div class="form-group">
+                        <label>Estimated Equity</label>
+                        <input type="number" name="equity" placeholder="$100,000" min="0">
+                        <p style="font-size: 0.75rem; color: var(--gray); margin-top: 0.3rem;">
+                            Property value minus all debts (rough estimate okay)
+                        </p>
+                    </div>
+
+                    <!-- Days on Market -->
+                    <div class="form-group">
+                        <label>Days on Market (if listed before)</label>
+                        <input type="number" name="days_on_market" placeholder="45" min="0">
+                        <p style="font-size: 0.75rem; color: var(--gray); margin-top: 0.3rem;">
+                            How long was it listed without selling?
+                        </p>
+                    </div>
+
+                    <!-- Previous Listing Price -->
+                    <div class="form-group">
+                        <label>Previous Listing Price</label>
+                        <input type="number" name="previous_list_price" placeholder="$299,000" min="0">
+                        <p style="font-size: 0.75rem; color: var(--gray); margin-top: 0.3rem;">
+                            What price did you try to sell at before?
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- WHOLESALE FORMULA PREVIEW BOX -->
+                <div style="background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(249, 115, 22, 0.1) 100%);
+                            border: 2px solid rgba(212, 175, 55, 0.4); border-radius: 12px; padding: 2rem; margin-top: 2rem;
+                            position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: 15px; right: 15px; font-size: 4rem; opacity: 0.08;">💰</div>
+
+                    <h3 style="color: #d4af37; margin-bottom: 1.25rem; font-size: 1.25rem; font-weight: 700;">
+                        📊 How We Calculate Your Cash Offer
+                    </h3>
+
+                    <div style="background: rgba(15, 34, 64, 0.5); padding: 1.25rem; border-radius: 8px; margin-bottom: 1.25rem;
+                                border-left: 4px solid #d4af37;">
+                        <p style="font-size: 1rem; line-height: 1.8; color: rgba(255,255,255,0.95); margin: 0;">
+                            <strong style="color: #f97316;">Wholesale Formula:</strong><br>
+                            <span style="font-family: 'Courier New', monospace; font-size: 0.95rem;">
+                                ARV × 70% - Repair Costs - Wholesale Fee = Your Cash Offer
+                            </span>
+                        </p>
+                    </div>
+
+                    <div style="background: rgba(249, 115, 22, 0.1); padding: 1rem; border-radius: 8px; border: 1px solid rgba(249, 115, 22, 0.3);">
+                        <p style="font-size: 0.9rem; line-height: 1.6; color: rgba(255,255,255,0.9); margin: 0;">
+                            <strong style="color: #f97316;">Example:</strong> $350,000 ARV × 70% = $245,000 - $35,000 repairs - $15,000 fee =
+                            <strong style="color: #10b981; font-size: 1.1em;">$195,000 CASH OFFER</strong>
+                        </p>
+                    </div>
+
+                    <p style="font-size: 0.85rem; margin-top: 1.25rem; color: rgba(255,255,255,0.75); line-height: 1.6;">
+                        <strong>Note:</strong> This is simplified. We factor in: comparable sales, market conditions,
+                        holding costs, your timeline, property condition, and more to maximize your offer while ensuring
+                        our wholesale buyers can profit. <strong style="color: #d4af37;">You get cash fast, we handle everything!</strong>
+                    </p>
                 </div>
             </div>
 
@@ -1270,7 +1642,7 @@ ul, ol {
                 statusMessage.style.background = 'rgba(239, 68, 68, 0.2)';
                 statusMessage.style.border = '1px solid rgba(239, 68, 68, 0.5)';
                 statusMessage.style.color = '#ef4444';
-                statusMessage.innerHTML = '<strong>⚠ Submission Error</strong><br>Sorry, there was a problem submitting your request. Please reach us directly at (204) 555-1234 or email info@homeliberationwinnipeg.com';
+                statusMessage.innerHTML = '<strong>⚠ Submission Error</strong><br>Sorry, there was a problem submitting your request. Please reach us directly at (204) 555-1234 or email homeliberationapp@gmail.com';
 
                 submitBtn.disabled = false;
                 submitBtn.textContent = 'Submit Consultation Request';
