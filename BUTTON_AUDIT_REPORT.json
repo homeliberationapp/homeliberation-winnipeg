@@ -1,0 +1,1709 @@
+{
+  "timestamp": "2025-11-14T20:17:15.393Z",
+  "totalButtons": 6,
+  "totalLinks": 290,
+  "brokenLinksCount": 0,
+  "details": [
+    {
+      "file": "index.html",
+      "buttons": [],
+      "internalLinks": [
+        {
+          "href": "contact.html",
+          "text": "Get Your Offer"
+        },
+        {
+          "href": "foreclosure.html",
+          "text": "Learn more →"
+        },
+        {
+          "href": "repairs.html",
+          "text": "Learn more →"
+        },
+        {
+          "href": "quick-sale.html",
+          "text": "Learn more →"
+        },
+        {
+          "href": "landlord.html",
+          "text": "Learn more →"
+        },
+        {
+          "href": "inherited.html",
+          "text": "Learn more →"
+        },
+        {
+          "href": "downsizing.html",
+          "text": "Learn more →"
+        },
+        {
+          "href": "contact.html",
+          "text": "Get Your Offer Now"
+        },
+        {
+          "href": "foreclosure.html",
+          "text": "Foreclosure Help"
+        },
+        {
+          "href": "repairs.html",
+          "text": "Sell As-Is"
+        },
+        {
+          "href": "quick-sale.html",
+          "text": "Fast  Sale"
+        },
+        {
+          "href": "inherited.html",
+          "text": "Inherited Property"
+        },
+        {
+          "href": "faq.html",
+          "text": "FAQ"
+        },
+        {
+          "href": "privacy.html",
+          "text": "Privacy Policy"
+        },
+        {
+          "href": "terms.html",
+          "text": "Terms of Service"
+        }
+      ],
+      "externalLinks": [
+        {
+          "href": "https://facebook.com/homeliberationwinnipeg",
+          "text": "f"
+        },
+        {
+          "href": "https://instagram.com/homeliberationwpg",
+          "text": ""
+        },
+        {
+          "href": "https://linkedin.com/company/home-liberation-winnipeg",
+          "text": "in"
+        }
+      ],
+      "emailLinks": [],
+      "telLinks": [],
+      "brokenLinks": []
+    },
+    {
+      "file": "about.html",
+      "buttons": [],
+      "internalLinks": [
+        {
+          "href": "about.html",
+          "text": "About"
+        },
+        {
+          "href": "services.html",
+          "text": "Services"
+        },
+        {
+          "href": "buyers.html",
+          "text": "Buyer List"
+        },
+        {
+          "href": "faq.html",
+          "text": "FAQ"
+        },
+        {
+          "href": "contact.html",
+          "text": "Sell Your Property"
+        },
+        {
+          "href": "foreclosure.html",
+          "text": "Foreclosure Help"
+        },
+        {
+          "href": "repairs.html",
+          "text": "Sell As-Is"
+        },
+        {
+          "href": "quick-sale.html",
+          "text": "Fast  Sale"
+        },
+        {
+          "href": "inherited.html",
+          "text": "Inherited Property"
+        },
+        {
+          "href": "faq.html",
+          "text": "FAQ"
+        },
+        {
+          "href": "privacy.html",
+          "text": "Privacy Policy"
+        },
+        {
+          "href": "terms.html",
+          "text": "Terms of Service"
+        }
+      ],
+      "externalLinks": [
+        {
+          "href": "https://facebook.com/homeliberationwinnipeg",
+          "text": "f"
+        },
+        {
+          "href": "https://instagram.com/homeliberationwpg",
+          "text": ""
+        },
+        {
+          "href": "https://linkedin.com/company/home-liberation-winnipeg",
+          "text": "in"
+        }
+      ],
+      "emailLinks": [],
+      "telLinks": [],
+      "brokenLinks": []
+    },
+    {
+      "file": "services.html",
+      "buttons": [],
+      "internalLinks": [
+        {
+          "href": "about.html",
+          "text": "About"
+        },
+        {
+          "href": "services.html",
+          "text": "Services"
+        },
+        {
+          "href": "buyers.html",
+          "text": "Buyer List"
+        },
+        {
+          "href": "faq.html",
+          "text": "FAQ"
+        },
+        {
+          "href": "contact.html",
+          "text": "Sell Your Property"
+        },
+        {
+          "href": "foreclosure.html",
+          "text": "Foreclosure Help"
+        },
+        {
+          "href": "repairs.html",
+          "text": "Sell As-Is"
+        },
+        {
+          "href": "quick-sale.html",
+          "text": "Fast  Sale"
+        },
+        {
+          "href": "inherited.html",
+          "text": "Inherited Property"
+        },
+        {
+          "href": "faq.html",
+          "text": "FAQ"
+        },
+        {
+          "href": "privacy.html",
+          "text": "Privacy Policy"
+        },
+        {
+          "href": "terms.html",
+          "text": "Terms of Service"
+        }
+      ],
+      "externalLinks": [
+        {
+          "href": "https://facebook.com/homeliberationwinnipeg",
+          "text": "f"
+        },
+        {
+          "href": "https://instagram.com/homeliberationwpg",
+          "text": ""
+        },
+        {
+          "href": "https://linkedin.com/company/home-liberation-winnipeg",
+          "text": "in"
+        }
+      ],
+      "emailLinks": [],
+      "telLinks": [],
+      "brokenLinks": []
+    },
+    {
+      "file": "contact.html",
+      "buttons": [
+        {
+          "text": "Submit Consultation Request",
+          "html": "<button type=\"submit\" class=\"submit-btn\" id=\"submitBtn\">Submit Consultation Request</button>"
+        },
+        {
+          "text": "×",
+          "html": "<button type=\"button\" class=\"remove-photo\" data-index=\"${selectedPhotos.length - 1}\"\r\n              "
+        }
+      ],
+      "internalLinks": [
+        {
+          "href": "foreclosure.html",
+          "text": "Foreclosure Help"
+        },
+        {
+          "href": "repairs.html",
+          "text": "Sell As-Is"
+        },
+        {
+          "href": "quick-sale.html",
+          "text": "Fast  Sale"
+        },
+        {
+          "href": "inherited.html",
+          "text": "Inherited Property"
+        },
+        {
+          "href": "faq.html",
+          "text": "FAQ"
+        },
+        {
+          "href": "privacy.html",
+          "text": "Privacy Policy"
+        },
+        {
+          "href": "terms.html",
+          "text": "Terms of Service"
+        }
+      ],
+      "externalLinks": [
+        {
+          "href": "https://facebook.com/homeliberationwinnipeg",
+          "text": "f"
+        },
+        {
+          "href": "https://instagram.com/homeliberationwpg",
+          "text": ""
+        },
+        {
+          "href": "https://linkedin.com/company/home-liberation-winnipeg",
+          "text": "in"
+        }
+      ],
+      "emailLinks": [],
+      "telLinks": [],
+      "brokenLinks": []
+    },
+    {
+      "file": "sellers.html",
+      "buttons": [
+        {
+          "text": "Submit Consultation Request",
+          "html": "<button type=\"submit\" class=\"submit-btn\" id=\"submitBtn\">Submit Consultation Request</button>"
+        },
+        {
+          "text": "×",
+          "html": "<button type=\"button\" class=\"remove-photo\" data-index=\"${selectedPhotos.length - 1}\"\r\n              "
+        }
+      ],
+      "internalLinks": [
+        {
+          "href": "contact.html",
+          "text": "Get Your Offer Now →"
+        },
+        {
+          "href": "foreclosure.html",
+          "text": "Foreclosure Help"
+        },
+        {
+          "href": "repairs.html",
+          "text": "Sell As-Is"
+        },
+        {
+          "href": "quick-sale.html",
+          "text": "Fast  Sale"
+        },
+        {
+          "href": "inherited.html",
+          "text": "Inherited Property"
+        },
+        {
+          "href": "faq.html",
+          "text": "FAQ"
+        },
+        {
+          "href": "privacy.html",
+          "text": "Privacy Policy"
+        },
+        {
+          "href": "terms.html",
+          "text": "Terms of Service"
+        }
+      ],
+      "externalLinks": [
+        {
+          "href": "https://facebook.com/homeliberationwinnipeg",
+          "text": "f"
+        },
+        {
+          "href": "https://instagram.com/homeliberationwpg",
+          "text": ""
+        },
+        {
+          "href": "https://linkedin.com/company/home-liberation-winnipeg",
+          "text": "in"
+        }
+      ],
+      "emailLinks": [],
+      "telLinks": [],
+      "brokenLinks": []
+    },
+    {
+      "file": "buyers.html",
+      "buttons": [
+        {
+          "text": "Join Buyer List",
+          "html": "<button type=\"submit\" class=\"submit-btn\" id=\"submitBtn\">Join Buyer List</button>"
+        }
+      ],
+      "internalLinks": [
+        {
+          "href": "contact.html",
+          "text": "Get Your Offer"
+        },
+        {
+          "href": "about.html",
+          "text": "About"
+        },
+        {
+          "href": "services.html",
+          "text": "Services"
+        },
+        {
+          "href": "buyers.html",
+          "text": "Buyer List"
+        },
+        {
+          "href": "faq.html",
+          "text": "FAQ"
+        },
+        {
+          "href": "contact.html",
+          "text": "Sell Your Property"
+        },
+        {
+          "href": "foreclosure.html",
+          "text": "Foreclosure Help"
+        },
+        {
+          "href": "repairs.html",
+          "text": "Sell As-Is"
+        },
+        {
+          "href": "quick-sale.html",
+          "text": "Fast  Sale"
+        },
+        {
+          "href": "inherited.html",
+          "text": "Inherited Property"
+        },
+        {
+          "href": "faq.html",
+          "text": "FAQ"
+        },
+        {
+          "href": "privacy.html",
+          "text": "Privacy Policy"
+        },
+        {
+          "href": "terms.html",
+          "text": "Terms of Service"
+        }
+      ],
+      "externalLinks": [
+        {
+          "href": "https://facebook.com/homeliberationwinnipeg",
+          "text": "f"
+        },
+        {
+          "href": "https://instagram.com/homeliberationwpg",
+          "text": ""
+        },
+        {
+          "href": "https://linkedin.com/company/home-liberation-winnipeg",
+          "text": "in"
+        }
+      ],
+      "emailLinks": [],
+      "telLinks": [],
+      "brokenLinks": []
+    },
+    {
+      "file": "properties.html",
+      "buttons": [],
+      "internalLinks": [
+        {
+          "href": "contact.html",
+          "text": "Get Your Offer"
+        },
+        {
+          "href": "foreclosure.html",
+          "text": "Foreclosure Help"
+        },
+        {
+          "href": "repairs.html",
+          "text": "Sell As-Is"
+        },
+        {
+          "href": "quick-sale.html",
+          "text": "Fast  Sale"
+        },
+        {
+          "href": "inherited.html",
+          "text": "Inherited Property"
+        },
+        {
+          "href": "faq.html",
+          "text": "FAQ"
+        },
+        {
+          "href": "privacy.html",
+          "text": "Privacy Policy"
+        },
+        {
+          "href": "terms.html",
+          "text": "Terms of Service"
+        }
+      ],
+      "externalLinks": [
+        {
+          "href": "https://facebook.com/homeliberationwinnipeg",
+          "text": "f"
+        },
+        {
+          "href": "https://instagram.com/homeliberationwpg",
+          "text": ""
+        },
+        {
+          "href": "https://linkedin.com/company/home-liberation-winnipeg",
+          "text": "in"
+        }
+      ],
+      "emailLinks": [],
+      "telLinks": [],
+      "brokenLinks": []
+    },
+    {
+      "file": "foreclosure.html",
+      "buttons": [],
+      "internalLinks": [
+        {
+          "href": "about.html",
+          "text": "About"
+        },
+        {
+          "href": "services.html",
+          "text": "Services"
+        },
+        {
+          "href": "buyers.html",
+          "text": "Buyer List"
+        },
+        {
+          "href": "faq.html",
+          "text": "FAQ"
+        },
+        {
+          "href": "contact.html",
+          "text": "Sell Your Property"
+        },
+        {
+          "href": "foreclosure.html",
+          "text": "Foreclosure Help"
+        },
+        {
+          "href": "repairs.html",
+          "text": "Sell As-Is"
+        },
+        {
+          "href": "quick-sale.html",
+          "text": "Fast  Sale"
+        },
+        {
+          "href": "inherited.html",
+          "text": "Inherited Property"
+        },
+        {
+          "href": "faq.html",
+          "text": "FAQ"
+        },
+        {
+          "href": "privacy.html",
+          "text": "Privacy Policy"
+        },
+        {
+          "href": "terms.html",
+          "text": "Terms of Service"
+        }
+      ],
+      "externalLinks": [
+        {
+          "href": "https://facebook.com/homeliberationwinnipeg",
+          "text": "f"
+        },
+        {
+          "href": "https://instagram.com/homeliberationwpg",
+          "text": ""
+        },
+        {
+          "href": "https://linkedin.com/company/home-liberation-winnipeg",
+          "text": "in"
+        }
+      ],
+      "emailLinks": [],
+      "telLinks": [],
+      "brokenLinks": []
+    },
+    {
+      "file": "bankruptcy.html",
+      "buttons": [],
+      "internalLinks": [
+        {
+          "href": "about.html",
+          "text": "About"
+        },
+        {
+          "href": "services.html",
+          "text": "Services"
+        },
+        {
+          "href": "buyers.html",
+          "text": "Buyer List"
+        },
+        {
+          "href": "faq.html",
+          "text": "FAQ"
+        },
+        {
+          "href": "contact.html",
+          "text": "Sell Your Property"
+        },
+        {
+          "href": "foreclosure.html",
+          "text": "Foreclosure Help"
+        },
+        {
+          "href": "repairs.html",
+          "text": "Sell As-Is"
+        },
+        {
+          "href": "quick-sale.html",
+          "text": "Fast  Sale"
+        },
+        {
+          "href": "inherited.html",
+          "text": "Inherited Property"
+        },
+        {
+          "href": "faq.html",
+          "text": "FAQ"
+        },
+        {
+          "href": "privacy.html",
+          "text": "Privacy Policy"
+        },
+        {
+          "href": "terms.html",
+          "text": "Terms of Service"
+        }
+      ],
+      "externalLinks": [
+        {
+          "href": "https://facebook.com/homeliberationwinnipeg",
+          "text": "f"
+        },
+        {
+          "href": "https://instagram.com/homeliberationwpg",
+          "text": ""
+        },
+        {
+          "href": "https://linkedin.com/company/home-liberation-winnipeg",
+          "text": "in"
+        }
+      ],
+      "emailLinks": [],
+      "telLinks": [],
+      "brokenLinks": []
+    },
+    {
+      "file": "landlord.html",
+      "buttons": [],
+      "internalLinks": [
+        {
+          "href": "contact.html",
+          "text": "Get Your Offer Now →"
+        },
+        {
+          "href": "about.html",
+          "text": "About"
+        },
+        {
+          "href": "services.html",
+          "text": "Services"
+        },
+        {
+          "href": "buyers.html",
+          "text": "Buyer List"
+        },
+        {
+          "href": "faq.html",
+          "text": "FAQ"
+        },
+        {
+          "href": "contact.html",
+          "text": "Sell Your Property"
+        },
+        {
+          "href": "foreclosure.html",
+          "text": "Foreclosure Help"
+        },
+        {
+          "href": "repairs.html",
+          "text": "Sell As-Is"
+        },
+        {
+          "href": "quick-sale.html",
+          "text": "Fast  Sale"
+        },
+        {
+          "href": "inherited.html",
+          "text": "Inherited Property"
+        },
+        {
+          "href": "faq.html",
+          "text": "FAQ"
+        },
+        {
+          "href": "privacy.html",
+          "text": "Privacy Policy"
+        },
+        {
+          "href": "terms.html",
+          "text": "Terms of Service"
+        }
+      ],
+      "externalLinks": [
+        {
+          "href": "https://facebook.com/homeliberationwinnipeg",
+          "text": "f"
+        },
+        {
+          "href": "https://instagram.com/homeliberationwpg",
+          "text": ""
+        },
+        {
+          "href": "https://linkedin.com/company/home-liberation-winnipeg",
+          "text": "in"
+        }
+      ],
+      "emailLinks": [],
+      "telLinks": [],
+      "brokenLinks": []
+    },
+    {
+      "file": "inherited.html",
+      "buttons": [],
+      "internalLinks": [
+        {
+          "href": "about.html",
+          "text": "About"
+        },
+        {
+          "href": "services.html",
+          "text": "Services"
+        },
+        {
+          "href": "buyers.html",
+          "text": "Buyer List"
+        },
+        {
+          "href": "faq.html",
+          "text": "FAQ"
+        },
+        {
+          "href": "contact.html",
+          "text": "Sell Your Property"
+        },
+        {
+          "href": "foreclosure.html",
+          "text": "Foreclosure Help"
+        },
+        {
+          "href": "repairs.html",
+          "text": "Sell As-Is"
+        },
+        {
+          "href": "quick-sale.html",
+          "text": "Fast  Sale"
+        },
+        {
+          "href": "inherited.html",
+          "text": "Inherited Property"
+        },
+        {
+          "href": "faq.html",
+          "text": "FAQ"
+        },
+        {
+          "href": "privacy.html",
+          "text": "Privacy Policy"
+        },
+        {
+          "href": "terms.html",
+          "text": "Terms of Service"
+        }
+      ],
+      "externalLinks": [
+        {
+          "href": "https://facebook.com/homeliberationwinnipeg",
+          "text": "f"
+        },
+        {
+          "href": "https://instagram.com/homeliberationwpg",
+          "text": ""
+        },
+        {
+          "href": "https://linkedin.com/company/home-liberation-winnipeg",
+          "text": "in"
+        }
+      ],
+      "emailLinks": [],
+      "telLinks": [],
+      "brokenLinks": []
+    },
+    {
+      "file": "downsizing.html",
+      "buttons": [],
+      "internalLinks": [
+        {
+          "href": "about.html",
+          "text": "About"
+        },
+        {
+          "href": "services.html",
+          "text": "Services"
+        },
+        {
+          "href": "buyers.html",
+          "text": "Buyer List"
+        },
+        {
+          "href": "faq.html",
+          "text": "FAQ"
+        },
+        {
+          "href": "contact.html",
+          "text": "Sell Your Property"
+        },
+        {
+          "href": "foreclosure.html",
+          "text": "Foreclosure Help"
+        },
+        {
+          "href": "repairs.html",
+          "text": "Sell As-Is"
+        },
+        {
+          "href": "quick-sale.html",
+          "text": "Fast  Sale"
+        },
+        {
+          "href": "inherited.html",
+          "text": "Inherited Property"
+        },
+        {
+          "href": "faq.html",
+          "text": "FAQ"
+        },
+        {
+          "href": "privacy.html",
+          "text": "Privacy Policy"
+        },
+        {
+          "href": "terms.html",
+          "text": "Terms of Service"
+        }
+      ],
+      "externalLinks": [
+        {
+          "href": "https://facebook.com/homeliberationwinnipeg",
+          "text": "f"
+        },
+        {
+          "href": "https://instagram.com/homeliberationwpg",
+          "text": ""
+        },
+        {
+          "href": "https://linkedin.com/company/home-liberation-winnipeg",
+          "text": "in"
+        }
+      ],
+      "emailLinks": [],
+      "telLinks": [],
+      "brokenLinks": []
+    },
+    {
+      "file": "quick-sale.html",
+      "buttons": [],
+      "internalLinks": [
+        {
+          "href": "about.html",
+          "text": "About"
+        },
+        {
+          "href": "services.html",
+          "text": "Services"
+        },
+        {
+          "href": "buyers.html",
+          "text": "Buyer List"
+        },
+        {
+          "href": "faq.html",
+          "text": "FAQ"
+        },
+        {
+          "href": "contact.html",
+          "text": "Sell Your Property"
+        },
+        {
+          "href": "foreclosure.html",
+          "text": "Foreclosure Help"
+        },
+        {
+          "href": "repairs.html",
+          "text": "Sell As-Is"
+        },
+        {
+          "href": "quick-sale.html",
+          "text": "Fast  Sale"
+        },
+        {
+          "href": "inherited.html",
+          "text": "Inherited Property"
+        },
+        {
+          "href": "faq.html",
+          "text": "FAQ"
+        },
+        {
+          "href": "privacy.html",
+          "text": "Privacy Policy"
+        },
+        {
+          "href": "terms.html",
+          "text": "Terms of Service"
+        }
+      ],
+      "externalLinks": [
+        {
+          "href": "https://facebook.com/homeliberationwinnipeg",
+          "text": "f"
+        },
+        {
+          "href": "https://instagram.com/homeliberationwpg",
+          "text": ""
+        },
+        {
+          "href": "https://linkedin.com/company/home-liberation-winnipeg",
+          "text": "in"
+        }
+      ],
+      "emailLinks": [],
+      "telLinks": [],
+      "brokenLinks": []
+    },
+    {
+      "file": "repairs.html",
+      "buttons": [],
+      "internalLinks": [
+        {
+          "href": "about.html",
+          "text": "About"
+        },
+        {
+          "href": "services.html",
+          "text": "Services"
+        },
+        {
+          "href": "buyers.html",
+          "text": "Buyer List"
+        },
+        {
+          "href": "faq.html",
+          "text": "FAQ"
+        },
+        {
+          "href": "contact.html",
+          "text": "Sell Your Property"
+        },
+        {
+          "href": "foreclosure.html",
+          "text": "Foreclosure Help"
+        },
+        {
+          "href": "repairs.html",
+          "text": "Sell As-Is"
+        },
+        {
+          "href": "quick-sale.html",
+          "text": "Fast  Sale"
+        },
+        {
+          "href": "inherited.html",
+          "text": "Inherited Property"
+        },
+        {
+          "href": "faq.html",
+          "text": "FAQ"
+        },
+        {
+          "href": "privacy.html",
+          "text": "Privacy Policy"
+        },
+        {
+          "href": "terms.html",
+          "text": "Terms of Service"
+        }
+      ],
+      "externalLinks": [
+        {
+          "href": "https://facebook.com/homeliberationwinnipeg",
+          "text": "f"
+        },
+        {
+          "href": "https://instagram.com/homeliberationwpg",
+          "text": ""
+        },
+        {
+          "href": "https://linkedin.com/company/home-liberation-winnipeg",
+          "text": "in"
+        }
+      ],
+      "emailLinks": [],
+      "telLinks": [],
+      "brokenLinks": []
+    },
+    {
+      "file": "tax-liens.html",
+      "buttons": [],
+      "internalLinks": [
+        {
+          "href": "about.html",
+          "text": "About"
+        },
+        {
+          "href": "services.html",
+          "text": "Services"
+        },
+        {
+          "href": "buyers.html",
+          "text": "Buyer List"
+        },
+        {
+          "href": "faq.html",
+          "text": "FAQ"
+        },
+        {
+          "href": "contact.html",
+          "text": "Sell Your Property"
+        },
+        {
+          "href": "foreclosure.html",
+          "text": "Foreclosure Help"
+        },
+        {
+          "href": "repairs.html",
+          "text": "Sell As-Is"
+        },
+        {
+          "href": "quick-sale.html",
+          "text": "Fast  Sale"
+        },
+        {
+          "href": "inherited.html",
+          "text": "Inherited Property"
+        },
+        {
+          "href": "faq.html",
+          "text": "FAQ"
+        },
+        {
+          "href": "privacy.html",
+          "text": "Privacy Policy"
+        },
+        {
+          "href": "terms.html",
+          "text": "Terms of Service"
+        }
+      ],
+      "externalLinks": [
+        {
+          "href": "https://facebook.com/homeliberationwinnipeg",
+          "text": "f"
+        },
+        {
+          "href": "https://instagram.com/homeliberationwpg",
+          "text": ""
+        },
+        {
+          "href": "https://linkedin.com/company/home-liberation-winnipeg",
+          "text": "in"
+        }
+      ],
+      "emailLinks": [],
+      "telLinks": [],
+      "brokenLinks": []
+    },
+    {
+      "file": "calculator.html",
+      "buttons": [
+        {
+          "text": "Calculate My Property Value",
+          "html": "<button type=\"submit\" class=\"submit-btn\">Calculate My Property Value</button>"
+        }
+      ],
+      "internalLinks": [
+        {
+          "href": "contact.html",
+          "text": "Get Your Offer"
+        },
+        {
+          "href": "contact.html",
+          "text": "Get Your Offer Now →"
+        },
+        {
+          "href": "about.html",
+          "text": "About"
+        },
+        {
+          "href": "services.html",
+          "text": "Services"
+        },
+        {
+          "href": "buyers.html",
+          "text": "Buyer List"
+        },
+        {
+          "href": "faq.html",
+          "text": "FAQ"
+        },
+        {
+          "href": "contact.html",
+          "text": "Sell Your Property"
+        },
+        {
+          "href": "contact.html",
+          "text": "Schedule Full Consultation"
+        },
+        {
+          "href": "foreclosure.html",
+          "text": "Foreclosure Help"
+        },
+        {
+          "href": "repairs.html",
+          "text": "Sell As-Is"
+        },
+        {
+          "href": "quick-sale.html",
+          "text": "Fast  Sale"
+        },
+        {
+          "href": "inherited.html",
+          "text": "Inherited Property"
+        },
+        {
+          "href": "faq.html",
+          "text": "FAQ"
+        },
+        {
+          "href": "privacy.html",
+          "text": "Privacy Policy"
+        },
+        {
+          "href": "terms.html",
+          "text": "Terms of Service"
+        }
+      ],
+      "externalLinks": [
+        {
+          "href": "https://facebook.com/homeliberationwinnipeg",
+          "text": "f"
+        },
+        {
+          "href": "https://instagram.com/homeliberationwpg",
+          "text": ""
+        },
+        {
+          "href": "https://linkedin.com/company/home-liberation-winnipeg",
+          "text": "in"
+        }
+      ],
+      "emailLinks": [],
+      "telLinks": [],
+      "brokenLinks": []
+    },
+    {
+      "file": "faq.html",
+      "buttons": [],
+      "internalLinks": [
+        {
+          "href": "contact.html",
+          "text": "Get Your Offer"
+        },
+        {
+          "href": "about.html",
+          "text": "About"
+        },
+        {
+          "href": "services.html",
+          "text": "Services"
+        },
+        {
+          "href": "buyers.html",
+          "text": "Buyer List"
+        },
+        {
+          "href": "faq.html",
+          "text": "FAQ"
+        },
+        {
+          "href": "contact.html",
+          "text": "Sell Your Property"
+        },
+        {
+          "href": "foreclosure.html",
+          "text": "Foreclosure Help"
+        },
+        {
+          "href": "repairs.html",
+          "text": "Sell As-Is"
+        },
+        {
+          "href": "quick-sale.html",
+          "text": "Fast  Sale"
+        },
+        {
+          "href": "inherited.html",
+          "text": "Inherited Property"
+        },
+        {
+          "href": "faq.html",
+          "text": "FAQ"
+        },
+        {
+          "href": "privacy.html",
+          "text": "Privacy Policy"
+        },
+        {
+          "href": "terms.html",
+          "text": "Terms of Service"
+        }
+      ],
+      "externalLinks": [
+        {
+          "href": "https://facebook.com/homeliberationwinnipeg",
+          "text": "f"
+        },
+        {
+          "href": "https://instagram.com/homeliberationwpg",
+          "text": ""
+        },
+        {
+          "href": "https://linkedin.com/company/home-liberation-winnipeg",
+          "text": "in"
+        }
+      ],
+      "emailLinks": [],
+      "telLinks": [],
+      "brokenLinks": []
+    },
+    {
+      "file": "terms.html",
+      "buttons": [],
+      "internalLinks": [
+        {
+          "href": "contact.html",
+          "text": "Get Your Offer"
+        },
+        {
+          "href": "contact.html",
+          "text": "Get Your Offer Now →"
+        },
+        {
+          "href": "about.html",
+          "text": "About"
+        },
+        {
+          "href": "services.html",
+          "text": "Services"
+        },
+        {
+          "href": "buyers.html",
+          "text": "Buyer List"
+        },
+        {
+          "href": "faq.html",
+          "text": "FAQ"
+        },
+        {
+          "href": "contact.html",
+          "text": "Sell Your Property"
+        },
+        {
+          "href": "privacy.html",
+          "text": "Privacy Policy"
+        },
+        {
+          "href": "foreclosure.html",
+          "text": "Foreclosure Help"
+        },
+        {
+          "href": "repairs.html",
+          "text": "Sell As-Is"
+        },
+        {
+          "href": "quick-sale.html",
+          "text": "Fast  Sale"
+        },
+        {
+          "href": "inherited.html",
+          "text": "Inherited Property"
+        },
+        {
+          "href": "faq.html",
+          "text": "FAQ"
+        },
+        {
+          "href": "privacy.html",
+          "text": "Privacy Policy"
+        },
+        {
+          "href": "terms.html",
+          "text": "Terms of Service"
+        }
+      ],
+      "externalLinks": [
+        {
+          "href": "https://facebook.com/homeliberationwinnipeg",
+          "text": "f"
+        },
+        {
+          "href": "https://instagram.com/homeliberationwpg",
+          "text": ""
+        },
+        {
+          "href": "https://linkedin.com/company/home-liberation-winnipeg",
+          "text": "in"
+        }
+      ],
+      "emailLinks": [
+        {
+          "href": "mailto:homeliberationapp@gmail.com",
+          "text": "homeliberationapp@gmail.com"
+        }
+      ],
+      "telLinks": [],
+      "brokenLinks": []
+    },
+    {
+      "file": "privacy.html",
+      "buttons": [],
+      "internalLinks": [
+        {
+          "href": "contact.html",
+          "text": "Get Your Offer"
+        },
+        {
+          "href": "contact.html",
+          "text": "Get Your Offer Now →"
+        },
+        {
+          "href": "about.html",
+          "text": "About"
+        },
+        {
+          "href": "services.html",
+          "text": "Services"
+        },
+        {
+          "href": "buyers.html",
+          "text": "Buyer List"
+        },
+        {
+          "href": "faq.html",
+          "text": "FAQ"
+        },
+        {
+          "href": "contact.html",
+          "text": "Sell Your Property"
+        },
+        {
+          "href": "foreclosure.html",
+          "text": "Foreclosure Help"
+        },
+        {
+          "href": "repairs.html",
+          "text": "Sell As-Is"
+        },
+        {
+          "href": "quick-sale.html",
+          "text": "Fast  Sale"
+        },
+        {
+          "href": "inherited.html",
+          "text": "Inherited Property"
+        },
+        {
+          "href": "faq.html",
+          "text": "FAQ"
+        },
+        {
+          "href": "privacy.html",
+          "text": "Privacy Policy"
+        },
+        {
+          "href": "terms.html",
+          "text": "Terms of Service"
+        }
+      ],
+      "externalLinks": [
+        {
+          "href": "https://www.priv.gc.ca",
+          "text": "www.priv.gc.ca"
+        },
+        {
+          "href": "https://facebook.com/homeliberationwinnipeg",
+          "text": "f"
+        },
+        {
+          "href": "https://instagram.com/homeliberationwpg",
+          "text": ""
+        },
+        {
+          "href": "https://linkedin.com/company/home-liberation-winnipeg",
+          "text": "in"
+        }
+      ],
+      "emailLinks": [
+        {
+          "href": "mailto:privacy@homeliberationwinnipeg.com",
+          "text": "privacy@homeliberationwinnipeg.com"
+        }
+      ],
+      "telLinks": [],
+      "brokenLinks": []
+    }
+  ],
+  "brokenLinks": [],
+  "emailLinks": [
+    {
+      "file": "terms.html",
+      "href": "mailto:homeliberationapp@gmail.com",
+      "text": "homeliberationapp@gmail.com"
+    },
+    {
+      "file": "privacy.html",
+      "href": "mailto:privacy@homeliberationwinnipeg.com",
+      "text": "privacy@homeliberationwinnipeg.com"
+    }
+  ],
+  "telLinks": [],
+  "externalLinks": [
+    {
+      "file": "index.html",
+      "href": "https://facebook.com/homeliberationwinnipeg",
+      "text": "f"
+    },
+    {
+      "file": "index.html",
+      "href": "https://instagram.com/homeliberationwpg",
+      "text": ""
+    },
+    {
+      "file": "index.html",
+      "href": "https://linkedin.com/company/home-liberation-winnipeg",
+      "text": "in"
+    },
+    {
+      "file": "about.html",
+      "href": "https://facebook.com/homeliberationwinnipeg",
+      "text": "f"
+    },
+    {
+      "file": "about.html",
+      "href": "https://instagram.com/homeliberationwpg",
+      "text": ""
+    },
+    {
+      "file": "about.html",
+      "href": "https://linkedin.com/company/home-liberation-winnipeg",
+      "text": "in"
+    },
+    {
+      "file": "services.html",
+      "href": "https://facebook.com/homeliberationwinnipeg",
+      "text": "f"
+    },
+    {
+      "file": "services.html",
+      "href": "https://instagram.com/homeliberationwpg",
+      "text": ""
+    },
+    {
+      "file": "services.html",
+      "href": "https://linkedin.com/company/home-liberation-winnipeg",
+      "text": "in"
+    },
+    {
+      "file": "contact.html",
+      "href": "https://facebook.com/homeliberationwinnipeg",
+      "text": "f"
+    },
+    {
+      "file": "contact.html",
+      "href": "https://instagram.com/homeliberationwpg",
+      "text": ""
+    },
+    {
+      "file": "contact.html",
+      "href": "https://linkedin.com/company/home-liberation-winnipeg",
+      "text": "in"
+    },
+    {
+      "file": "sellers.html",
+      "href": "https://facebook.com/homeliberationwinnipeg",
+      "text": "f"
+    },
+    {
+      "file": "sellers.html",
+      "href": "https://instagram.com/homeliberationwpg",
+      "text": ""
+    },
+    {
+      "file": "sellers.html",
+      "href": "https://linkedin.com/company/home-liberation-winnipeg",
+      "text": "in"
+    },
+    {
+      "file": "buyers.html",
+      "href": "https://facebook.com/homeliberationwinnipeg",
+      "text": "f"
+    },
+    {
+      "file": "buyers.html",
+      "href": "https://instagram.com/homeliberationwpg",
+      "text": ""
+    },
+    {
+      "file": "buyers.html",
+      "href": "https://linkedin.com/company/home-liberation-winnipeg",
+      "text": "in"
+    },
+    {
+      "file": "properties.html",
+      "href": "https://facebook.com/homeliberationwinnipeg",
+      "text": "f"
+    },
+    {
+      "file": "properties.html",
+      "href": "https://instagram.com/homeliberationwpg",
+      "text": ""
+    },
+    {
+      "file": "properties.html",
+      "href": "https://linkedin.com/company/home-liberation-winnipeg",
+      "text": "in"
+    },
+    {
+      "file": "foreclosure.html",
+      "href": "https://facebook.com/homeliberationwinnipeg",
+      "text": "f"
+    },
+    {
+      "file": "foreclosure.html",
+      "href": "https://instagram.com/homeliberationwpg",
+      "text": ""
+    },
+    {
+      "file": "foreclosure.html",
+      "href": "https://linkedin.com/company/home-liberation-winnipeg",
+      "text": "in"
+    },
+    {
+      "file": "bankruptcy.html",
+      "href": "https://facebook.com/homeliberationwinnipeg",
+      "text": "f"
+    },
+    {
+      "file": "bankruptcy.html",
+      "href": "https://instagram.com/homeliberationwpg",
+      "text": ""
+    },
+    {
+      "file": "bankruptcy.html",
+      "href": "https://linkedin.com/company/home-liberation-winnipeg",
+      "text": "in"
+    },
+    {
+      "file": "landlord.html",
+      "href": "https://facebook.com/homeliberationwinnipeg",
+      "text": "f"
+    },
+    {
+      "file": "landlord.html",
+      "href": "https://instagram.com/homeliberationwpg",
+      "text": ""
+    },
+    {
+      "file": "landlord.html",
+      "href": "https://linkedin.com/company/home-liberation-winnipeg",
+      "text": "in"
+    },
+    {
+      "file": "inherited.html",
+      "href": "https://facebook.com/homeliberationwinnipeg",
+      "text": "f"
+    },
+    {
+      "file": "inherited.html",
+      "href": "https://instagram.com/homeliberationwpg",
+      "text": ""
+    },
+    {
+      "file": "inherited.html",
+      "href": "https://linkedin.com/company/home-liberation-winnipeg",
+      "text": "in"
+    },
+    {
+      "file": "downsizing.html",
+      "href": "https://facebook.com/homeliberationwinnipeg",
+      "text": "f"
+    },
+    {
+      "file": "downsizing.html",
+      "href": "https://instagram.com/homeliberationwpg",
+      "text": ""
+    },
+    {
+      "file": "downsizing.html",
+      "href": "https://linkedin.com/company/home-liberation-winnipeg",
+      "text": "in"
+    },
+    {
+      "file": "quick-sale.html",
+      "href": "https://facebook.com/homeliberationwinnipeg",
+      "text": "f"
+    },
+    {
+      "file": "quick-sale.html",
+      "href": "https://instagram.com/homeliberationwpg",
+      "text": ""
+    },
+    {
+      "file": "quick-sale.html",
+      "href": "https://linkedin.com/company/home-liberation-winnipeg",
+      "text": "in"
+    },
+    {
+      "file": "repairs.html",
+      "href": "https://facebook.com/homeliberationwinnipeg",
+      "text": "f"
+    },
+    {
+      "file": "repairs.html",
+      "href": "https://instagram.com/homeliberationwpg",
+      "text": ""
+    },
+    {
+      "file": "repairs.html",
+      "href": "https://linkedin.com/company/home-liberation-winnipeg",
+      "text": "in"
+    },
+    {
+      "file": "tax-liens.html",
+      "href": "https://facebook.com/homeliberationwinnipeg",
+      "text": "f"
+    },
+    {
+      "file": "tax-liens.html",
+      "href": "https://instagram.com/homeliberationwpg",
+      "text": ""
+    },
+    {
+      "file": "tax-liens.html",
+      "href": "https://linkedin.com/company/home-liberation-winnipeg",
+      "text": "in"
+    },
+    {
+      "file": "calculator.html",
+      "href": "https://facebook.com/homeliberationwinnipeg",
+      "text": "f"
+    },
+    {
+      "file": "calculator.html",
+      "href": "https://instagram.com/homeliberationwpg",
+      "text": ""
+    },
+    {
+      "file": "calculator.html",
+      "href": "https://linkedin.com/company/home-liberation-winnipeg",
+      "text": "in"
+    },
+    {
+      "file": "faq.html",
+      "href": "https://facebook.com/homeliberationwinnipeg",
+      "text": "f"
+    },
+    {
+      "file": "faq.html",
+      "href": "https://instagram.com/homeliberationwpg",
+      "text": ""
+    },
+    {
+      "file": "faq.html",
+      "href": "https://linkedin.com/company/home-liberation-winnipeg",
+      "text": "in"
+    },
+    {
+      "file": "terms.html",
+      "href": "https://facebook.com/homeliberationwinnipeg",
+      "text": "f"
+    },
+    {
+      "file": "terms.html",
+      "href": "https://instagram.com/homeliberationwpg",
+      "text": ""
+    },
+    {
+      "file": "terms.html",
+      "href": "https://linkedin.com/company/home-liberation-winnipeg",
+      "text": "in"
+    },
+    {
+      "file": "privacy.html",
+      "href": "https://www.priv.gc.ca",
+      "text": "www.priv.gc.ca"
+    },
+    {
+      "file": "privacy.html",
+      "href": "https://facebook.com/homeliberationwinnipeg",
+      "text": "f"
+    },
+    {
+      "file": "privacy.html",
+      "href": "https://instagram.com/homeliberationwpg",
+      "text": ""
+    },
+    {
+      "file": "privacy.html",
+      "href": "https://linkedin.com/company/home-liberation-winnipeg",
+      "text": "in"
+    }
+  ]
+}

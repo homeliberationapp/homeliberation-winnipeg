@@ -1,0 +1,184 @@
+{
+  "timestamp": "2025-11-14T20:16:01.761Z",
+  "correctEmail": "homeliberationapp@gmail.com",
+  "filesProcessed": 25,
+  "filesModified": 25,
+  "totalReplacements": 68,
+  "details": [
+    {
+      "file": "index.html",
+      "replacements": 4,
+      "details": [
+        "  - hello@homeliberationwinnipeg.com → homeliberationapp@gmail.com (4x)"
+      ]
+    },
+    {
+      "file": "index_dark.html",
+      "replacements": 2,
+      "details": [
+        "  - hello@homeliberationwinnipeg.com → homeliberationapp@gmail.com (2x)"
+      ]
+    },
+    {
+      "file": "about.html",
+      "replacements": 2,
+      "details": [
+        "  - hello@homeliberationwinnipeg.com → homeliberationapp@gmail.com (2x)"
+      ]
+    },
+    {
+      "file": "services.html",
+      "replacements": 2,
+      "details": [
+        "  - hello@homeliberationwinnipeg.com → homeliberationapp@gmail.com (2x)"
+      ]
+    },
+    {
+      "file": "contact.html",
+      "replacements": 2,
+      "details": [
+        "  - hello@homeliberationwinnipeg.com → homeliberationapp@gmail.com (2x)"
+      ]
+    },
+    {
+      "file": "sellers.html",
+      "replacements": 2,
+      "details": [
+        "  - hello@homeliberationwinnipeg.com → homeliberationapp@gmail.com (2x)"
+      ]
+    },
+    {
+      "file": "buyers.html",
+      "replacements": 4,
+      "details": [
+        "  - hello@homeliberationwinnipeg.com → homeliberationapp@gmail.com (4x)"
+      ]
+    },
+    {
+      "file": "properties.html",
+      "replacements": 4,
+      "details": [
+        "  - hello@homeliberationwinnipeg.com → homeliberationapp@gmail.com (4x)"
+      ]
+    },
+    {
+      "file": "foreclosure.html",
+      "replacements": 2,
+      "details": [
+        "  - hello@homeliberationwinnipeg.com → homeliberationapp@gmail.com (2x)"
+      ]
+    },
+    {
+      "file": "bankruptcy.html",
+      "replacements": 2,
+      "details": [
+        "  - hello@homeliberationwinnipeg.com → homeliberationapp@gmail.com (2x)"
+      ]
+    },
+    {
+      "file": "landlord.html",
+      "replacements": 2,
+      "details": [
+        "  - hello@homeliberationwinnipeg.com → homeliberationapp@gmail.com (2x)"
+      ]
+    },
+    {
+      "file": "inherited.html",
+      "replacements": 2,
+      "details": [
+        "  - hello@homeliberationwinnipeg.com → homeliberationapp@gmail.com (2x)"
+      ]
+    },
+    {
+      "file": "downsizing.html",
+      "replacements": 2,
+      "details": [
+        "  - hello@homeliberationwinnipeg.com → homeliberationapp@gmail.com (2x)"
+      ]
+    },
+    {
+      "file": "quick-sale.html",
+      "replacements": 2,
+      "details": [
+        "  - hello@homeliberationwinnipeg.com → homeliberationapp@gmail.com (2x)"
+      ]
+    },
+    {
+      "file": "repairs.html",
+      "replacements": 2,
+      "details": [
+        "  - hello@homeliberationwinnipeg.com → homeliberationapp@gmail.com (2x)"
+      ]
+    },
+    {
+      "file": "tax-liens.html",
+      "replacements": 2,
+      "details": [
+        "  - hello@homeliberationwinnipeg.com → homeliberationapp@gmail.com (2x)"
+      ]
+    },
+    {
+      "file": "calculator.html",
+      "replacements": 4,
+      "details": [
+        "  - hello@homeliberationwinnipeg.com → homeliberationapp@gmail.com (4x)"
+      ]
+    },
+    {
+      "file": "faq.html",
+      "replacements": 4,
+      "details": [
+        "  - hello@homeliberationwinnipeg.com → homeliberationapp@gmail.com (4x)"
+      ]
+    },
+    {
+      "file": "terms.html",
+      "replacements": 4,
+      "details": [
+        "  - hello@homeliberationwinnipeg.com → homeliberationapp@gmail.com (4x)"
+      ]
+    },
+    {
+      "file": "privacy.html",
+      "replacements": 4,
+      "details": [
+        "  - hello@homeliberationwinnipeg.com → homeliberationapp@gmail.com (4x)"
+      ]
+    },
+    {
+      "file": "offline.html",
+      "replacements": 4,
+      "details": [
+        "  - hello@homeliberationwinnipeg.com → homeliberationapp@gmail.com (4x)"
+      ]
+    },
+    {
+      "file": "other.html",
+      "replacements": 2,
+      "details": [
+        "  - hello@homeliberationwinnipeg.com → homeliberationapp@gmail.com (2x)"
+      ]
+    },
+    {
+      "file": "buyers-list.html",
+      "replacements": 4,
+      "details": [
+        "  - hello@homeliberationwinnipeg.com → homeliberationapp@gmail.com (4x)"
+      ]
+    },
+    {
+      "file": "admin-dashboard.html",
+      "replacements": 2,
+      "details": [
+        "  - hello@homeliberationwinnipeg.com → homeliberationapp@gmail.com (2x)"
+      ]
+    },
+    {
+      "file": "admin-login.html",
+      "replacements": 2,
+      "details": [
+        "  - hello@homeliberationwinnipeg.com → homeliberationapp@gmail.com (2x)"
+      ]
+    }
+  ]
+}
