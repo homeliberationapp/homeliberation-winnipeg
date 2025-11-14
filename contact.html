@@ -374,8 +374,11 @@ ul, ol {
 
     <style>
         .contact-hero {
-            background: linear-gradient(rgba(15, 34, 64, 0.75), rgba(15, 34, 64, 0.85)),
-                        url('https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=2000&q=90');
+            background: linear-gradient(135deg,
+                        rgba(15, 34, 64, 0.92) 0%,
+                        rgba(30, 50, 80, 0.88) 50%,
+                        rgba(15, 34, 64, 0.92) 100%),
+                        url('https://images.unsplash.com/photo-1449844908441-8829872d2607?w=2400&q=95');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -391,7 +394,8 @@ ul, ol {
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at top right, rgba(212, 175, 55, 0.15), transparent 50%);
+            background: radial-gradient(ellipse at top left, rgba(212, 175, 55, 0.18), transparent 60%),
+                        radial-gradient(ellipse at bottom right, rgba(100, 150, 200, 0.12), transparent 60%);
             pointer-events: none;
         }
 
@@ -493,8 +497,11 @@ ul, ol {
 <body class="contact-page" class="contact-page">
 
     <section class="hero" style="
-    background-image: linear-gradient(rgba(15, 34, 64, 0.85), rgba(15, 34, 64, 0.90)),
-                      url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=2400&q=95');
+    background-image: linear-gradient(135deg,
+                      rgba(15, 34, 64, 0.88) 0%,
+                      rgba(40, 60, 95, 0.82) 50%,
+                      rgba(15, 34, 64, 0.88) 100%),
+                      url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=2400&q=95');
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
@@ -932,17 +939,96 @@ ul, ol {
                     <label>Winnipeg Neighborhood / Area <span class="required">*</span></label>
                     <select name="neighborhood" required>
                         <option value="">Select neighborhood...</option>
-                        <option value="Tuxedo">Tuxedo </option>
-                        <option value="River Heights">River Heights </option>
-                        <option value="Wolseley">Wolseley </option>
-                        <option value="St. Boniface">St. Boniface </option>
-                        <option value="Fort Garry">Fort Garry </option>
-                        <option value="Charleswood">Charleswood </option>
-                        <option value="Waverley West">Waverley West </option>
-                        <option value="Garden City">Garden City </option>
-                        <option value="Amber Trails">Amber Trails </option>
-                        <option value="North End">North End </option>
-                        <option value="Other">Other Winnipeg Area</option>
+                        <optgroup label="Central Winnipeg">
+                            <option value="Armstrong Point">Armstrong Point</option>
+                            <option value="Broadway-Assiniboine">Broadway-Assiniboine</option>
+                            <option value="Centennial">Centennial</option>
+                            <option value="Colony">Colony</option>
+                            <option value="Daniel McIntyre">Daniel McIntyre</option>
+                            <option value="Downtown">Downtown</option>
+                            <option value="Exchange District">Exchange District</option>
+                            <option value="Fort Rouge">Fort Rouge</option>
+                            <option value="Lord Roberts">Lord Roberts</option>
+                            <option value="Osborne Village">Osborne Village</option>
+                            <option value="Polo Park">Polo Park</option>
+                            <option value="River Heights">River Heights</option>
+                            <option value="Riverview">Riverview</option>
+                            <option value="South Portage">South Portage</option>
+                            <option value="Spence">Spence</option>
+                            <option value="St. James">St. James</option>
+                            <option value="Tuxedo">Tuxedo</option>
+                            <option value="West Broadway">West Broadway</option>
+                            <option value="Westwood">Westwood</option>
+                            <option value="Wolseley">Wolseley</option>
+                        </optgroup>
+                        <optgroup label="North Winnipeg">
+                            <option value="Burrows Central">Burrows Central</option>
+                            <option value="Canterbury Park">Canterbury Park</option>
+                            <option value="Centennial (North)">Centennial (North)</option>
+                            <option value="Dufferin">Dufferin</option>
+                            <option value="Garden City">Garden City</option>
+                            <option value="Inkster-Faraday">Inkster-Faraday</option>
+                            <option value="Jefferson">Jefferson</option>
+                            <option value="Kelvin">Kelvin</option>
+                            <option value="Leila-McPhillips Triangle">Leila-McPhillips Triangle</option>
+                            <option value="Lord Selkirk">Lord Selkirk</option>
+                            <option value="Luxton">Luxton</option>
+                            <option value="Mynarski">Mynarski</option>
+                            <option value="North End">North End</option>
+                            <option value="North Point Douglas">North Point Douglas</option>
+                            <option value="Old Kildonan">Old Kildonan</option>
+                            <option value="Point Douglas">Point Douglas</option>
+                            <option value="Robertson">Robertson</option>
+                            <option value="Seven Oaks">Seven Oaks</option>
+                            <option value="St. John's">St. John's</option>
+                            <option value="Templeton-Sinclair">Templeton-Sinclair</option>
+                            <option value="Weston">Weston</option>
+                            <option value="William Whyte">William Whyte</option>
+                        </optgroup>
+                        <optgroup label="South Winnipeg">
+                            <option value="Fort Garry">Fort Garry</option>
+                            <option value="Fort Richmond">Fort Richmond</option>
+                            <option value="Glenwood">Glenwood</option>
+                            <option value="Lindenwoods">Lindenwoods</option>
+                            <option value="Linden Ridge">Linden Ridge</option>
+                            <option value="Niakwa Place">Niakwa Place</option>
+                            <option value="Royalwood">Royalwood</option>
+                            <option value="South Pointe">South Pointe</option>
+                            <option value="St. Norbert">St. Norbert</option>
+                            <option value="St. Vital">St. Vital</option>
+                            <option value="Southdale">Southdale</option>
+                            <option value="Waverley Heights">Waverley Heights</option>
+                            <option value="Whyte Ridge">Whyte Ridge</option>
+                        </optgroup>
+                        <optgroup label="East Winnipeg">
+                            <option value="Archwood">Archwood</option>
+                            <option value="Elmwood">Elmwood</option>
+                            <option value="Munroe East">Munroe East</option>
+                            <option value="Munroe West">Munroe West</option>
+                            <option value="North Kildonan">North Kildonan</option>
+                            <option value="Regent">Regent</option>
+                            <option value="St. Boniface">St. Boniface</option>
+                            <option value="Transcona">Transcona</option>
+                            <option value="Windsor Park">Windsor Park</option>
+                        </optgroup>
+                        <optgroup label="West Winnipeg">
+                            <option value="Amber Trails">Amber Trails</option>
+                            <option value="Bridgwater">Bridgwater</option>
+                            <option value="Charleswood">Charleswood</option>
+                            <option value="Crestview">Crestview</option>
+                            <option value="Headingley">Headingley</option>
+                            <option value="Heritage Park">Heritage Park</option>
+                            <option value="Kenaston">Kenaston</option>
+                            <option value="Lindenwoods">Lindenwoods</option>
+                            <option value="Sturgeon Creek">Sturgeon Creek</option>
+                            <option value="Tuxedo (West)">Tuxedo (West)</option>
+                            <option value="Waverley West">Waverley West</option>
+                            <option value="Whyte Ridge">Whyte Ridge</option>
+                        </optgroup>
+                        <optgroup label="Other Areas">
+                            <option value="Rural Winnipeg">Rural Winnipeg</option>
+                            <option value="Other">Other Area</option>
+                        </optgroup>
                     </select>
                     <p style="font-size: 0.75rem; color: var(--gray); margin-top: 0.5rem;">
                         Average prices based on 2025 Winnipeg market data
