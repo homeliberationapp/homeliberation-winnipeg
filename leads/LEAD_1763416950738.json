@@ -1,0 +1,19 @@
+{
+  "propertyAddress": "123 Test Street, Winnipeg, MB",
+  "propertyType": "Single-Family Home",
+  "bedrooms": "3",
+  "condition": "Poor - Major repairs needed",
+  "reason": "Foreclosure / Behind on payments",
+  "timeline": "Immediately (1-7 days)",
+  "mortgageStatus": "3-4 months behind",
+  "firstName": "John",
+  "lastName": "TestUser",
+  "phone": "(204) 555-1234",
+  "email": "test@example.com",
+  "bestTimeToCall": "Morning (8-12 PM)",
+  "comments": "This is an automated test submission",
+  "timestamp": "2025-11-17T22:02:30.738Z",
+  "id": "LEAD_1763416950738",
+  "score": 400,
+  "priority": "HOT"
+}

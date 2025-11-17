@@ -1,0 +1,28 @@
+{
+  "leads": [
+    {
+      "id": "LEAD_1763416956417",
+      "name": "Hot Lead",
+      "email": "hotlead@example.com",
+      "phone": "(204) 555-9999",
+      "address": "456 Urgent Sale Ave, Winnipeg, MB",
+      "score": 450,
+      "priority": "HOT",
+      "timestamp": "2025-11-17T22:02:36.417Z"
+    },
+    {
+      "id": "LEAD_1763416950738",
+      "name": "John TestUser",
+      "email": "test@example.com",
+      "phone": "(204) 555-1234",
+      "address": "123 Test Street, Winnipeg, MB",
+      "score": 400,
+      "priority": "HOT",
+      "timestamp": "2025-11-17T22:02:30.738Z"
+    }
+  ],
+  "lastUpdated": "2025-11-17T22:02:36.421Z",
+  "totalLeads": 2,
+  "hotLeads": 2,
+  "warmLeads": 0
+}

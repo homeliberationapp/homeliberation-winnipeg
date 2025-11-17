@@ -1,0 +1,19 @@
+{
+  "propertyAddress": "456 Urgent Sale Ave, Winnipeg, MB",
+  "propertyType": "Single-Family Home",
+  "bedrooms": "3",
+  "condition": "Very Poor - Uninhabitable/condemned",
+  "reason": "Foreclosure / Behind on payments",
+  "timeline": "Immediately (1-7 days)",
+  "mortgageStatus": "In foreclosure",
+  "firstName": "Hot",
+  "lastName": "Lead",
+  "phone": "(204) 555-9999",
+  "email": "hotlead@example.com",
+  "bestTimeToCall": "Anytime",
+  "comments": "",
+  "timestamp": "2025-11-17T22:02:36.417Z",
+  "id": "LEAD_1763416956417",
+  "score": 450,
+  "priority": "HOT"
+}

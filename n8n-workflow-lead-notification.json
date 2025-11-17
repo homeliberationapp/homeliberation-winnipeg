@@ -1,0 +1,94 @@
+{
+  "name": "Lead Notification Workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "lead-webhook",
+        "options": {}
+      },
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [250, 300],
+      "webhookId": "lead-webhook"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "value1": "={{$json[\"score\"]}}",
+              "operation": "largerEqual",
+              "value2": 400
+            }
+          ]
+        }
+      },
+      "name": "IF Hot Lead",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [450, 300]
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "operation": "send",
+        "message": "🔥 HOT LEAD!\n\n{{$json[\"firstName\"]}} {{$json[\"lastName\"]}}\nScore: {{$json[\"score\"]}}/600\n📍 {{$json[\"propertyAddress\"]}}\n📞 {{$json[\"phone\"]}}",
+        "otherOptions": {}
+      },
+      "name": "Send Gmail",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2,
+      "position": [650, 300],
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "1",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "sms",
+        "operation": "send",
+        "from": "={{$env[\"TWILIO_PHONE_NUMBER\"]}}",
+        "to": "={{$env[\"TWILIO_PHONE_NUMBER\"]}}",
+        "message": "🔥 HOT LEAD: {{$json[\"firstName\"]}} {{$json[\"lastName\"]}} - Score: {{$json[\"score\"]}}/600"
+      },
+      "name": "Send SMS",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [650, 450],
+      "credentials": {
+        "twilioApi": {
+          "id": "2",
+          "name": "Twilio account"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [[{
+        "node": "IF Hot Lead",
+        "type": "main",
+        "index": 0
+      }]]
+    },
+    "IF Hot Lead": {
+      "main": [
+        [{
+          "node": "Send Gmail",
+          "type": "main",
+          "index": 0
+        }, {
+          "node": "Send SMS",
+          "type": "main",
+          "index": 0
+        }],
+        []
+      ]
+    }
+  }
+}
