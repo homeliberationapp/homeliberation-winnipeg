@@ -32,10 +32,16 @@ const transporter = nodemailer.createTransport({
 
 // Twilio setup (optional)
 let twilioClient = null;
-if (process.env.TWILIO_ACCOUNT_SID && process.env.TWILIO_AUTH_TOKEN) {
-    const twilio = require('twilio');
-    twilioClient = twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
-    console.log('✅ Twilio SMS enabled');
+if (process.env.TWILIO_ACCOUNT_SID &&
+    process.env.TWILIO_AUTH_TOKEN &&
+    process.env.TWILIO_ACCOUNT_SID.startsWith('AC')) {
+    try {
+        const twilio = require('twilio');
+        twilioClient = twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
+        console.log('✅ Twilio SMS enabled');
+    } catch (error) {
+        console.log('⚠️  Twilio setup failed - SMS disabled');
+    }
 } else {
     console.log('⚠️  Twilio not configured - SMS disabled');
 }

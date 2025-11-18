@@ -1,6 +1,17 @@
 {
   "leads": [
     {
+      "id": "LEAD_1763427884179",
+      "name": "Email TestUser",
+      "email": "test-email@example.com",
+      "phone": "(204) 555-9999",
+      "address": "999 Email Test Street, Winnipeg, MB",
+      "score": 450,
+      "priority": "HOT",
+      "timestamp": "2025-11-18T01:04:44.179Z",
+      "scoringMethod": "Rule-Based"
+    },
+    {
       "id": "LEAD_1763416956417",
       "name": "Hot Lead",
       "email": "hotlead@example.com",
@@ -21,8 +32,9 @@
       "timestamp": "2025-11-17T22:02:30.738Z"
     }
   ],
-  "lastUpdated": "2025-11-17T22:02:36.421Z",
-  "totalLeads": 2,
-  "hotLeads": 2,
-  "warmLeads": 0
+  "lastUpdated": "2025-11-18T01:04:44.286Z",
+  "totalLeads": 3,
+  "hotLeads": 3,
+  "warmLeads": 0,
+  "aiScoredLeads": 0
 }

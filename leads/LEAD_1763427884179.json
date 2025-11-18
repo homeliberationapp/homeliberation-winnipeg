@@ -1,0 +1,20 @@
+{
+  "propertyAddress": "999 Email Test Street, Winnipeg, MB",
+  "propertyType": "Single-Family Home",
+  "bedrooms": "3",
+  "condition": "Very Poor - Uninhabitable/condemned",
+  "reason": "Foreclosure / Behind on payments",
+  "timeline": "Immediately (1-7 days)",
+  "mortgageStatus": "In foreclosure",
+  "firstName": "Email",
+  "lastName": "TestUser",
+  "phone": "(204) 555-9999",
+  "email": "test-email@example.com",
+  "bestTimeToCall": "Morning (8-12 PM)",
+  "comments": "TEST EMAIL DELIVERY - This is a test lead to verify Gmail App Password is working correctly. Expected: 500+ score, HOT priority, email notification sent to homeliberationapp@gmail.com",
+  "timestamp": "2025-11-18T01:04:44.179Z",
+  "id": "LEAD_1763427884179",
+  "score": 450,
+  "priority": "HOT",
+  "scoringMethod": "Rule-Based"
+}
