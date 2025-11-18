@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Liberation - System Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f2240 0%, #1a3a5c 100%);
+            color: white;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .highlight {
+            color: #d4af37;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .card h2 {
+            font-size: 1.3rem;
+            margin-bottom: 16px;
+            color: #d4af37;
+        }
+
+        .status-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .status-row:last-child {
+            border-bottom: none;
+        }
+
+        .status-label {
+            font-weight: 600;
+        }
+
+        .status-value {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .badge {
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .badge.working {
+            background: #28a745;
+            color: white;
+        }
+
+        .badge.pending {
+            background: #ffc107;
+            color: #000;
+        }
+
+        .badge.disabled {
+            background: #6c757d;
+            color: white;
+        }
+
+        .stat-card {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #d4af37;
+            margin: 10px 0;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .leads-table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        .leads-table th {
+            background: rgba(212, 175, 55, 0.2);
+            padding: 12px;
+            text-align: left;
+            border-bottom: 2px solid #d4af37;
+        }
+
+        .leads-table td {
+            padding: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .priority-hot {
+            color: #ff6b6b;
+            font-weight: 700;
+        }
+
+        .priority-warm {
+            color: #ffa500;
+            font-weight: 700;
+        }
+
+        .priority-lukewarm {
+            color: #ffd700;
+            font-weight: 700;
+        }
+
+        .priority-cold {
+            color: #87ceeb;
+            font-weight: 700;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #d4af37 0%, #f4c542 100%);
+            color: #0f2240;
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .refresh-info {
+            text-align: center;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏠 Home Liberation <span class="highlight">System Dashboard</span></h1>
+            <p class="subtitle">Real-time Lead Capture System Status</p>
+        </header>
+
+        <div class="dashboard-grid">
+            <!-- System Status Card -->
+            <div class="card">
+                <h2>📊 System Status</h2>
+                <div id="systemStatus">
+                    <div class="status-row">
+                        <span class="status-label">Overall Health</span>
+                        <span class="status-value">
+                            <span class="badge" id="healthBadge">Checking...</span>
+                        </span>
+                    </div>
+                    <div class="status-row">
+                        <span class="status-label">Email Notifications</span>
+                        <span class="status-value">
+                            <span class="badge" id="emailBadge">Checking...</span>
+                        </span>
+                    </div>
+                    <div class="status-row">
+                        <span class="status-label">SMS Alerts</span>
+                        <span class="status-value">
+                            <span class="badge" id="smsBadge">Checking...</span>
+                        </span>
+                    </div>
+                    <div class="status-row">
+                        <span class="status-label">AI Scoring</span>
+                        <span class="status-value">
+                            <span class="badge" id="aiBadge">Checking...</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lead Statistics -->
+            <div class="card stat-card">
+                <h2>📈 Lead Statistics</h2>
+                <div class="stat-number" id="totalLeads">0</div>
+                <div class="stat-label">Total Leads Captured</div>
+            </div>
+
+            <div class="card stat-card">
+                <h2>🔥 Hot Leads</h2>
+                <div class="stat-number" id="hotLeads">0</div>
+                <div class="stat-label">Priority Leads (400+)</div>
+            </div>
+        </div>
+
+        <!-- Recent Leads -->
+        <div class="card">
+            <h2>📋 Recent Leads</h2>
+            <table class="leads-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>Phone</th>
+                        <th>Score</th>
+                        <th>Priority</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody id="leadsTable">
+                    <tr>
+                        <td colspan="6" style="text-align: center; opacity: 0.6;">Loading leads...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+            <a href="lead-form.html" class="btn btn-primary">📝 Capture New Lead</a>
+            <a href="http://localhost:5678" target="_blank" class="btn btn-secondary">⚙️ Open n8n Workflows</a>
+            <button onclick="location.reload()" class="btn btn-secondary">🔄 Refresh Dashboard</button>
+        </div>
+
+        <div class="refresh-info">
+            Last updated: <span id="lastUpdate">--</span> | Auto-refresh every 30 seconds
+        </div>
+    </div>
+
+    <script>
+        async function loadDashboard() {
+            try {
+                // Check system health
+                const healthResponse = await fetch('http://localhost:3000/health');
+                const health = await healthResponse.json();
+
+                // Update system status badges
+                document.getElementById('healthBadge').textContent = health.status === 'ok' ? 'ONLINE' : 'OFFLINE';
+                document.getElementById('healthBadge').className = `badge ${health.status === 'ok' ? 'working' : 'disabled'}`;
+
+                document.getElementById('emailBadge').textContent = health.features.email ? 'WORKING' : 'DISABLED';
+                document.getElementById('emailBadge').className = `badge ${health.features.email ? 'working' : 'disabled'}`;
+
+                document.getElementById('smsBadge').textContent = health.features.sms ? 'ENABLED' : 'DISABLED';
+                document.getElementById('smsBadge').className = `badge ${health.features.sms ? 'working' : 'disabled'}`;
+
+                document.getElementById('aiBadge').textContent = health.features.ai ? 'ENABLED' : 'RULE-BASED';
+                document.getElementById('aiBadge').className = `badge ${health.features.ai ? 'working' : 'pending'}`;
+
+                // Load leads data
+                const leadsResponse = await fetch('http://localhost:3000/api/leads');
+                const leadsData = await leadsResponse.json();
+
+                // Update statistics
+                document.getElementById('totalLeads').textContent = leadsData.totalLeads || 0;
+                document.getElementById('hotLeads').textContent = leadsData.hotLeads || 0;
+
+                // Update leads table
+                const tbody = document.getElementById('leadsTable');
+                if (leadsData.leads && leadsData.leads.length > 0) {
+                    tbody.innerHTML = leadsData.leads.slice(0, 10).map(lead => {
+                        const time = new Date(lead.timestamp).toLocaleString();
+                        const priorityClass = `priority-${lead.priority.toLowerCase()}`;
+                        return `
+                            <tr>
+                                <td>${lead.name}</td>
+                                <td>${lead.address || 'N/A'}</td>
+                                <td>${lead.phone}</td>
+                                <td>${lead.score}/600</td>
+                                <td class="${priorityClass}">${lead.priority}</td>
+                                <td>${time}</td>
+                            </tr>
+                        `;
+                    }).join('');
+                } else {
+                    tbody.innerHTML = '<tr><td colspan="6" style="text-align: center; opacity: 0.6;">No leads yet</td></tr>';
+                }
+
+                // Update last refresh time
+                document.getElementById('lastUpdate').textContent = new Date().toLocaleTimeString();
+
+            } catch (error) {
+                console.error('Error loading dashboard:', error);
+                document.getElementById('healthBadge').textContent = 'ERROR';
+                document.getElementById('healthBadge').className = 'badge disabled';
+            }
+        }
+
+        // Load dashboard on page load
+        loadDashboard();
+
+        // Auto-refresh every 30 seconds
+        setInterval(loadDashboard, 30000);
+    </script>
+</body>
+</html>
